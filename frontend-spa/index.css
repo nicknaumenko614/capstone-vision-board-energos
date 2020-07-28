@@ -33,6 +33,7 @@ body {
     height: 100%;
     width: 100px;
     padding-top: 20px;
+    z-index: 100;
 }
 
 .sidebar i {
@@ -52,7 +53,7 @@ body {
 .sidebar:hover .sidebar-content {
     display: block;
     transition: all 0.5s ease;
-    width: 250px;
+    width: 10vw;
 }
 
 .sidebar .wallpapers-container {
@@ -98,8 +99,8 @@ main {
 }
 
 .design-board {
-    width: 1200px;
-    height: 800px;
+    width: 50vw;
+    height: 80vh;
     /* background-color:teal ; */
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
