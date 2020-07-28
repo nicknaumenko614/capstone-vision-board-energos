@@ -20,14 +20,16 @@ body {
 }
 
 .sidebar {
+    text-align: center;
     position: fixed;
     left: 0;
     background-color: var(--color6);
     height: 100%;
     width: 100px;
-
+    padding-top: 20px;
 }
 .sidebar i {
+    
     font-size: 50pt;
 }
 
@@ -43,7 +45,7 @@ main {
 }
 
 .design-board {
-    width: 800px;
+    width: 1200px;
     height: 800px;
     /* background-color:teal ; */
     display: grid;
