@@ -17,10 +17,18 @@ body {
     background-color: yellowgreen;
 }
 
+img {
+    position: fixed;
+    right: 0;
+    width: 250px;
+    height: auto;
+} 
+
 .sidebar {
     text-align: center;
     position: fixed;
     left: 0;
+    top: 0;
     background-color: var(--color6);
     height: 100%;
     width: 100px;
