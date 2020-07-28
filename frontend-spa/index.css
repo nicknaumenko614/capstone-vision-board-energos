@@ -73,11 +73,17 @@ body {
 }
 
 .sidebar .images-container {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95%;
+    overflow-y: scroll;
 }
 
 .sidebar .images-container img {
-    
+    width: 150px;
+    height: auto;
+    margin: 10px;
 }
 
 main {
