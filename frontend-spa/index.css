@@ -25,6 +25,10 @@ body {
     background-color: var(--color6);
     height: 100%;
     width: 100px;
+
+}
+.sidebar i {
+    font-size: 50pt;
 }
 
 main {
