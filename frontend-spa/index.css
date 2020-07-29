@@ -50,6 +50,10 @@ body {
   color: var(--color6);
 }
 
+.sidebar .icon-div {
+    margin-top: 7vh;
+}
+
 .sidebar .icon-div:hover {
 background-color: var(--color2);
 }
