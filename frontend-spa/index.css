@@ -244,3 +244,21 @@ main > div {
   grid-gap: 10px;
   grid-template-rows: 2fr 3fr;
 }
+
+.design-board3 {
+  width: 50vw;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 10px;
+}
+
+.design-board3 .column-left {
+  display: grid;
+}
+
+.design-board3 .column-right {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr;
+}
