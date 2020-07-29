@@ -262,3 +262,33 @@ main > div {
   grid-gap: 10px;
   grid-template-rows: 1fr 1fr 1fr;
 }
+
+.design-board4 {
+    width: 50vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board4 .column-end {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board4 .column-middle {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board4 .row-end {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board4 .row-middle {
+    display: grid;
+  }
