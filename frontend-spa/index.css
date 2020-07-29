@@ -6,6 +6,7 @@
   --color5: #e7c874;
   --color5a: #e7c87477;
   --color6: #0162b7;
+  --color6a:#0162b767;
 }
 
 * {
@@ -37,10 +38,6 @@ body {
   z-index: 100;
 }
 
-.sidebar:hover {
-  background-color: var(--color5);
-}
-
 .sidebar i {
   font-size: 50pt;
   cursor: pointer;
@@ -48,7 +45,13 @@ body {
 }
 
 .sidebar i:hover {
-  text-shadow: 3px 3px 1px var(--color3);
+  text-shadow: 3px 3px 1px var(--color6a);
+  transform: scale(1.1);
+  color: var(--color6);
+}
+
+.sidebar .icon-div:hover {
+background-color: var(--color2);
 }
 
 .sidebar .sidebar-content {
@@ -58,7 +61,7 @@ body {
   top: 0;
   height: 100%;
   width: 0;
-  background-color: var(--color5a);
+  background-color: var(--color2);
 }
 
 .sidebar:hover .sidebar-content {
