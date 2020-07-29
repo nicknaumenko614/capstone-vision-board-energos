@@ -191,6 +191,10 @@ main {
   height: 82vh;
 }
 
+main > div {
+  margin-bottom: 20px;
+}
+
 .design-board {
   width: 50vw;
   height: 80vh;
@@ -211,19 +215,11 @@ main {
   background-color: var(--color2);
 }
 
-.design-board2-container {
-  background-color: var(--color6);
-  display: inline;
-  position: relative;
-  left: 50%;
-  /*transform: translateY(-50%); */
-}
-
 .design-board2 {
   width: 50vw;
   height: 80vh;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
 
@@ -231,4 +227,20 @@ main {
   display: grid;
   grid-gap: 10px;
   grid-template-rows: 3fr 2fr;
+}
+
+.design-board2 .row-single {
+  display: grid;
+}
+
+.design-board2 .row-double {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.design-board2 .column-right {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 2fr 3fr;
 }
