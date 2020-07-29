@@ -292,3 +292,49 @@ main > div {
   .design-board4 .row-middle {
     display: grid;
   }
+
+  .design-board5 {
+    width: 50vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board5 .column-left {
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board5 .column-right {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board5 .column-left .row-top {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 10px;
+  }
+
+  .design-board5 .column-left .row-bottom {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+  }
+
+  .design-board5 .column-right .row-top {
+    display: grid;
+  }
+
+  .design-board5 .column-right .row-middle {
+    display: grid;
+  }
+
+  .design-board5 .column-right .row-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
