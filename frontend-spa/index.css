@@ -67,8 +67,8 @@ body {
   font-size: 20pt;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    text-shadow: none;
-    color: var(--color1);
+  text-shadow: none;
+  color: var(--color1);
 }
 
 .sidebar .wallpapers i:hover::after {
@@ -181,12 +181,14 @@ body {
 main {
   background-color: var(--color3);
   display: inline;
-  position: relative;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   border: 2px solid var(--color1);
   padding: 10px;
+  overflow-y: scroll;
+  height: 82vh;
 }
 
 .design-board {
@@ -198,7 +200,6 @@ main {
   grid-gap: 10px;
 }
 
-
 .design-board .row {
   grid-gap: 10px;
   /* background-color: var(--color1); */
@@ -206,29 +207,28 @@ main {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.design-board .box {
+.box {
   background-color: var(--color2);
 }
 
 .design-board2-container {
   background-color: var(--color6);
   display: inline;
-   position: relative; 
+  position: relative;
   left: 50%;
   /*transform: translateY(-50%); */
-} 
+}
 
-/* .design-board2 {
+.design-board2 {
   width: 50vw;
   height: 80vh;
-  /* background-color:teal ; */
-  /* display: grid;
+  display: grid;
   grid-template-columns: 3fr 2fr;
   grid-gap: 10px;
 }
 
-.design-board2 .column-left{
+.design-board2 .column-left {
   display: grid;
   grid-gap: 10px;
   grid-template-rows: 3fr 2fr;
-} */ 
+}
