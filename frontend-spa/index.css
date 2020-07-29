@@ -338,3 +338,21 @@ main > div {
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
   }
+
+  .design-board6 {
+    width: 50vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-gap: 10px;
+  }
+
+  .design-board6 .column-end {
+    display: grid;
+      grid-template-rows: 2fr 3fr 2fr;
+      grid-gap: 10px;
+  }
+
+  .design-board6 .column-middle {
+    display: grid;
+  }
