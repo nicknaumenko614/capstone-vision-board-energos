@@ -6,7 +6,7 @@
   --color5: #e7c874;
   --color5a: #e7c87477;
   --color6: #0162b7;
-  --color6a:#0162b767;
+  --color6a: #0162b767;
 }
 
 * {
@@ -51,11 +51,44 @@ body {
 }
 
 .sidebar .icon-div {
-    margin-top: 7vh;
+  margin-top: 7vh;
+  position: relative;
 }
 
-.sidebar .icon-div:hover {
-background-color: var(--color2);
+/* .sidebar .icon-div:hover {
+    background-color: var(--color2);
+  } */
+
+.sidebar .icon-div i:hover::after {
+  position: absolute;
+  left: 125%;
+  top: 0;
+  line-height: 50pt;
+  font-size: 20pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    text-shadow: none;
+    color: var(--color1);
+}
+
+.sidebar .wallpapers i:hover::after {
+  content: "Wallpapers";
+}
+
+.sidebar .templates i:hover::after {
+  content: "Templates";
+}
+
+.sidebar .images i:hover::after {
+  content: "Images";
+}
+
+.sidebar .text i:hover::after {
+  content: "Text";
+}
+
+.sidebar .quotes i:hover::after {
+  content: "Quotes";
 }
 
 .sidebar .sidebar-content {
@@ -68,11 +101,11 @@ background-color: var(--color2);
   background-color: var(--color2);
 }
 
-.sidebar:hover .sidebar-content {
+/* .sidebar:hover .sidebar-content {
   display: block;
   transition: all 0.5s ease;
   width: 16vw;
-}
+} */
 
 .sidebar .wallpapers-container {
   display: flex;
