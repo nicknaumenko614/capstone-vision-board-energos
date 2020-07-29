@@ -38,6 +38,7 @@ body {
 
 .sidebar i {
     font-size: 50pt;
+    cursor: pointer;
 }
 
 .sidebar .sidebar-content {
@@ -47,7 +48,7 @@ body {
     top: 0;
     height: 100%;
     width: 0;
-    background-color: aqua;
+    background-color: var(--color4);
 }
 
 .sidebar:hover .sidebar-content {
@@ -73,11 +74,11 @@ body {
     width: 100px;
     height: 70px;
     margin: 10px;
+    cursor: grab;
 }
 
 .sidebar .images-container {
     display: flex;
-    display: none;
     flex-direction: column;
     align-items: center;
     height: 95%;
@@ -88,10 +89,12 @@ body {
     width: 150px;
     height: auto;
     margin: 10px;
+    cursor: grab;
 }
 
 .sidebar .quotes-container {
     display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     height: 95%;
@@ -102,6 +105,27 @@ body {
     width: 150px;
     height: auto;
     margin: 10px;
+    cursor: grab;
+}
+
+.sidebar .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 95%;
+    overflow-y: scroll;
+}
+
+.sidebar .text-container .text {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    padding: 20px;
+    cursor: grab;
+}
+
+.sidebar .text-container h2 {
+    cursor: text;
 }
 
 
