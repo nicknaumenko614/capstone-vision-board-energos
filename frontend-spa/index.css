@@ -223,6 +223,30 @@ body {
   box-shadow: 2px 2px 2px var(--color1);
 }
 
+.sidebar .settings-container .switch-label {
+    display: inline-block;
+}
+
+.sidebar .settings-container .grid-checkbox {
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+
+.sidebar .settings-container .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.sidebar .settings-container .switch {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 50px;
+    /* right: 100px; */
+}
+
 main {
   background-color: var(--color3);
   display: inline;
