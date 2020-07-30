@@ -130,7 +130,7 @@ body {
   top: 0;
   height: 100%;
   width: 0;
-  background-color: var(--color2);
+  background-color: var(--color2a);
 }
 
 .sidebar:hover .sidebar-content {
@@ -163,7 +163,7 @@ body {
 
 .sidebar .quotes-container {
   display: flex;
-  /* display: none; */
+  display: none;
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -172,7 +172,7 @@ body {
 
 .sidebar .text-container {
   display: flex;
-  display: none;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -187,8 +187,14 @@ body {
   cursor: grab;
 }
 
+.sidebar .text-container .text:hover {
+    background-color: var(--color2);
+    transform: scale(1.1);
+}
+
 .sidebar .text-container h2 {
   cursor: text;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .sidebar .templates-container {
