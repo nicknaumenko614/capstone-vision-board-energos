@@ -39,6 +39,7 @@ body {
   z-index: 100;
 }
 
+
 .sidebar i {
   font-size: 50pt;
   cursor: pointer;
@@ -74,6 +75,17 @@ body {
 
 .sidebar .wallpapers i:hover::after {
   content: "Background";
+}
+
+.sidebar .wallpapers-container .color-container {
+  margin-top: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20pt;
+}
+
+.sidebar .wallpapers-container .color-container input {
+  height: 20pt;
+  width: 70px;
 }
 
 .sidebar .templates i:hover::after {
