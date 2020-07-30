@@ -102,6 +102,11 @@ body {
   height: 30px;
 }
 
+.sidebar .input-container input:focus {
+  border: none;
+  outline: none;
+}
+
 .sidebar .templates i:hover::after {
   content: "Templates";
 }
