@@ -73,7 +73,7 @@ body {
 }
 
 .sidebar .wallpapers i:hover::after {
-  content: "Wallpapers";
+  content: "Background";
 }
 
 .sidebar .templates i:hover::after {
@@ -110,7 +110,7 @@ body {
 
 .sidebar .wallpapers-container {
   display: flex;
-  display: none;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -139,9 +139,6 @@ body {
   overflow-y: scroll;
 }
 
-.sidebar .quotes-container img {
-}
-
 .sidebar .text-container {
   display: flex;
   display: none;
@@ -165,7 +162,7 @@ body {
 
 .sidebar .templates-container {
   display: flex;
-  /* display: none; */
+  display: none;
   flex-direction: column;
   align-items: center;
   height: 95%;
