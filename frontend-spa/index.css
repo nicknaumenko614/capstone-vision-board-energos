@@ -237,7 +237,34 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color6);
+    transition: all 0.5s linear;
 }
+
+.sidebar .settings-container .slider::before {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  right: 2px;
+  background-color: var(--color5);
+  transition: all 0.5s linear;
+}
+
+.sidebar .settings-container .grid-checkbox:checked + .slider {
+  background-color: var(--color2);
+}
+
+.slider .settings-container .grid-checkbox:focus + .slider {
+  box-shadow: 0 0 1px var(--color2);
+}
+
+.sidebar .settings-container .grid-checkbox:checked + .slider::before {
+  transform: translateX(23px);
+} 
+
 
 .sidebar .settings-container .switch {
     position: relative;
