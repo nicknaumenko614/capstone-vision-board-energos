@@ -123,6 +123,10 @@ body {
   content: "Quotes";
 }
 
+.sidebar .settings i:hover::after {
+    content: "Settings";
+  }
+
 .sidebar .sidebar-content {
   display: none;
   position: absolute;
