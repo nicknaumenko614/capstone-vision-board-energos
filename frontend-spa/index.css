@@ -89,14 +89,14 @@ body {
   display: block;
 }
 
-.sidebar .wallpapers-container .input-container {
+.sidebar .input-container {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: 10px;
   font-size: 20pt;
 }
 
-.sidebar .wallpapers-container .input-container input {
+.sidebar .input-container input {
   display: block;
   width: 150px;
   height: 30px;
@@ -136,7 +136,7 @@ body {
 
 .sidebar .wallpapers-container {
   display: flex;
-  /* display: none; */
+  display: none;
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -158,7 +158,7 @@ body {
 
 .sidebar .quotes-container {
   display: flex;
-  display: none;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
   height: 95%;
