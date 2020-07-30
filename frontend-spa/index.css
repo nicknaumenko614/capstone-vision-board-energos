@@ -1,5 +1,6 @@
 :root {
   --color1: #393e41;
+  --color1a: #393e4177;
   --color2: #b2ebe0;
   --color2a: #b2ebe0aa;
   --color3: #f9fcff;
@@ -234,8 +235,8 @@ body {
   position: absolute;
 }
 
-.sidebar .settings-container .grid-toggle-switch {
-  margin-top: 10px;
+.sidebar .settings-container .dark-theme-toggle-switch {
+  margin-top: 35px;
 }
 
 .sidebar .settings-container .switch-label {
@@ -243,7 +244,7 @@ body {
     font-size: 20pt;
 }
 
-.sidebar .settings-container .grid-checkbox {
+.sidebar .settings-container input {
     height: 0;
     width: 0;
     opacity: 0;
@@ -263,7 +264,7 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: var(--color1);
+    background-color: var(--color1a);
     transition: all 0.5s linear;
 }
 
@@ -278,15 +279,15 @@ body {
   transition: all 0.5s linear;
 }
 
-.sidebar .settings-container .grid-checkbox:checked + .slider {
+.sidebar .settings-container input:checked + .slider {
   background-color: var(--color6);
 }
 
-.slider .settings-container .grid-checkbox:focus + .slider {
+.slider .settings-container input:focus + .slider {
   box-shadow: 0 0 1px var(--color6);
 }
 
-.sidebar .settings-container .grid-checkbox:checked + .slider::before {
+.sidebar .settings-container input:checked + .slider::before {
   transform: translateX(26px);
 } 
 
