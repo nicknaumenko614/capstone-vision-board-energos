@@ -1,6 +1,7 @@
 :root {
   --color1: #393e41;
   --color2: #b2ebe0;
+  --color2a: #b2ebe0aa;
   --color3: #f9fcff;
   --color4: #f3d1dc;
   --color5: #e7c874;
@@ -218,6 +219,10 @@ main > div {
 }
 
 .box {
+  background-color: var(--color2a);
+}
+
+.box:hover {
   background-color: var(--color2);
 }
 
