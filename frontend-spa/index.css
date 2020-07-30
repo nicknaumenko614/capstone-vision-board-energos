@@ -101,11 +101,11 @@ body {
   background-color: var(--color2);
 }
 
-/* .sidebar:hover .sidebar-content {
+.sidebar:hover .sidebar-content {
   display: block;
   transition: all 0.5s ease;
   width: 16vw;
-} */
+}
 
 .sidebar .wallpapers-container {
   display: flex;
@@ -129,6 +129,7 @@ body {
 
 .sidebar .images-container {
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -160,6 +161,7 @@ body {
 
 .sidebar .text-container {
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -176,6 +178,28 @@ body {
 
 .sidebar .text-container h2 {
   cursor: text;
+}
+
+.sidebar .templates-container {
+  display: flex;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 95%;
+  overflow-y: scroll;
+  padding-top: 20px;
+}
+
+.sidebar .templates-container img {
+  width: 150px;
+  height: auto;
+  margin: 15px;
+  cursor: grab;
+}
+
+.sidebar img:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 2px 2px var(--color1);
 }
 
 main {
