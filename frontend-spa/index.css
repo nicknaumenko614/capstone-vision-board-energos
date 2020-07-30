@@ -21,6 +21,10 @@ body {
   background-color: var(--color3);
 }
 
+body.dark {
+  background-color: var(--color1);
+}
+
 .logo-image {
   position: fixed;
   right: 0;
