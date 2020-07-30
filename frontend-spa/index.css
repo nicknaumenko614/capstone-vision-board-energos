@@ -120,13 +120,6 @@ body {
   display: none;
 }
 
-.sidebar .wallpapers-container img {
-  width: 100px;
-  height: 70px;
-  margin: 10px;
-  cursor: grab;
-}
-
 .sidebar .images-container {
   display: flex;
   display: none;
@@ -134,13 +127,6 @@ body {
   align-items: center;
   height: 95%;
   overflow-y: scroll;
-}
-
-.sidebar .images-container img {
-  width: 150px;
-  height: auto;
-  margin: 10px;
-  cursor: grab;
 }
 
 .sidebar .quotes-container {
@@ -153,10 +139,6 @@ body {
 }
 
 .sidebar .quotes-container img {
-  width: 150px;
-  height: auto;
-  margin: 10px;
-  cursor: grab;
 }
 
 .sidebar .text-container {
@@ -182,7 +164,7 @@ body {
 
 .sidebar .templates-container {
   display: flex;
-  display: none;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -190,10 +172,10 @@ body {
   padding-top: 20px;
 }
 
-.sidebar .templates-container img {
+.sidebar img {
   width: 150px;
   height: auto;
-  margin: 15px;
+  margin: 13px;
   cursor: grab;
 }
 
