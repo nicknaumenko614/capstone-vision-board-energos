@@ -176,7 +176,7 @@ body {
 
 .sidebar .text-container {
   display: flex;
-  /* display: none; */
+  display: none;
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -223,6 +223,13 @@ body {
   box-shadow: 2px 2px 2px var(--color1);
 }
 
+.sidebar .settings-container {
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  align-items: center;
+}
+
 .sidebar .settings-container .switch-label {
     display: inline-block;
 }
@@ -265,6 +272,13 @@ body {
   transform: translateX(23px);
 } 
 
+.sidebar .settings-container .slider.round {
+  border-radius: 50px;
+}
+
+.sidebar .settings-container .slider.round::before {
+  border-radius: 50%;
+}
 
 .sidebar .settings-container .switch {
     position: relative;
