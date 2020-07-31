@@ -338,10 +338,14 @@ body.dark {
 }
 
 .sidebar .settings-container .border-color {
-  width: 60px;
-  height: 34px;
- 
+  width: 100px;
+  height: 36px;
+}
 
+.sidebar .settings-container .border-style {
+  text-align-last: center;
+  font-size: 15pt;
+  padding: 5px;
 }
 
 main {
