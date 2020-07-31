@@ -21,4 +21,70 @@
       background-color: var(--color4a);
   }
 
+  .sidebar-right .grid-toggle-switch {
+    margin-top: 35px;
+  }
+  
+  .sidebar-right .switch-label {
+    display: block;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 20pt;
+  }
+  
+  .sidebar-right .checkboxes {
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+  
+  .sidebar-right .switch {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    height: 34px;
+    width: 60px;
+  }
+  
+  .sidebar-right .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color1a);
+    transition: all 0.25s linear;
+  }
+  
+  .sidebar-right .slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color3);
+    transition: all 0.25s linear;
+  }
+  
+  .sidebar-right .checkboxes:checked + .slider {
+    background-color: var(--color6);
+  }
+  
+  .sidebar-right .checkboxes:focus + .slider {
+    box-shadow: 0 0 1px var(--color6);
+  }
+  
+  .sidebar-right .checkboxes:checked + .slider::before {
+    transform: translateX(26px);
+  }
+  
+  .sidebar-right .slider.round {
+    border-radius: 50px;
+  }
+  
+  .sidebar-right .slider.round::before {
+    border-radius: 50%;
+  }
+
 

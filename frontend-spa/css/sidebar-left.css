@@ -275,7 +275,7 @@
     background-color: var(--color6);
   }
   
-  .slider .settings-container .checkboxes:focus + .slider {
+  .sidebar .settings-container .checkboxes:focus + .slider {
     box-shadow: 0 0 1px var(--color6);
   }
   
