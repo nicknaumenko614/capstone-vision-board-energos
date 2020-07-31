@@ -167,7 +167,7 @@ body.dark {
 
 .sidebar .images-container {
   display: flex;
-  /* display: none; */
+  display: none;
   flex-direction: column;
   align-items: center;
   height: 95%;
@@ -235,7 +235,7 @@ body.dark {
 
 .sidebar .settings-container {
   display: flex;
-  display: none;
+  /* display: none; */
   flex-direction: column;
   align-items: center;
   top: 50%;
@@ -311,6 +311,33 @@ body.dark {
 .sidebar .settings-container .slider.round::before {
   border-radius: 50%;
 }
+
+.sidebar .settings-container .spacing-container {
+  width: 80%;
+  position: relative;
+  margin-top: 30px;
+}
+
+.sidebar .settings-container .spacing-slider {
+  width: 100%;
+  height: 10px;
+  background-color: var(--color1a);
+  outline: none;
+  border-radius: 15px;
+  opacity: 1;
+}
+
+.sidebar .settings-container .spacing-container label {
+  margin-bottom: 10px;
+}
+
+.sidebar .settings-container .spacing-slider::-webkit-slider-thumb {
+  background-color: var(--color6);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+
 
 main {
   background-color: var(--color3);
