@@ -256,7 +256,7 @@ body.dark {
   font-size: 20pt;
 }
 
-.sidebar .settings-container input {
+.sidebar .settings-container .checkboxes {
   height: 0;
   width: 0;
   opacity: 0;
@@ -292,15 +292,15 @@ body.dark {
   transition: all 0.25s linear;
 }
 
-.sidebar .settings-container input:checked + .slider {
+.sidebar .settings-container .checkboxes:checked + .slider {
   background-color: var(--color6);
 }
 
-.slider .settings-container input:focus + .slider {
+.slider .settings-container .checkboxes:focus + .slider {
   box-shadow: 0 0 1px var(--color6);
 }
 
-.sidebar .settings-container input:checked + .slider::before {
+.sidebar .settings-container .checkboxes:checked + .slider::before {
   transform: translateX(26px);
 }
 
@@ -313,7 +313,8 @@ body.dark {
 }
 
 .sidebar .settings-container .spacing-container,
-.sidebar .settings-container .border-radius-container {
+.sidebar .settings-container .border-radius-container,
+.sidebar .settings-container .border-thickness-container {
   width: 80%;
   position: relative;
   margin-top: 30px;
@@ -329,7 +330,8 @@ body.dark {
 }
 
 .sidebar .settings-container .spacing-container label,
-.sidebar .settings-container .border-radius-container label {
+.sidebar .settings-container .border-radius-container label,
+.sidebar .settings-container .border-thickness-container label {
   margin-bottom: 10px;
 }
 
@@ -338,8 +340,6 @@ body.dark {
   cursor: pointer;
   border-radius: 50%;
 }
-
-
 
 main {
   background-color: var(--color3);
