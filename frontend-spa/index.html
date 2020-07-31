@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/design-board.css" />
+    <link rel="stylesheet" href="/css/sidebar-left.css"/>
+    <link rel="stylesheet" href="/css/sidebar-right.css"/>
+    <title>Vision Board</title>
+  </head>
+
+  <body class="">
+    <img class="logo-image" src="./images/logo.png" alt="Energos Logo" />
+    <section class="sidebar">
+      <div class="buttons-container">
+        <div class="templates icon-div">
+          <i class="material-icons">view_quilt</i>
+        </div>
+        <div class="wallpapers icon-div">
+          <i class="material-icons">palette</i>
+        </div>
+        <div class="images icon-div">
+          <i class="material-icons">image</i>
+        </div>
+        <div class="text icon-div">
+          <i class="material-icons">text_fields</i>
+        </div>
+        <div class="quotes icon-div">
+          <i class="material-icons">format_quote</i>
+        </div>
+        <div class="settings icon-div">
+          <i class="material-icons">settings</i>
+        </div>
+      </div>
+      <div class="sidebar-content">
+        <div class="wallpapers-container">
+          <div class="color-container">
+            <label>Color </label>
+            <input type="color" />
+          </div>
+          <div class="input-container">
+            <label>Image URL </label>
+            <input type="text" />
+          </div>
+
+          <img src="./images/backgrounds/background1.jpg" alt="" />
+          <img src="./images/backgrounds/background2.jpg" alt="" />
+          <img src="./images/backgrounds/background3.jpeg" alt="" />
+          <img src="./images/backgrounds/background4.jpg" alt="" />
+          <img src="./images/backgrounds/background5.jpg" alt="" />
+          <img src="./images/backgrounds/background6.jpg" alt="" />
+          <img src="./images/backgrounds/background7.jpg" alt="" />
+        </div>
+        <div class="images-container">
+          <div class="input-container">
+            <label>Image URL </label>
+            <input type="text" />
+          </div>
+          <img
+            draggable="true"
+            id="img1"
+            src="/images/gallery-images/airplane.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img2"
+            src="/images/gallery-images/baby-berner (1).jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img3"
+            src="/images/gallery-images/baby-berner (2).jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img4"
+            src="/images/gallery-images/dollars.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img5"
+            src="/images/gallery-images/family-sunset.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img6"
+            src="/images/gallery-images/grad-cap.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img7"
+            src="/images/gallery-images/health-is-wealth.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img8"
+            src="/images/gallery-images/health.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img9"
+            src="/images/gallery-images/house-pool.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img10"
+            src="/images/gallery-images/luggage-beach.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img11"
+            src="/images/gallery-images/mercedes.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img12"
+            src="/images/gallery-images/paper-love.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img13"
+            src="/images/gallery-images/pom.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img14"
+            src="/images/gallery-images/running.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img15"
+            src="/images/gallery-images/runningII.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img16"
+            src="/images/gallery-images/success-focus-life-achievements.jpeg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img17"
+            src="/images/gallery-images/wedding.jpeg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="img18"
+            src="/images/gallery-images/woman-and-man-hugging-on-street.jpg"
+            alt=""
+          />
+        </div>
+
+        <div class="quotes-container">
+          <div class="input-container">
+            <label>Image URL </label>
+            <input type="text" />
+          </div>
+          <img
+            draggable="true"
+            id="quote-img1"
+            src="/images/quotes/quote1.png"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img2"
+            src="/images/quotes/quote2.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img3"
+            src="/images/quotes/quote3.png"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img4"
+            src="/images/quotes/quote4.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img5"
+            src="/images/quotes/quote5.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img6"
+            src="/images/quotes/quote6.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img7"
+            src="/images/quotes/quote7.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img8"
+            src="images/quotes/quote8.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img9"
+            src="/images/quotes/quote9.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img10"
+            src="/images/quotes/quote10.jpg"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="quote-img11"
+            src="/images/quotes/quote11.png"
+            alt=""
+          />
+        </div>
+        <div class="text-container">
+          <div class="input-container">
+            <label>Text Input</label>
+            <input type="text" />
+          </div>
+          <div class="text" id="text1" draggable="true">
+            <h2 contenteditable="true">
+              Dream Big!
+            </h2>
+          </div>
+          <div class="text" id="text2" draggable="true">
+            <h2 contenteditable="true">
+              Be your own inspiration
+            </h2>
+          </div>
+          <div class="text" id="text3" draggable="true">
+            <h2 contenteditable="true">
+              Fortune Favors The Bold
+            </h2>
+          </div>
+          <div class="text" id="text4" draggable="true">
+            <h2 contenteditable="true">
+              Success is based on your drive!
+            </h2>
+          </div>
+          <div class="text" id="text5" draggable="true">
+            <h2 contenteditable="true">
+              Success doesn't come to you, you go to it
+            </h2>
+          </div>
+          <div class="text" id="text6" draggable="true">
+            <h2 contenteditable="true">
+              Vision Board 2020
+            </h2>
+          </div>
+        </div>
+
+        <div class="templates-container">
+          <img
+            draggable="true"
+            id="template1"
+            src="/images/templates/design-board1.JPG"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="template2"
+            src="/images/templates/design-board2.JPG"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="template3"
+            src="/images/templates/design-board3.JPG"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="template4"
+            src="/images/templates/design-board4.JPG"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="template5"
+            src="/images/templates/design-board5.JPG"
+            alt=""
+          />
+          <img
+            draggable="true"
+            id="template6"
+            src="/images/templates/design-board6.JPG"
+            alt=""
+          />
+        </div>
+        <div class="settings-container">
+          
+          <div class="dark-theme-toggle-switch">
+            <label class="switch-label">Dark Theme</label>
+            <label class="switch">
+              <input class="dark-theme-checkbox checkboxes" type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="grid-toggle-switch">
+            <label class="switch-label">Show Grid</label>
+            <label class="switch">
+              <input class="grid-checkbox checkboxes"  type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="spacing-container border-settings">
+            <label class="switch-label">Spacing</label>
+            <input type="range" min="0" max="100" value="50" class="spacing-slider" id="spacing-slider" />
+          </div>
+
+          <div class="border-radius-container border-settings">
+            <label class="switch-label">Border Radius</label>
+            <input type="range" min="0" max="50" value="50" class="spacing-slider" id="border-radius-slider" />
+          </div>
+          
+          <div class="border-thickness-container border-settings">
+              <label class="switch-label">Border Thickness</label>
+              <input type="range" min="0" max="30" value="2" class="spacing-slider" id="border-thickness-slider" />
+          </div>
+          <div class="border-color-container border-settings">
+            <label class="switch-label">Border Color</label>
+            <input type="color" class="border-color" />
+          </div>
+          <div class="border-style-container border-settings">
+            <label class="switch-label">Border Style</label>
+            <select class="border-style">
+              <option value="dotted">Dotted</option>
+              <option value="dashed">Dashed</option>
+              <option value="solid" selected>Solid</option>
+              <option value="double">Double</option>
+              <option value="ridge">Ridge</option>
+              <option value="groove">Groove</option>
+              <option value="inset">Inset</option>
+              <option value="outset">Outset</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sidebar-right">
+      <div></div>
+    </section>
+
+    <main>
+      <div class="design-board">
+        <div class="row">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="row">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="row">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+
+      <div class="design-board2">
+        <div class="column-left">
+          <div class="row-single">
+            <div class="box"></div>
+          </div>
+          <div class="row-double">
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div>
+        <div class="column-right">
+          <div class="row-double">
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="row-single">
+            <div class="box"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-board3">
+        <div class="column-left">
+          <div class="box"></div>
+        </div>
+        <div class="column-right">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+
+      <div class="design-board4">
+        <div class="column-end">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="column-middle">
+          <div class="row-end">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="row-middle">
+            <div class="box"></div>
+          </div>
+          <div class="row-end">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div>
+        <div class="column-end">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+
+      <div class="design-board5">
+        <div class="column-left">
+          <div class="row-top">
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+          <div class="row-bottom">
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div>
+        <div class="column-right">
+          <div class="row-top">
+            <div class="box"></div>
+          </div>
+          <div class="row-middle">
+            <div class="box"></div>
+          </div>
+          <div class="row-bottom">
+            <div class="box"></div>
+            <div class="box"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="design-board6">
+        <div class="column-end">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="column-middle">
+          <div class="box"></div>
+        </div>
+        <div class="column-end">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
