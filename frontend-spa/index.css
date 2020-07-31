@@ -312,9 +312,7 @@ body.dark {
   border-radius: 50%;
 }
 
-.sidebar .settings-container .spacing-container,
-.sidebar .settings-container .border-radius-container,
-.sidebar .settings-container .border-thickness-container {
+.sidebar .settings-container .border-settings {
   width: 80%;
   position: relative;
   margin-top: 30px;
@@ -329,9 +327,7 @@ body.dark {
   opacity: 1;
 }
 
-.sidebar .settings-container .spacing-container label,
-.sidebar .settings-container .border-radius-container label,
-.sidebar .settings-container .border-thickness-container label {
+.sidebar .settings-container .border-settings label {
   margin-bottom: 10px;
 }
 
@@ -339,6 +335,13 @@ body.dark {
   background-color: var(--color6);
   cursor: pointer;
   border-radius: 50%;
+}
+
+.sidebar .settings-container .border-color {
+  width: 60px;
+  height: 34px;
+ 
+
 }
 
 main {
