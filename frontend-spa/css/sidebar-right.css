@@ -109,6 +109,28 @@
     overflow-y: scroll;
   }
   
+  .sidebar-right .container .text-settings {
+    width: 80%;
+    position: relative;
+    margin-top: 30px;
+  }
+  
+  .sidebar-right .container .text-settings label {
+    margin-bottom: 10px;
+  }
+
+  .sidebar-right .container .text-color {
+    width: 100px;
+    height: 36px;
+  }
+
+  .sidebar-right .container .font-type {
+    text-align-last: center;
+    font-size: 15pt;
+    padding: 5px;
+  } 
+
+  
 
 
 
