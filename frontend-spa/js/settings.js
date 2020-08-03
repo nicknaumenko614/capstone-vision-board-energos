@@ -5,8 +5,14 @@ const icons = document.querySelectorAll(".icon-div i");
 const showGridToggleSwitch = document.querySelector(".grid-checkbox");
 const gridBoxes = document.querySelectorAll(".box");
 const spacingSlider = document.querySelector("#spacing-slider");
-const elementsWithGridGap =document.querySelectorAll("main div:not(.box)");
-
+const elementsWithGridGap = document.querySelectorAll("main div:not(.box)");
+const borderRadiusSlider = document.querySelector("#border-radius-slider");
+const borderThicknessSlider = document.querySelector(
+  "#border-thickness-slider"
+);
+const main = document.querySelector("main");
+const borderColorPicker = document.querySelector(".border-color");
+const borderStyleSelector = document.querySelector(".border-style");
 
 export function addSettingsEventListeners() {
   darkModeToggleSwitch.addEventListener("click", () => {
@@ -17,9 +23,25 @@ export function addSettingsEventListeners() {
     toggleShowGrid();
   });
 
-  spacingSlider.addEventListener("change", () => {
+  spacingSlider.addEventListener("mousemove", () => {
     changeSpacing();
-  })
+  });
+
+  borderRadiusSlider.addEventListener("mousemove", () => {
+    changeBorderRadius();
+  });
+
+  borderThicknessSlider.addEventListener("mousemove", () => {
+    changeBorder();
+  });
+
+  borderColorPicker.addEventListener("change", () => {
+    changeBorder();
+  });
+
+  borderStyleSelector.addEventListener("change", ()=> {
+    changeBorder();
+  });
 }
 
 function toggleDarkMode() {
@@ -39,13 +61,27 @@ function toggleDarkMode() {
 
 function toggleShowGrid() {
   if (showGridToggleSwitch.checked) {
-    gridBoxes.forEach((box)  => box.style.backgroundColor ="");
+    gridBoxes.forEach((box) => (box.style.backgroundColor = ""));
   } else {
-    gridBoxes.forEach((box)  => box.style.backgroundColor ="transparent" );
+    gridBoxes.forEach((box) => (box.style.backgroundColor = "transparent"));
   }
-} 
+}
 
 function changeSpacing() {
   let gap = spacingSlider.value;
-  elementsWithGridGap.forEach(element => element.style.gridGap = gap + "px");
+  elementsWithGridGap.forEach(
+    (element) => (element.style.gridGap = gap + "px")
+  );
+}
+
+function changeBorderRadius() {
+  let radius = borderRadiusSlider.value;
+  gridBoxes.forEach((box) => (box.style.borderRadius = radius + "%"));
+}
+
+function changeBorder() {
+  let thickness = borderThicknessSlider.value;
+  let style = borderStyleSelector.value;
+  let color = borderColorPicker.value;
+  main.style.border = thickness + "px " + style + " " + color;
 }
