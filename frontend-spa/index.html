@@ -516,16 +516,17 @@
 
     <section class="sidebar-right">
       <div class="container">
-        <div class="image-border">
-          <label class="switch-label">Border</label>
-          <label class="switch">
-            <input class="checkboxes" type="checkbox" checked />
-            <span class="slider round"></span>
-          </label>
-        </div>
+        <div class="image-editing-container">
+          <div class="image-border">
+            <label class="switch-label">Border</label>
+            <label class="switch">
+              <input class="checkboxes" type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+          </div>
 
-        <div class="image-rotate">
-          <label class="switch-label">Rotate</label>
+          <div class="image-rotate">
+            <label class="switch-label">Rotate</label>
             <input
               type="range"
               min="-180"
@@ -538,28 +539,57 @@
 
           <div class="image-rotate">
             <label class="switch-label">Border Radius</label>
-              <input
-                type="range"
-                min="0"
-                max="50"
-                value="0"
-                class="image-slider"
-                id="border-radius-slider"
-              />
+            <input
+              type="range"
+              min="0"
+              max="50"
+              value="0"
+              class="image-slider"
+              id="border-radius-slider"
+            />
           </div>
 
           <div class="image-zoom">
             <label class="switch-label">Zoom</label>
-              <input
-                type="range"
-                min="1"
-                max="5"
-                value="1"
-                class="image-slider"
-                id="zoom-slider"
-              />
+            <input
+              type="range"
+              min="1"
+              max="5"
+              value="1"
+              class="image-slider"
+              id="zoom-slider"
+            />
           </div>
 
+          <div class="image-flip">
+            <label class="switch-label">Flip</label>
+            <label class="switch">
+              <input class="checkboxes" type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        <!-- <div class="text-editing-container">
+          <div class="border-color-container border-settings">
+            <label class="switch-label">Border Color</label>
+            <input type="color" class="border-color" />
+          </div>
+          <div class="border-style-container border-settings">
+            <label class="switch-label">Border Style</label>
+            <select class="border-style">
+              <option value="dotted">Dotted</option>
+              <option value="dashed">Dashed</option>
+              <option value="solid" selected>Solid</option>
+              <option value="double">Double</option>
+              <option value="ridge">Ridge</option>
+              <option value="groove">Groove</option>
+              <option value="inset">Inset</option>
+              <option value="outset">Outset</option>
+              <option value="none">None</option>
+            </select>
+          </div> -->
+
+        </div>
       </div>
     </section>
   </body>
