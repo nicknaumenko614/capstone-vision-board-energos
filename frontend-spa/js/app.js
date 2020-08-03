@@ -1,7 +1,5 @@
-import { toggleDarkMode } from "./settings.js";
+import { addSettingsEventListeners } from "./settings.js";
 
-const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
+addSettingsEventListeners();
 
-darkModeToggleSwitch.addEventListener("click", () => {
-  toggleDarkMode();
-});
+

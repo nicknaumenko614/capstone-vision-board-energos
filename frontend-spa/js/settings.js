@@ -3,7 +3,13 @@ const logoImage = document.querySelector(".logo-image");
 const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
 const icons = document.querySelectorAll(".icon-div i");
 
-export function toggleDarkMode() {
+export function addSettingsEventListeners() {
+  darkModeToggleSwitch.addEventListener("click", () => {
+    toggleDarkMode();
+  });
+}
+
+function toggleDarkMode() {
   body.classList.toggle("dark");
   if (darkModeToggleSwitch.checked) {
     logoImage.src = "./images/logo-dark.png";
