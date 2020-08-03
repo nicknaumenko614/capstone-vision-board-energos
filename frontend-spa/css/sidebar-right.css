@@ -109,6 +109,14 @@
     overflow-y: scroll;
   }
   
+  .sidebar-right .text-editing-container {
+    display: flex;
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    height: 95%;
+  }
+  
   .sidebar-right .container .text-settings {
     width: 80%;
     position: relative;
