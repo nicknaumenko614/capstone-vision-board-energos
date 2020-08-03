@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
 :root {
     --color1: #393e41;
     --color1a: #393e4177;
@@ -40,18 +42,13 @@
     position: relative;
   }
   
-  /* .sidebar .icon-div:hover {
-      background-color: var(--color2);
-    } */
-  
   .sidebar .icon-div i:hover::after {
     position: absolute;
     left: 125%;
     top: 0;
     line-height: 50pt;
     font-size: 20pt;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-family: "Amaranth", sans-serif;
     text-shadow: none;
     color: var(--color1);
   }
@@ -116,20 +113,15 @@
   }
   
   .sidebar .sidebar-content {
-    /* display: none; */
+    display: none;
     position: absolute;
     left: 100%;
     top: 0;
     height: 100%;
     width: 0;
-    width: 16vw;
     background-color: var(--color2a);
-  }
-  
-  .sidebar:hover .sidebar-content {
-    display: block;
     transition: all 0.5s ease;
-    width: 16vw;
+    overflow: hidden;
   }
   
   .sidebar .wallpapers-container {
@@ -164,7 +156,6 @@
   }
   
   .sidebar .text-container {
-    display: flex;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -192,7 +183,6 @@
   }
   
   .sidebar .templates-container {
-    display: flex;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -214,8 +204,7 @@
   }
   
   .sidebar .settings-container {
-    display: flex;
-    /* display: none; */
+    display: none;
     flex-direction: column;
     align-items: center;
     top: 50%;
@@ -248,7 +237,6 @@
     cursor: pointer;
     height: 34px;
     width: 60px;
-    /* right: 100px; */
   }
   
   .sidebar .settings-container .slider {
