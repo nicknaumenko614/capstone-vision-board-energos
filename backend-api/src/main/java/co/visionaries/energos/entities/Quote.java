@@ -22,7 +22,7 @@ public class Quote {
     @ManyToOne
     private VisionBoard visionBoard;
 
-    public Quote() {
+    protected Quote() {
     }
 
     public Quote(long id, String quoteName, int quoteHeight, int quoteWidth, String quoteLink, boolean quoteHasBorder, int quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, VisionBoard visionBoard) {
