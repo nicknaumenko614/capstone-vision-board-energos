@@ -19,6 +19,7 @@ public class VisionBoard {
     private String gridBorderColor;
     private String gridBorderStyle;
     private String backgroundImageLink;
+    private String backgroundColor;
     private String gridTemplateName;
 
     @OneToMany
@@ -28,9 +29,10 @@ public class VisionBoard {
     @OneToMany
     private Collection<Image> images;
 
-protected VisionBoard(){}
+    protected VisionBoard() {
+    }
 
-    public VisionBoard(long id, boolean isThemeDark, boolean hasGrid, int gridSpacing, int gridBorderRadius, int gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
+    public VisionBoard(long id, boolean isThemeDark, boolean hasGrid, int gridSpacing, int gridBorderRadius, int gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
         this.id = id;
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
@@ -40,6 +42,7 @@ protected VisionBoard(){}
         this.gridBorderColor = gridBorderColor;
         this.gridBorderStyle = gridBorderStyle;
         this.backgroundImageLink = backgroundImageLink;
+        this.backgroundColor = backgroundColor;
         this.gridTemplateName = gridTemplateName;
         this.texts = texts;
         this.quotes = quotes;
@@ -110,6 +113,14 @@ protected VisionBoard(){}
         this.backgroundImageLink = backgroundImageLink;
     }
 
+    public String getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(String backgroundColor) {
+        this.backgroundColor = backgroundColor;
+    }
+
     public String getGridTemplateName() {
         return gridTemplateName;
     }
@@ -142,4 +153,3 @@ protected VisionBoard(){}
         this.images = images;
     }
 }
-

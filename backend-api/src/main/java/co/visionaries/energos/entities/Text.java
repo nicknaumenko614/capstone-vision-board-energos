@@ -12,24 +12,32 @@ public class Text {
     private long id;
     private String textContent;
     private int fontSize;
+    private Boolean hasFontShadow;
+    private String fontShadowColor;
+    private String fontColor;
     private String fontFamily;
     private Boolean isFontBold;
     private Boolean isFontItalicized;
     private Boolean isFontUnderlined;
+    private String textParentElement;
     @ManyToOne
     private VisionBoard visionBoard;
 
     protected Text() {
     }
 
-    public Text(long id, String textContent, int fontSize, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, VisionBoard visionBoard) {
+    public Text(long id, String textContent, int fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
         this.id = id;
         this.textContent = textContent;
         this.fontSize = fontSize;
+        this.hasFontShadow = hasFontShadow;
+        this.fontShadowColor = fontShadowColor;
+        this.fontColor = fontColor;
         this.fontFamily = fontFamily;
         this.isFontBold = isFontBold;
         this.isFontItalicized = isFontItalicized;
         this.isFontUnderlined = isFontUnderlined;
+        this.textParentElement = textParentElement;
         this.visionBoard = visionBoard;
     }
 
@@ -47,6 +55,30 @@ public class Text {
 
     public void setFontSize(int fontSize) {
         this.fontSize = fontSize;
+    }
+
+    public Boolean getHasFontShadow() {
+        return hasFontShadow;
+    }
+
+    public void setHasFontShadow(Boolean hasFontShadow) {
+        this.hasFontShadow = hasFontShadow;
+    }
+
+    public String getFontShadowColor() {
+        return fontShadowColor;
+    }
+
+    public void setFontShadowColor(String fontShadowColor) {
+        this.fontShadowColor = fontShadowColor;
+    }
+
+    public String getFontColor() {
+        return fontColor;
+    }
+
+    public void setFontColor(String fontColor) {
+        this.fontColor = fontColor;
     }
 
     public String getFontFamily() {
@@ -79,6 +111,14 @@ public class Text {
 
     public void setFontUnderlined(Boolean fontUnderlined) {
         isFontUnderlined = fontUnderlined;
+    }
+
+    public String getTextParentElement() {
+        return textParentElement;
+    }
+
+    public void setTextParentElement(String textParentElement) {
+        this.textParentElement = textParentElement;
     }
 
     public VisionBoard getVisionBoard() {

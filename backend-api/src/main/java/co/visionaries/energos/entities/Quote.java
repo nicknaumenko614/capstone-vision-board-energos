@@ -18,6 +18,7 @@ public class Quote {
     private int quoteBorderRadius;
     private int quoteRotate;
     private boolean quoteIsFlipped;
+    private String quoteParentElement;
 
     @ManyToOne
     private VisionBoard visionBoard;
@@ -25,7 +26,7 @@ public class Quote {
     protected Quote() {
     }
 
-    public Quote(long id, String quoteName, int quoteHeight, int quoteWidth, String quoteLink, boolean quoteHasBorder, int quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, VisionBoard visionBoard) {
+    public Quote(long id, String quoteName, int quoteHeight, int quoteWidth, String quoteLink, boolean quoteHasBorder, int quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, String quoteParentElement, VisionBoard visionBoard) {
         this.id = id;
         this.quoteName = quoteName;
         this.quoteHeight = quoteHeight;
@@ -35,15 +36,8 @@ public class Quote {
         this.quoteBorderRadius = quoteBorderRadius;
         this.quoteRotate = quoteRotate;
         this.quoteIsFlipped = quoteIsFlipped;
+        this.quoteParentElement = quoteParentElement;
         this.visionBoard = visionBoard;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getQuoteName() {
@@ -108,6 +102,14 @@ public class Quote {
 
     public void setQuoteIsFlipped(boolean quoteIsFlipped) {
         this.quoteIsFlipped = quoteIsFlipped;
+    }
+
+    public String getQuoteParentElement() {
+        return quoteParentElement;
+    }
+
+    public void setQuoteParentElement(String quoteParentElement) {
+        this.quoteParentElement = quoteParentElement;
     }
 
     public VisionBoard getVisionBoard() {
