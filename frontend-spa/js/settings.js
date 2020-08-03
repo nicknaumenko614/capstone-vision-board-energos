@@ -4,6 +4,8 @@ const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
 const icons = document.querySelectorAll(".icon-div i");
 const showGridToggleSwitch = document.querySelector(".grid-checkbox");
 const gridBoxes = document.querySelectorAll(".box");
+const spacingSlider = document.querySelector("#spacing-slider");
+const elementsWithGridGap =document.querySelectorAll("main div:not(.box)");
 
 
 export function addSettingsEventListeners() {
@@ -14,6 +16,10 @@ export function addSettingsEventListeners() {
   showGridToggleSwitch.addEventListener("click", () => {
     toggleShowGrid();
   });
+
+  spacingSlider.addEventListener("change", () => {
+    changeSpacing();
+  })
 }
 
 function toggleDarkMode() {
@@ -37,4 +43,9 @@ function toggleShowGrid() {
   } else {
     gridBoxes.forEach((box)  => box.style.backgroundColor ="transparent" );
   }
+} 
+
+function changeSpacing() {
+  let gap = spacingSlider.value;
+  elementsWithGridGap.forEach(element => element.style.gridGap = gap + "px");
 }
