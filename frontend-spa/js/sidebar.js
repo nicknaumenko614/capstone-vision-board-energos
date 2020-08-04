@@ -14,9 +14,15 @@ const backgroundAddImageInput = document.querySelector(
   ".wallpapers-container .add-image"
 );
 const backgroundImageInputContainer = document.querySelector(
-  ".input-container"
+  ".wallpapers-container .input-container"
 );
 let wallpaperImages = document.querySelectorAll(".wallpapers-container img");
+const addImageInput = document.querySelector(".add-image");
+const imageInputContainer = document.querySelector(
+  ".images-container .input-container"
+);
+let images = document.querySelectorAll(".images-container img");
+
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -41,6 +47,10 @@ export function addSideBarEventListeners() {
 
   backgroundAddImageInput.addEventListener("change", () => {
     createNewBackgroundImage();
+  });
+
+  addImageInput.addEventListener("change", () => {
+    createNewImage();
   });
 
   addEventListenerToWallpaperImages();
@@ -120,6 +130,32 @@ function addEventListenerToWallpaperImages() {
   for (let i = 0; i < wallpaperImages.length; i++) {
     wallpaperImages[i].addEventListener("click", () => {
       main.style.backgroundImage = "url(" + wallpaperImages[i].src + ")";
+    });
+  }
+}
+
+function createNewImage() {
+  let url = addImageInput.value;
+  let urlToCheck = checkUrl(url);
+  if (urlToCheck === false) {
+    addImageInput.value = "";
+    return false;
+  }
+  let img = new Image();
+  img.src = url;
+  imageInputContainer.parentNode.insertBefore(
+    img,
+    imageInputContainer.nextSibling
+  );
+  imageInputContainer.value = "";
+  images.push(img);
+  addEventListenersToImages();
+}
+
+function addEventListenersToImages() {
+  for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener("click", () => {
+      main.style.backgroundImage = "url(" + images[i].src + ")";
     });
   }
 }
