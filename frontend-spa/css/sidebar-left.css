@@ -202,6 +202,10 @@
     margin: 13px;
     cursor: grab;
   }
+
+  .sidebar .wallpapers-container img {
+    cursor: pointer;
+  }
   
   .sidebar img:hover {
     transform: scale(1.1);
