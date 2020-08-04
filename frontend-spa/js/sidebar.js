@@ -7,6 +7,7 @@ const addTextInput = document.querySelector(".add-text");
 const inputContainerDiv = document.querySelector(".text-container .input-container");
 const backgroundColorPickerInput = document.querySelector(".wallpapers-container .color-picker");
 const backgroundAddImageInput = document.querySelector(".wallpapers-container .add-image");
+const backgroundImageInputContainer = document.querySelector(".input-container");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -77,11 +78,14 @@ function checkUrl(url) {
 }
 
 function createNewBackgroundImage() {
-  let urlToCheck = backgroundAddImageInput.value;
-  let url = checkUrl(urlToCheck);
-  if (url === false) {
+  let url = backgroundAddImageInput.value;
+  let urlToCheck = checkUrl(url);
+  if (urlToCheck === false) {
     backgroundAddImageInput.value = "";
     return false;
-    
   }
+  let img = new Image();
+  img.src = url;
+  backgroundImageInputContainer.parentNode.insertBefore(img, backgroundImageInputContainer.nextSibling);
+  backgroundAddImageInput.value = "";
 }
