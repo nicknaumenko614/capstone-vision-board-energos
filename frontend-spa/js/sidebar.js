@@ -5,6 +5,7 @@ const icons = document.querySelectorAll(".icon-div i");
 const contentContainers = document.querySelectorAll(".sidebar-content > div");
 const addTextInput = document.querySelector(".add-text");
 const textContainerDiv = document.querySelector(".text-container");
+const inputContainerDiv = document.querySelector(".text-container .input-container");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -58,6 +59,6 @@ function createNewTextElement() {
   textH2.contentEditable = "true";
   textH2.innerText = textFromInput;
   textDiv.appendChild(textH2);
-  textContainerDiv.appendChild(textDiv);
+  inputContainerDiv.parentNode.insertBefore(textDiv, inputContainerDiv.nextSibling);
   addTextInput.value = "";
 }
