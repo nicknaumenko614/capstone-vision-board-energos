@@ -30,6 +30,11 @@
     cursor: pointer;
     color: var(--color1);
   }
+
+  .sidebar i.active {
+    color: var(--color2);
+    text-shadow: 0 0 5px var(--color1);
+  }
   
   .sidebar i:hover {
     text-shadow: 3px 3px 1px var(--color6a);
@@ -55,10 +60,6 @@
   
   .sidebar .icon-div i.dark:hover::after {
     color: var(--color3);
-  }
-  
-  .sidebar .wallpapers i:hover::after {
-    content: "Background";
   }
   
   .sidebar .wallpapers-container .color-container {
@@ -92,23 +93,27 @@
     outline: none;
   }
   
-  .sidebar .templates i:hover::after {
+  .sidebar .templates .icon-text:hover::after {
     content: "Templates";
   }
   
-  .sidebar .images i:hover::after {
+  .sidebar .wallpapers .icon-text:hover::after {
+    content: "Background";
+  }
+  
+  .sidebar .images .icon-text:hover::after {
     content: "Images";
   }
   
-  .sidebar .text i:hover::after {
+  .sidebar .text .icon-text:hover::after {
     content: "Text";
   }
   
-  .sidebar .quotes i:hover::after {
+  .sidebar .quotes .icon-text:hover::after {
     content: "Quotes";
   }
   
-  .sidebar .settings i:hover::after {
+  .sidebar .settings .icon-text:hover::after {
     content: "Settings";
   }
   
