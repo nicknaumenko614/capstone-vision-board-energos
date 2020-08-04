@@ -30,16 +30,8 @@ public class ImageStorageTest {
         verify(imageRepo).save(testImage);
     }
 
-
-
     @Test
-    public void shoudlBeAbleToDeleteImage() {
+    public void shouldBeAbleToDeleteImage() {
 
     }
 }
-
-//    public void shouldFindColumbus(){
-//        when(campusRepo.findByName("Columbus")).thenReturn(Optional.of(new Campus("Columbus","")));
-//        Campus result = underTest.findCampusByName("Columbus");
-//        assertThat(result.getName()).isEqualTo("Columbus");
-//    }
