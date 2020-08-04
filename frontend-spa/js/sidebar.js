@@ -4,8 +4,9 @@ const main = document.querySelector("main");
 const icons = document.querySelectorAll(".icon-div i");
 const contentContainers = document.querySelectorAll(".sidebar-content > div");
 const addTextInput = document.querySelector(".add-text");
-const textContainerDiv = document.querySelector(".text-container");
 const inputContainerDiv = document.querySelector(".text-container .input-container");
+const backgroundColorPickerInput = document.querySelector(".wallpapers-container .color-picker");
+const backgroundAddImageInput = document.querySelector(".wallpapers-container .add-image");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -43,6 +44,11 @@ export function addSideBarEventListeners() {
 
   addTextInput.addEventListener("change", () => {
     createNewTextElement();
+  });
+
+  backgroundColorPickerInput.addEventListener("change", () => {
+    let color = backgroundColorPickerInput.value;
+    main.style.backgroundColor = color;
   });
 }
 
