@@ -36,6 +36,7 @@ export function addSideBarEventListeners() {
   backgroundColorPickerInput.addEventListener("change", () => {
     let color = backgroundColorPickerInput.value;
     main.style.backgroundColor = color;
+    main.style.backgroundImage = "";
   });
 
   backgroundAddImageInput.addEventListener("change", () => {
