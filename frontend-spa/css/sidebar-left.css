@@ -5,6 +5,7 @@
     --color2a: #b2ebe0aa;
     --color3: #f9fcff;
     --color4: #f3d1dc;
+    --color4a: #f3d1dccc;
     --color5: #e7c874;
     --color5a: #e7c87477;
     --color6: #0162b7;
@@ -275,7 +276,7 @@
     background-color: var(--color6);
   }
   
-  .slider .settings-container .checkboxes:focus + .slider {
+  .sidebar .settings-container .checkboxes:focus + .slider {
     box-shadow: 0 0 1px var(--color6);
   }
   
