@@ -22,6 +22,9 @@ const imageInputContainer = document.querySelector(
   ".images-container .input-container"
 );
 let images = document.querySelectorAll(".images-container img");
+const addQuoteInput = document.querySelector(".add-quote");
+let quotes = document.querySelectorAll(".quotes-container img");
+const quoteInputContainer = document.querySelector(".quotes-container .input-container");
 
 
 export function addSideBarEventListeners() {
@@ -53,8 +56,15 @@ export function addSideBarEventListeners() {
     createNewImage();
   });
 
+  addQuoteInput.addEventListener("change", () => {
+    createNewQuote();
+  });
+
   addEventListenerToWallpaperImages();
+  addEventListenersToImages();
+  addEventListenersToQuotes();
 }
+
 
 function addHoverEffectsForIcons(i) {
   sidebarContent.style.display = "block";
@@ -160,4 +170,28 @@ function addEventListenersToImages() {
   }
 }
 
+function createNewQuote() {
+  let url = addQuoteInput.value;
+  let urlToCheck = checkUrl(url);
+  if (urlToCheck === false) {
+    addQuoteInput.value = "";
+    return false;
+  }
+  let img = new Image();
+  img.src = url;
+  quoteInputContainer.parentNode.insertBefore(
+    img,
+    quoteInputContainer.nextSibling
+  );
+    addQuoteInput.value = "";
+    quotes.push(img);
+    addEventListenersToQuotes();
+}
 
+function addEventListenersToQuotes(){
+  for (let i = 0; i < quotes.length; i++) {
+    quotes[i].addEventListener("click", () => {
+      main.style.backgroundImage = "url(" + quotes[i].src + ")";
+    });
+  }
+}
