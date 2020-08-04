@@ -16,11 +16,12 @@ const backgroundAddImageInput = document.querySelector(
 const backgroundImageInputContainer = document.querySelector(
   ".input-container"
 );
+let wallpaperImages = document.querySelectorAll(".wallpapers-container img");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
     icons[i].addEventListener("click", () => {
-      addHoverEffectsForIcons();
+      addHoverEffectsForIcons(i);
     });
   }
 
@@ -40,9 +41,11 @@ export function addSideBarEventListeners() {
   backgroundAddImageInput.addEventListener("change", () => {
     createNewBackgroundImage();
   });
+
+  addEventListenerToWallpaperImages();
 }
 
-function addHoverEffectsForIcons() {
+function addHoverEffectsForIcons(i) {
   sidebarContent.style.display = "block";
   icons.forEach((icon) => icon.classList.remove("icon-text"));
   icons.forEach((icon) => icon.classList.remove("active"));
@@ -108,8 +111,14 @@ function createNewBackgroundImage() {
     backgroundImageInputContainer.nextSibling
   );
   backgroundAddImageInput.value = "";
+  wallpaperImages.push(img);
+  addEventListenerToWallpaperImages();
 }
 
 function addEventListenerToWallpaperImages() {
-  
+  for (let i = 0; i < wallpaperImages.length; i++) {
+    wallpaperImages[i].addEventListener("click", () => {
+      main.style.backgroundImage = "url(" + wallpaperImages[i].src + ")";
+    });
+  }
 }

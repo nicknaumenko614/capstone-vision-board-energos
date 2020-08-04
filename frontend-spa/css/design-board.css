@@ -45,6 +45,8 @@ main {
   padding: 10px;
   overflow-y: scroll;
   height: 82vh;
+  background-size: cover;
+  background-position: center;
 }
 
 main > div {
