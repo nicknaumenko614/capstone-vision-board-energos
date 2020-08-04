@@ -62,3 +62,8 @@ function createNewTextElement() {
   inputContainerDiv.parentNode.insertBefore(textDiv, inputContainerDiv.nextSibling);
   addTextInput.value = "";
 }
+
+function checkUrl(url) {
+  return url.match(/\.(jpeg|jpg|png|gif|tiff)$/) != null;
+}
+
