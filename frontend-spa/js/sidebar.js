@@ -50,10 +50,13 @@ export function addSideBarEventListeners() {
     let color = backgroundColorPickerInput.value;
     main.style.backgroundColor = color;
   });
+
+  backgroundAddImageInput.addEventListener("change", () => {
+    createNewBackgroundImage();
+  });
 }
 
 let textNumber = 0;
-
 function createNewTextElement() {
   let textDiv = document.createElement("div");
   textDiv.classList.add("text");
@@ -73,3 +76,12 @@ function checkUrl(url) {
   return url.match(/\.(jpeg|jpg|png|gif|tiff)$/) != null;
 }
 
+function createNewBackgroundImage() {
+  let urlToCheck = backgroundAddImageInput.value;
+  let url = checkUrl(urlToCheck);
+  if (url === false) {
+    backgroundAddImageInput.value = "";
+    return false;
+    
+  }
+}
