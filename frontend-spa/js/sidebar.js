@@ -3,13 +3,15 @@ const sidebarContent = document.querySelector(".sidebar-content");
 const main = document.querySelector("main");
 const icons = document.querySelectorAll(".icon-div i");
 const contentContainers = document.querySelectorAll(".sidebar-content > div");
+const addTextInput = document.querySelector(".add-text");
+const textContainerDiv = document.querySelector(".text-container");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
     icons[i].addEventListener("click", () => {
       sidebarContent.style.display = "block";
-      icons.forEach(icon => icon.classList.remove("icon-text"));
-      icons.forEach(icon => icon.classList.remove("active"));
+      icons.forEach((icon) => icon.classList.remove("icon-text"));
+      icons.forEach((icon) => icon.classList.remove("active"));
       icons[i].classList.add("active");
       setTimeout(() => {
         sidebarContent.style.width = "16vw";
@@ -37,4 +39,25 @@ export function addSideBarEventListeners() {
       }, 300);
     });
   });
+
+  addTextInput.addEventListener("change", () => {
+    createNewTextElement();
+  });
+}
+
+let textNumber = 0;
+
+function createNewTextElement() {
+  let textDiv = document.createElement("div");
+  textDiv.classList.add("text");
+  textDiv.id = "add-text-" + textNumber;
+  textNumber++;
+  textDiv.draggable = "true";
+  let textH2 = document.createElement("h2");
+  let textFromInput = addTextInput.value;
+  textH2.contentEditable = "true";
+  textH2.innerText = textFromInput;
+  textDiv.appendChild(textH2);
+  textContainerDiv.appendChild(textDiv);
+  addTextInput.value = "";
 }
