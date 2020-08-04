@@ -9,7 +9,7 @@ import java.util.Collection;
 @Service
 public class ImageStorage {
 
-private ImageRepository imageRepo;
+    private ImageRepository imageRepo;
 
     public ImageStorage(ImageRepository imageRepo) {
         this.imageRepo = imageRepo;
@@ -19,15 +19,15 @@ private ImageRepository imageRepo;
 //        return (Collection <Image>) imageRepo.findAll();
 //    }
 
-    public Image retrieveImageById (long imageId) {
+    public Image retrieveImageById(long imageId) {
         return imageRepo.findById(imageId).get();
     }
 
-    public Image saveImage (Image image) {
+    public Image saveImage(Image image) {
         return imageRepo.save(image);
     }
 
-    public void deleteImage (long imageId) {
+    public void deleteImage(long imageId) {
         imageRepo.deleteById(imageId);
     }
 }

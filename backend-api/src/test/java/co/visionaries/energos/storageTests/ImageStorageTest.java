@@ -29,5 +29,5 @@ public class ImageStorageTest {
         underTest.saveImage(testImage);
         verify(imageRepo).save(testImage);
     }
-    
+
 }
