@@ -28,8 +28,8 @@ public class VisionBoardRepositoryTests {
     private Collection<Image> images;
 
     @Test
-    public void saveShouldBeAbleToUpdateVisionBoardAttributes(){
-        VisionBoard testVisionBoard = new VisionBoard(false,false,20, 15, 10, "#2222", "solid", "www.image.com", "#0000", "template1", texts, quotes, images);
+    public void saveShouldBeAbleToUpdateVisionBoardAttributes() {
+        VisionBoard testVisionBoard = new VisionBoard(false, false, 20, 15, 10, "#2222", "solid", "www.image.com", "#0000", "template1", texts, quotes, images);
         visionBoardRepo.save(testVisionBoard);
         int newGridSpacing = 50;
         testVisionBoard.setGridSpacing(newGridSpacing);

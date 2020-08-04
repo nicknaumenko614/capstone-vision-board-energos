@@ -23,11 +23,11 @@ public class QuoteRepositoryTests {
 
     @Test
     public void saveShouldBeAbleToUpdateQuoteAttributes() {
-    Quote testQuote = new Quote("testQuote", 100,300, "www.quote.com", true, 25, 50, true, "block1", visionBoard1);
-    quoteRepo.save(testQuote);
-    String newQuoteName = "newTestQuote";
-    testQuote.setQuoteName(newQuoteName);
-    quoteRepo.save(testQuote);
+        Quote testQuote = new Quote("testQuote", 100, 300, "www.quote.com", true, 25, 50, true, "block1", visionBoard1);
+        quoteRepo.save(testQuote);
+        String newQuoteName = "newTestQuote";
+        testQuote.setQuoteName(newQuoteName);
+        quoteRepo.save(testQuote);
         entityManager.flush();
         entityManager.clear();
 
