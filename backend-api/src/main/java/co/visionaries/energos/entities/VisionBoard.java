@@ -32,8 +32,7 @@ public class VisionBoard {
     protected VisionBoard() {
     }
 
-    public VisionBoard(long id, boolean isThemeDark, boolean hasGrid, int gridSpacing, int gridBorderRadius, int gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
-        this.id = id;
+    public VisionBoard(boolean isThemeDark, boolean hasGrid, int gridSpacing, int gridBorderRadius, int gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
         this.gridSpacing = gridSpacing;
@@ -47,6 +46,10 @@ public class VisionBoard {
         this.texts = texts;
         this.quotes = quotes;
         this.images = images;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public boolean isThemeDark() {

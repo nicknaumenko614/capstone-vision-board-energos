@@ -27,8 +27,7 @@ public class Image {
     protected Image() {
     }
 
-    public Image(long id, String imageName, int imageHeight, int imageWidth, String imageLink, boolean imageHasBorder, int imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
-        this.id = id;
+    public Image(String imageName, int imageHeight, int imageWidth, String imageLink, boolean imageHasBorder, int imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
         this.imageName = imageName;
         this.imageHeight = imageHeight;
         this.imageWidth = imageWidth;
@@ -39,6 +38,10 @@ public class Image {
         this.imageIsFlipped = imageIsFlipped;
         this.imageParentElement = imageParentElement;
         this.visionBoard = visionBoard;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getImageName() {

@@ -26,8 +26,7 @@ public class Text {
     protected Text() {
     }
 
-    public Text(long id, String textContent, int fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
-        this.id = id;
+    public Text(String textContent, int fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
         this.textContent = textContent;
         this.fontSize = fontSize;
         this.hasFontShadow = hasFontShadow;
@@ -39,6 +38,10 @@ public class Text {
         this.isFontUnderlined = isFontUnderlined;
         this.textParentElement = textParentElement;
         this.visionBoard = visionBoard;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getTextContent() {
