@@ -17,7 +17,7 @@ const backgroundImageInputContainer = document.querySelector(
   ".wallpapers-container .input-container"
 );
 let wallpaperImages = document.querySelectorAll(".wallpapers-container img");
-const addImageInput = document.querySelector(".add-image");
+const addImageInput = document.querySelector(".images-container .add-image");
 const imageInputContainer = document.querySelector(
   ".images-container .input-container"
 );
@@ -147,7 +147,7 @@ function createNewImage() {
     img,
     imageInputContainer.nextSibling
   );
-  imageInputContainer.value = "";
+  addImageInput.value = "";
   images.push(img);
   addEventListenersToImages();
 }
@@ -159,3 +159,5 @@ function addEventListenersToImages() {
     });
   }
 }
+
+
