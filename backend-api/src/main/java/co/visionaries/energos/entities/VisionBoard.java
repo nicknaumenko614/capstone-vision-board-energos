@@ -13,9 +13,9 @@ public class VisionBoard {
     private long id;
     private boolean isThemeDark;
     private boolean hasGrid;
-    private int gridSpacing;
-    private int gridBorderRadius;
-    private int gridBorderThickness;
+    private String gridSpacing;
+    private String gridBorderRadius;
+    private String gridBorderThickness;
     private String gridBorderColor;
     private String gridBorderStyle;
     private String backgroundImageLink;
@@ -32,7 +32,7 @@ public class VisionBoard {
     protected VisionBoard() {
     }
 
-    public VisionBoard(boolean isThemeDark, boolean hasGrid, int gridSpacing, int gridBorderRadius, int gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
+    public VisionBoard(boolean isThemeDark, boolean hasGrid, String gridSpacing, String gridBorderRadius, String gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
         this.gridSpacing = gridSpacing;
@@ -68,27 +68,27 @@ public class VisionBoard {
         this.hasGrid = hasGrid;
     }
 
-    public int getGridSpacing() {
+    public String getGridSpacing() {
         return gridSpacing;
     }
 
-    public void setGridSpacing(int gridSpacing) {
+    public void setGridSpacing(String gridSpacing) {
         this.gridSpacing = gridSpacing;
     }
 
-    public int getGridBorderRadius() {
+    public String getGridBorderRadius() {
         return gridBorderRadius;
     }
 
-    public void setGridBorderRadius(int gridBorderRadius) {
+    public void setGridBorderRadius(String gridBorderRadius) {
         this.gridBorderRadius = gridBorderRadius;
     }
 
-    public int getGridBorderThickness() {
+    public String getGridBorderThickness() {
         return gridBorderThickness;
     }
 
-    public void setGridBorderThickness(int gridBorderThickness) {
+    public void setGridBorderThickness(String gridBorderThickness) {
         this.gridBorderThickness = gridBorderThickness;
     }
 

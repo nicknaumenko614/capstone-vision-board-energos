@@ -47,6 +47,13 @@ public class ImageController {
         Image imageToUpdate = imageStorage.retrieveImageById(image.getId());
         imageToUpdate.setImageHeight(image.getImageHeight());
         imageToUpdate.setImageWidth(image.getImageWidth());
+        imageToUpdate.setImageLink(image.getImageLink());
+        imageToUpdate.setImageHasBorder(image.isImageHasBorder());
+        imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
+        imageToUpdate.setImageRotate(image.getImageRotate());
+        imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
+        imageToUpdate.setImageParentElement(image.getImageParentElement());
+        imageToUpdate.setVisionBoard(image.getVisionBoard());
     }
 
 }

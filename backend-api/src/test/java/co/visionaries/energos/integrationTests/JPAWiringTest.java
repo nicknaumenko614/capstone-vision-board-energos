@@ -1,4 +1,4 @@
-package co.visionaries.energos.repositoryTests;
+package co.visionaries.energos.integrationTests;
 
 import co.visionaries.energos.entities.Image;
 import co.visionaries.energos.entities.VisionBoard;
@@ -8,30 +8,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DataJpaTest
-public class ImageRepositoryTests {
+public class JPAWiringTest {
 
     @Autowired
     private ImageRepository imageRepo;
     @Autowired
     private TestEntityManager entityManager;
 
-    private VisionBoard visionBoard1;
-
     @Test
-    public void saveShouldBeAbleToUpdateImageAttributes() {
+    public void flippedFlagComesOutOfDbTheWayItWentIn(){
 
-        Image testImage = new Image("testImage", "100", "150", "www.link.com", true, "25", 0, false, "grid1", visionBoard1);
-        imageRepo.save(testImage);
-        int newImageHeight = 500;
-        testImage.setImageHeight(newImageHeight);
+        VisionBoard visionBoard = null;
+        Image testImage = imageRepo.save(new Image("Image1", "100px", "200px", "www.imagelink.com", false, "25px", 180, false, "block1", visionBoard));
+        testImage.setImageIsFlipped(true);//This is whatever function that sets imageIsFlipped to true
         imageRepo.save(testImage);
         entityManager.flush();
         entityManager.clear();
-
         Image retrievedImage = imageRepo.findById(testImage.getId()).get();
-        assertThat(retrievedImage.getImageHeight()).isEqualTo(newImageHeight);
+        assertTrue(retrievedImage.isImageIsFlipped()); //The getter may have a different name, maybe isImageIsFlipped()
     }
 }

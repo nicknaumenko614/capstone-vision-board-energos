@@ -11,11 +11,11 @@ public class Image {
     @GeneratedValue
     private long id;
     private String imageName;
-    private int imageHeight;
-    private int imageWidth;
+    private String imageHeight;
+    private String imageWidth;
     private String imageLink;
     private boolean imageHasBorder = false;
-    private int imageBorderRadius;
+    private String imageBorderRadius;
     private int imageRotate;
     private boolean imageIsFlipped = false;
     private String imageParentElement;
@@ -27,7 +27,7 @@ public class Image {
     protected Image() {
     }
 
-    public Image(String imageName, int imageHeight, int imageWidth, String imageLink, boolean imageHasBorder, int imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
+    public Image(String imageName, String imageHeight, String imageWidth, String imageLink, boolean imageHasBorder, String imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
         this.imageName = imageName;
         this.imageHeight = imageHeight;
         this.imageWidth = imageWidth;
@@ -52,19 +52,19 @@ public class Image {
         this.imageName = imageName;
     }
 
-    public int getImageHeight() {
+    public String getImageHeight() {
         return imageHeight;
     }
 
-    public void setImageHeight(int imageHeight) {
+    public void setImageHeight(String imageHeight) {
         this.imageHeight = imageHeight;
     }
 
-    public int getImageWidth() {
+    public String getImageWidth() {
         return imageWidth;
     }
 
-    public void setImageWidth(int imageWidth) {
+    public void setImageWidth(String imageWidth) {
         this.imageWidth = imageWidth;
     }
 
@@ -84,11 +84,11 @@ public class Image {
         this.imageHasBorder = imageHasBorder;
     }
 
-    public int getImageBorderRadius() {
+    public String getImageBorderRadius() {
         return imageBorderRadius;
     }
 
-    public void setImageBorderRadius(int imageBorderRadius) {
+    public void setImageBorderRadius(String imageBorderRadius) {
         this.imageBorderRadius = imageBorderRadius;
     }
 

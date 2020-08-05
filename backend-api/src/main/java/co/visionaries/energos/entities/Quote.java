@@ -11,11 +11,11 @@ public class Quote {
     @GeneratedValue
     private long id;
     private String quoteName;
-    private int quoteHeight;
-    private int quoteWidth;
+    private String quoteHeight;
+    private String quoteWidth;
     private String quoteLink;
     private boolean quoteHasBorder;
-    private int quoteBorderRadius;
+    private String quoteBorderRadius;
     private int quoteRotate;
     private boolean quoteIsFlipped;
     private String quoteParentElement;
@@ -26,7 +26,7 @@ public class Quote {
     protected Quote() {
     }
 
-    public Quote(String quoteName, int quoteHeight, int quoteWidth, String quoteLink, boolean quoteHasBorder, int quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, String quoteParentElement, VisionBoard visionBoard) {
+    public Quote(String quoteName, String quoteHeight, String quoteWidth, String quoteLink, boolean quoteHasBorder, String quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, String quoteParentElement, VisionBoard visionBoard) {
         this.quoteName = quoteName;
         this.quoteHeight = quoteHeight;
         this.quoteWidth = quoteWidth;
@@ -51,19 +51,19 @@ public class Quote {
         this.quoteName = quoteName;
     }
 
-    public int getQuoteHeight() {
+    public String getQuoteHeight() {
         return quoteHeight;
     }
 
-    public void setQuoteHeight(int quoteHeight) {
+    public void setQuoteHeight(String quoteHeight) {
         this.quoteHeight = quoteHeight;
     }
 
-    public int getQuoteWidth() {
+    public String getQuoteWidth() {
         return quoteWidth;
     }
 
-    public void setQuoteWidth(int quoteWidth) {
+    public void setQuoteWidth(String quoteWidth) {
         this.quoteWidth = quoteWidth;
     }
 
@@ -83,11 +83,11 @@ public class Quote {
         this.quoteHasBorder = quoteHasBorder;
     }
 
-    public int getQuoteBorderRadius() {
+    public String getQuoteBorderRadius() {
         return quoteBorderRadius;
     }
 
-    public void setQuoteBorderRadius(int quoteBorderRadius) {
+    public void setQuoteBorderRadius(String quoteBorderRadius) {
         this.quoteBorderRadius = quoteBorderRadius;
     }
 

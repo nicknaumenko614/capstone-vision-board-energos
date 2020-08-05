@@ -11,7 +11,7 @@ public class Text {
     @GeneratedValue
     private long id;
     private String textContent;
-    private int fontSize;
+    private String fontSize;
     private Boolean hasFontShadow;
     private String fontShadowColor;
     private String fontColor;
@@ -26,7 +26,7 @@ public class Text {
     protected Text() {
     }
 
-    public Text(String textContent, int fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
+    public Text(String textContent, String fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
         this.textContent = textContent;
         this.fontSize = fontSize;
         this.hasFontShadow = hasFontShadow;
@@ -52,11 +52,11 @@ public class Text {
         this.textContent = textContent;
     }
 
-    public int getFontSize() {
+    public String getFontSize() {
         return fontSize;
     }
 
-    public void setFontSize(int fontSize) {
+    public void setFontSize(String fontSize) {
         this.fontSize = fontSize;
     }
 
