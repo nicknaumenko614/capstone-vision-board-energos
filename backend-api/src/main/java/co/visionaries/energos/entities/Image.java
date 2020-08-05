@@ -14,10 +14,10 @@ public class Image {
     private int imageHeight;
     private int imageWidth;
     private String imageLink;
-    private boolean imageHasBorder;
+    private boolean imageHasBorder = false;
     private int imageBorderRadius;
     private int imageRotate;
-    private boolean imageIsFlipped;
+    private boolean imageIsFlipped = false;
     private String imageParentElement;
     @ManyToOne
     private VisionBoard visionBoard;
@@ -123,4 +123,5 @@ public class Image {
     public void setVisionBoard(VisionBoard visionBoard) {
         this.visionBoard = visionBoard;
     }
+
 }
