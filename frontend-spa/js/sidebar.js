@@ -1,6 +1,5 @@
 import { drag } from "./drag-and-drop.js";
 
-const sidebar = document.querySelector(".sidebar");
 const sidebarContent = document.querySelector(".sidebar-content");
 const main = document.querySelector("main");
 const icons = document.querySelectorAll(".icon-div i");
@@ -18,18 +17,24 @@ const backgroundAddImageInput = document.querySelector(
 const backgroundImageInputContainer = document.querySelector(
   ".wallpapers-container .input-container"
 );
-let wallpaperImages = document.querySelectorAll(".wallpapers-container img");
+const presetWallpaperImages = document.querySelectorAll(
+  ".wallpapers-container img"
+);
 const addImageInput = document.querySelector(".images-container .add-image");
 const imageInputContainer = document.querySelector(
   ".images-container .input-container"
 );
-let images = document.querySelectorAll(".images-container img");
+const presetImages = document.querySelectorAll(".images-container img");
 const addQuoteInput = document.querySelector(".add-quote");
-let quotes = document.querySelectorAll(".quotes-container img");
+const presetQuotes = document.querySelectorAll(".quotes-container img");
 const quoteInputContainer = document.querySelector(
   ".quotes-container .input-container"
 );
-let texts = document.querySelectorAll(".text");
+const presetTexts = document.querySelectorAll(".text");
+let wallpaperImages = [];
+let images = [];
+let quotes = [];
+let texts = [];
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -64,9 +69,26 @@ export function addSideBarEventListeners() {
     createNewQuote();
   });
 
+  fillArraysWithPresetElements();
   addEventListenerToWallpaperImages();
   addEventListenersToImages();
   addEventListenersToQuotes();
+  addEventListenerToTexts();
+}
+
+function fillArraysWithPresetElements() {
+  presetWallpaperImages.forEach((img) => {
+    wallpaperImages.push(img);
+  });
+  presetImages.forEach((img) => {
+    images.push(img);
+  });
+  presetQuotes.forEach((quote) => {
+    quotes.push(quote);
+  });
+  presetTexts.forEach((text) => {
+    texts.push(text);
+  });
 }
 
 function addHoverEffectsForIcons(i) {
@@ -128,7 +150,7 @@ function addEventListenerToTexts() {
 }
 
 function checkUrl(url) {
-  return url.match(/\.(jpeg|jpg|png|gif|tiff)$/) != null;
+  return url.match(/\.(jpeg|jpg|png|gif|tiff)/) != null;
 }
 
 function createNewBackgroundImage() {

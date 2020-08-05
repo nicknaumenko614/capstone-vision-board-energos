@@ -1,9 +1,10 @@
-const boxes = document.querySelectorAll(".box");
-
+const imagesContainer = document.querySelector(".images-container");
+const textsContainer = document.querySelector(".text-container");
+const quotesContainer = document.querySelector(".quotes-container");
 
 export function addDragAndDropEventListeners() {
+  const boxes = document.querySelectorAll(".box");
   boxes.forEach((box) => {
-    box.style.backgroundColor = "red";
     box.addEventListener("drop", () => {
       drop(event, box);
     });
@@ -22,13 +23,22 @@ export function drag(e) {
   e.dataTransfer.setData("elementID", e.target.id);
 }
 
-const quoteContainer = document.querySelector(".quotes-container");
-
 function drop(e, box) {
   e.preventDefault();
-  let previousElement = box.firstChild;
-  if (previousElement != null) quoteContainer.appendChild(previousElement);
+  removePreviousElement(box);
   let data = e.dataTransfer.getData("elementID");
   let el = document.getElementById(data);
   box.appendChild(el);
+}
+
+function removePreviousElement(box) {
+  let previousElement = box.firstChild;
+  if (previousElement == null) return false;
+  if (previousElement.classList.contains("image")) {
+    imagesContainer.appendChild(previousElement);
+  } else if (previousElement.classList.contains("text")) {
+    textsContainer.appendChild(previousElement);
+  } else if (previousElement.classList.contains("quote")) {
+    quotesContainer.appendChild(previousElement);
+  }
 }
