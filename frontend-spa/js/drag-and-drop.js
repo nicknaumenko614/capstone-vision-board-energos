@@ -1,6 +1,14 @@
 const boxes = document.querySelectorAll(".box");
 
+boxes.forEach((box) => {
+    box.addEventListener("drop",()=> {
+        drop(event, box);
+    });
 
+    box.addEventListener("dragOver",()=> {
+        allowDrop(event);
+    })
+});
 
 function allowDrop(e) {
     e.preventDefault();
