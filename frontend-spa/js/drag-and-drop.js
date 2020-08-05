@@ -3,11 +3,12 @@ const boxes = document.querySelectorAll(".box");
 
 export function addDragAndDropEventListeners() {
   boxes.forEach((box) => {
+    box.style.backgroundColor = "red";
     box.addEventListener("drop", () => {
       drop(event, box);
     });
 
-    box.addEventListener("dragOver", () => {
+    box.addEventListener("dragover", () => {
       allowDrop(event);
     });
   });
@@ -25,5 +26,6 @@ function drop(e, box) {
   e.preventDefault();
   let data = e.dataTransfer.getData("text");
   let el = document.getElementById(data);
-  box.append(el);
+  box.appendChild(el);
+  console.log(el);
 }

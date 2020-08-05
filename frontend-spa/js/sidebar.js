@@ -1,4 +1,4 @@
-import { drag } from "./drag-and-drop.js";
+import {drag} from "./drag-and-drop.js";
 
 const sidebar = document.querySelector(".sidebar");
 const sidebarContent = document.querySelector(".sidebar-content");
@@ -190,7 +190,7 @@ function createNewQuote() {
 
 function addEventListenersToQuotes() {
   for (let i = 0; i < quotes.length; i++) {
-    quotes[i].addEventListener("click", () => {
+    quotes[i].addEventListener("dragstart", () => {
       drag(event);
     });
   }
