@@ -1,6 +1,9 @@
 import { renderDesignBoard } from "./components/renderDesignBoards.js";
-import { addSettingsAndDragNDropEventListeners } from "./app.js";
-import { removePreviousElement } from "./drag-and-drop.js";
+import { addSettingsEventListeners } from "./settings.js";
+import {
+  removePreviousElement,
+  addDragAndDropEventListeners,
+} from "./drag-and-drop.js";
 
 const templates = document.querySelectorAll(".templates-container img");
 const main = document.querySelector("main");
@@ -11,7 +14,8 @@ export function addEventListenersToTemplates() {
       clearDesignBoard();
       const designBoard = renderDesignBoard(i);
       main.appendChild(designBoard);
-      addSettingsAndDragNDropEventListeners();
+      addSettingsEventListeners();
+      addDragAndDropEventListeners();
     });
   }
 }
