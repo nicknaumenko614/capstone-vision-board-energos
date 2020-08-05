@@ -19,12 +19,12 @@ function allowDrop(e) {
 }
 
 export function drag(e) {
-  e.dataTransfer.setData("text", e.target.id);
+  e.dataTransfer.setData("elementID", e.target.id);
 }
 
 function drop(e, box) {
   e.preventDefault();
-  let data = e.dataTransfer.getData("text");
+  let data = e.dataTransfer.getData("elementID");
   let el = document.getElementById(data);
   box.appendChild(el);
   console.log(el);
