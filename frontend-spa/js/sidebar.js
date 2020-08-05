@@ -1,4 +1,4 @@
-import {drag} from "./drag-and-drop.js";
+import { drag } from "./drag-and-drop.js";
 
 const sidebar = document.querySelector(".sidebar");
 const sidebarContent = document.querySelector(".sidebar-content");
@@ -29,6 +29,7 @@ let quotes = document.querySelectorAll(".quotes-container img");
 const quoteInputContainer = document.querySelector(
   ".quotes-container .input-container"
 );
+let texts = document.querySelectorAll(".text");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -114,6 +115,16 @@ function createNewTextElement() {
     inputContainerDiv.nextSibling
   );
   addTextInput.value = "";
+  texts.push(textDiv);
+  addEventListenerToTexts();
+}
+
+function addEventListenerToTexts() {
+  texts.forEach((text) => {
+    text.addEventListener("dragstart", () => {
+      drag(event);
+    });
+  });
 }
 
 function checkUrl(url) {
@@ -166,7 +177,9 @@ function createNewImage() {
 
 function addEventListenersToImages() {
   for (let i = 0; i < images.length; i++) {
-    images[i].addEventListener("click", () => {});
+    images[i].addEventListener("dragstart", () => {
+      drag(event);
+    });
   }
 }
 

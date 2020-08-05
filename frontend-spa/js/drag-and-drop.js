@@ -22,10 +22,13 @@ export function drag(e) {
   e.dataTransfer.setData("elementID", e.target.id);
 }
 
+const quoteContainer = document.querySelector(".quotes-container");
+
 function drop(e, box) {
   e.preventDefault();
+  let previousElement = box.firstChild;
+  if (previousElement != null) quoteContainer.appendChild(previousElement);
   let data = e.dataTransfer.getData("elementID");
   let el = document.getElementById(data);
   box.appendChild(el);
-  console.log(el);
 }
