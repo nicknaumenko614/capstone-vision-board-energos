@@ -1,8 +1,11 @@
 package co.visionaries.energos.storage;
 
+import co.visionaries.energos.entities.Image;
 import co.visionaries.energos.entities.Quote;
 import co.visionaries.energos.repositories.QuoteRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.Collection;
 
 @Service
 public class QuoteStorage {
@@ -10,6 +13,10 @@ public class QuoteStorage {
 
     public QuoteStorage(QuoteRepository quoteRepo) {
         this.quoteRepo = quoteRepo;
+    }
+
+    public Collection<Quote> getAllQuotes (){
+        return (Collection <Quote>) quoteRepo.findAll();
     }
 
     public Quote retrieveQuoteById(long quoteId) {

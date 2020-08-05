@@ -15,9 +15,9 @@ public class ImageStorage {
         this.imageRepo = imageRepo;
     }
 
-//    public Collection<Image> getAllImages (){
-//        return (Collection <Image>) imageRepo.findAll();
-//    }
+    public Collection<Image> getAllImages (){
+        return (Collection <Image>) imageRepo.findAll();
+    }
 
     public Image retrieveImageById(long imageId) {
         return imageRepo.findById(imageId).get();

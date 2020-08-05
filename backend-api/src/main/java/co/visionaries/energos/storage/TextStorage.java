@@ -1,8 +1,11 @@
 package co.visionaries.energos.storage;
 
+import co.visionaries.energos.entities.Image;
 import co.visionaries.energos.entities.Text;
 import co.visionaries.energos.repositories.TextRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.Collection;
 
 @Service
 public class TextStorage {
@@ -10,6 +13,10 @@ public class TextStorage {
 
     public TextStorage(TextRepository textRepo) {
         this.textRepo = textRepo;
+    }
+
+    public Collection<Text> getAllTexts (){
+        return (Collection <Text>) textRepo.findAll();
     }
 
     public Text retrieveTextById(long textId) {
