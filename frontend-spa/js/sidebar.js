@@ -165,7 +165,6 @@ function createNewImage() {
 function addEventListenersToImages() {
   for (let i = 0; i < images.length; i++) {
     images[i].addEventListener("click", () => {
-      main.style.backgroundImage = "url(" + images[i].src + ")";
     });
   }
 }
@@ -191,7 +190,6 @@ function createNewQuote() {
 function addEventListenersToQuotes(){
   for (let i = 0; i < quotes.length; i++) {
     quotes[i].addEventListener("click", () => {
-      main.style.backgroundImage = "url(" + quotes[i].src + ")";
     });
   }
 }
