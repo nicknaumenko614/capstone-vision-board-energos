@@ -1,5 +1,6 @@
 import { renderDesignBoard } from "./components/renderDesignBoards.js";
-import { addAllEventListeners } from "./app.js";
+import { addSettingsAndDragNDropEventListeners } from "./app.js";
+import { removePreviousElement } from "./drag-and-drop.js";
 
 const templates = document.querySelectorAll(".templates-container img");
 const main = document.querySelector("main");
@@ -7,15 +8,22 @@ const main = document.querySelector("main");
 export function addEventListenersToTemplates() {
   for (let i = 0; i < templates.length; i++) {
     templates[i].addEventListener("click", () => {
-      let boxes = document.querySelectorAll(".box");
       clearDesignBoard();
       const designBoard = renderDesignBoard(i);
       main.appendChild(designBoard);
-      
+      addSettingsAndDragNDropEventListeners();
     });
   }
 }
 
 function clearDesignBoard() {
+  removeAllElements();
   main.innerHTML = null;
+}
+
+function removeAllElements() {
+  const boxes = document.querySelectorAll(".box");
+  boxes.forEach((box) => {
+    removePreviousElement(box);
+  });
 }

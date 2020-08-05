@@ -31,7 +31,7 @@ function drop(e, box) {
   box.appendChild(el);
 }
 
-function removePreviousElement(box) {
+export function removePreviousElement(box) {
   let previousElement = box.firstChild;
   if (previousElement == null) return false;
   if (previousElement.classList.contains("image")) {
