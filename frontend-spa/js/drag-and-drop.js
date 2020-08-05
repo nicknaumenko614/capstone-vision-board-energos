@@ -1,5 +1,5 @@
 const boxes = document.querySelectorAll(".box");
-const images = document.querySelectorAll("img");
+
 
 export function addDragAndDropEventListeners() {
   boxes.forEach((box) => {
@@ -17,7 +17,7 @@ function allowDrop(e) {
   e.preventDefault();
 }
 
-function drag(e) {
+export function drag(e) {
   e.dataTransfer.setData("text", e.target.id);
 }
 

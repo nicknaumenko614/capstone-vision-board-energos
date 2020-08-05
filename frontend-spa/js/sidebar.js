@@ -1,3 +1,5 @@
+import { drag } from "./drag-and-drop.js";
+
 const sidebar = document.querySelector(".sidebar");
 const sidebarContent = document.querySelector(".sidebar-content");
 const main = document.querySelector("main");
@@ -24,8 +26,9 @@ const imageInputContainer = document.querySelector(
 let images = document.querySelectorAll(".images-container img");
 const addQuoteInput = document.querySelector(".add-quote");
 let quotes = document.querySelectorAll(".quotes-container img");
-const quoteInputContainer = document.querySelector(".quotes-container .input-container");
-
+const quoteInputContainer = document.querySelector(
+  ".quotes-container .input-container"
+);
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -64,7 +67,6 @@ export function addSideBarEventListeners() {
   addEventListenersToImages();
   addEventListenersToQuotes();
 }
-
 
 function addHoverEffectsForIcons(i) {
   sidebarContent.style.display = "block";
@@ -164,8 +166,7 @@ function createNewImage() {
 
 function addEventListenersToImages() {
   for (let i = 0; i < images.length; i++) {
-    images[i].addEventListener("click", () => {
-    });
+    images[i].addEventListener("click", () => {});
   }
 }
 
@@ -182,16 +183,15 @@ function createNewQuote() {
     img,
     quoteInputContainer.nextSibling
   );
-    addQuoteInput.value = "";
-    quotes.push(img);
-    addEventListenersToQuotes();
+  addQuoteInput.value = "";
+  quotes.push(img);
+  addEventListenersToQuotes();
 }
 
-function addEventListenersToQuotes(){
+function addEventListenersToQuotes() {
   for (let i = 0; i < quotes.length; i++) {
     quotes[i].addEventListener("click", () => {
+      drag(event);
     });
   }
 }
-
-
