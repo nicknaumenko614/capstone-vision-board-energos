@@ -5,8 +5,10 @@
   --color2a: #b2ebe0aa;
   --color3: #f9fcff;
   --color4: #f3d1dc;
+  --color4a: #f3d1dccc;
   --color5: #e7c874;
   --color5a: #e7c87477;
+  --color5b: #e7c874cc;
   --color6: #0162b7;
   --color6a: #0162b767;
 }
@@ -93,7 +95,7 @@ main img.fill {
 }
 
 .box:hover {
-  background-color: var(--color2);
+  background-color: var(--color5b);
 }
 
 .box div, .box img {
