@@ -1,5 +1,4 @@
 const main = document.querySelector("main");
-const icons = document.querySelectorAll(".sidebar i");
 
 main.addEventListener("click", () => {
   let el = event.target;
@@ -27,12 +26,6 @@ function addBoxShadowOnTarget(el) {
   el.style.boxShadow = "0 0 10px red, 0 0 10px red, 0 0 10px red";
   el.style.zIndex = "100";
 }
-
-icons.forEach((icon) => {
-  icon.addEventListener("click", () => {
-    removeBoxShadows();
-  });
-});
 
 window.addEventListener("click", () => {
   const el = event.target;
