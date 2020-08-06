@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
+
 :root {
     --color1: #393e41;
     --color1a: #393e4177;
@@ -34,6 +36,7 @@
   top: 10%;
   position: absolute;
   font-size: 25pt;
+  font-family: "Amaranth", sans-serif;
 }
 
 .welcome-design-board {
