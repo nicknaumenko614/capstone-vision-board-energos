@@ -7,6 +7,11 @@ export function renderDesignBoard(i) {
   if (i === 5) return renderDesignBoard6();
 }
 
+export function setupDefaultBoard() {
+  const main = document.querySelector("main");
+  const designBoard = renderDesignBoard(0);
+  main.appendChild(designBoard);
+}
 
 function renderDesignBoard1() {
     const designBoard = document.createElement("div");

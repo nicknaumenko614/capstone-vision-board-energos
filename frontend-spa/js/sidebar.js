@@ -1,5 +1,6 @@
 import { drag } from "./drag-and-drop.js";
 
+const sidebar = document.querySelector(".sidebar");
 const sidebarContent = document.querySelector(".sidebar-content");
 const main = document.querySelector("main");
 const icons = document.querySelectorAll(".icon-div i");
@@ -17,24 +18,20 @@ const backgroundAddImageInput = document.querySelector(
 const backgroundImageInputContainer = document.querySelector(
   ".wallpapers-container .input-container"
 );
-const presetWallpaperImages = document.querySelectorAll(
-  ".wallpapers-container img"
-);
+// const presetWallpaperImages = document.querySelectorAll(
+//   ".wallpapers-container img"
+// );
 const addImageInput = document.querySelector(".images-container .add-image");
 const imageInputContainer = document.querySelector(
   ".images-container .input-container"
 );
-const presetImages = document.querySelectorAll(".images-container img");
+// const presetImages = document.querySelectorAll(".images-container img");
 const addQuoteInput = document.querySelector(".add-quote");
-const presetQuotes = document.querySelectorAll(".quotes-container img");
+// const presetQuotes = document.querySelectorAll(".quotes-container img");
 const quoteInputContainer = document.querySelector(
   ".quotes-container .input-container"
 );
-const presetTexts = document.querySelectorAll(".text");
-let wallpaperImages = [];
-let images = [];
-let quotes = [];
-let texts = [];
+// const presetTexts = document.querySelectorAll(".text");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -43,7 +40,15 @@ export function addSideBarEventListeners() {
     });
   }
 
-  main.addEventListener("mouseover", () => {
+  sidebar.addEventListener("click", () => {
+    sidebarClickEventListener();
+  });
+
+  sidebar.addEventListener("dragstart", () => {
+    sidebarDragEventListener();
+  });
+
+  window.addEventListener("mouseover", () => {
     hideSidebarContent();
   });
 
@@ -52,9 +57,7 @@ export function addSideBarEventListeners() {
   });
 
   backgroundColorPickerInput.addEventListener("change", () => {
-    let color = backgroundColorPickerInput.value;
-    main.style.backgroundColor = color;
-    main.style.backgroundImage = "";
+    changeBackgroundColor();
   });
 
   backgroundAddImageInput.addEventListener("change", () => {
@@ -69,26 +72,32 @@ export function addSideBarEventListeners() {
     createNewQuote();
   });
 
-  fillArraysWithPresetElements();
-  addEventListenerToWallpaperImages();
-  addEventListenersToImages();
-  addEventListenersToQuotes();
-  addEventListenerToTexts();
+  // fillArraysWithPresetElements();
+  // addEventListenerToWallpaperImages();
+  // addEventListenersToImages();
+  // addEventListenersToQuotes();
+  // addEventListenerToTexts();
 }
 
-function fillArraysWithPresetElements() {
-  presetWallpaperImages.forEach((img) => {
-    wallpaperImages.push(img);
-  });
-  presetImages.forEach((img) => {
-    images.push(img);
-  });
-  presetQuotes.forEach((quote) => {
-    quotes.push(quote);
-  });
-  presetTexts.forEach((text) => {
-    texts.push(text);
-  });
+// function fillArraysWithPresetElements() {
+//   presetWallpaperImages.forEach((img) => {
+//     wallpaperImages.push(img);
+//   });
+//   presetImages.forEach((img) => {
+//     images.push(img);
+//   });
+//   presetQuotes.forEach((quote) => {
+//     quotes.push(quote);
+//   });
+//   presetTexts.forEach((text) => {
+//     texts.push(text);
+//   });
+// }
+
+function changeBackgroundColor() {
+  let color = backgroundColorPickerInput.value;
+  main.style.backgroundColor = color;
+  main.style.backgroundImage = "";
 }
 
 function addHoverEffectsForIcons(i) {
@@ -108,6 +117,9 @@ function addHoverEffectsForIcons(i) {
 }
 
 function hideSidebarContent() {
+  const el = event.target;
+  if (event.target.closest(".sidebar")) return false;
+
   sidebarContent.style.width = "0";
 
   for (let i = 0; i < icons.length; i++) {
@@ -137,22 +149,23 @@ function createNewTextElement() {
     inputContainerDiv.nextSibling
   );
   addTextInput.value = "";
-  texts.push(textDiv);
-  addEventListenerToTexts();
+  // texts.push(textDiv);
+  // addEventListenerToTexts();
 }
 
-function addEventListenerToTexts() {
-  texts.forEach((text) => {
-    text.addEventListener("dragstart", () => {
-      drag(event);
-    });
-  });
-}
+// function addEventListenerToTexts() {
+//   texts.forEach((text) => {
+//     text.addEventListener("dragstart", () => {
+//       drag(event);
+//     });
+//   });
+// }
 
 function checkUrl(url) {
   return url.match(/\.(jpeg|jpg|png|gif|tiff)/) != null;
 }
 
+let wallpaperNumber = 0;
 function createNewBackgroundImage() {
   let url = backgroundAddImageInput.value;
   let urlToCheck = checkUrl(url);
@@ -160,25 +173,31 @@ function createNewBackgroundImage() {
     backgroundAddImageInput.value = "";
     return false;
   }
-  let img = new Image();
-  img.src = url;
+  const img = createImageToAdd(url, "wallpaper", wallpaperNumber);
+
+  // const img = new Image();
+  // img.src = url;
+  // img.id = "add-" + className + "-" + number;
+  // img.classList.add(className);
   backgroundImageInputContainer.parentNode.insertBefore(
     img,
     backgroundImageInputContainer.nextSibling
   );
   backgroundAddImageInput.value = "";
-  wallpaperImages.push(img);
-  addEventListenerToWallpaperImages();
+  wallpaperNumber++;
+  // wallpaperImages.push(img);
+  // addEventListenerToWallpaperImages();
 }
 
-function addEventListenerToWallpaperImages() {
-  for (let i = 0; i < wallpaperImages.length; i++) {
-    wallpaperImages[i].addEventListener("click", () => {
-      main.style.backgroundImage = "url(" + wallpaperImages[i].src + ")";
-    });
-  }
-}
+// function addEventListenerToWallpaperImages() {
+//   for (let i = 0; i < wallpaperImages.length; i++) {
+//     wallpaperImages[i].addEventListener("click", () => {
+//       main.style.backgroundImage = "url(" + wallpaperImages[i].src + ")";
+//     });
+//   }
+// }
 
+let imageNumber = 0;
 function createNewImage() {
   let url = addImageInput.value;
   let urlToCheck = checkUrl(url);
@@ -186,25 +205,31 @@ function createNewImage() {
     addImageInput.value = "";
     return false;
   }
-  let img = new Image();
-  img.src = url;
+  const img = createImageToAdd(url, "image", imageNumber);
+
+  // const img = new Image();
+  // img.src = url;
+  // img.id = "add-" + className + "-" + number;
+  // img.classList.add(className);
   imageInputContainer.parentNode.insertBefore(
     img,
     imageInputContainer.nextSibling
   );
   addImageInput.value = "";
-  images.push(img);
-  addEventListenersToImages();
+  imageNumber++;
+  // images.push(img);
+  // addEventListenersToImages();
 }
 
-function addEventListenersToImages() {
-  for (let i = 0; i < images.length; i++) {
-    images[i].addEventListener("dragstart", () => {
-      drag(event);
-    });
-  }
-}
+// function addEventListenersToImages() {
+//   for (let i = 0; i < images.length; i++) {
+//     images[i].addEventListener("dragstart", () => {
+//       drag(event);
+//     });
+//   }
+// }
 
+let quoteNumber = 0;
 function createNewQuote() {
   let url = addQuoteInput.value;
   let urlToCheck = checkUrl(url);
@@ -212,21 +237,52 @@ function createNewQuote() {
     addQuoteInput.value = "";
     return false;
   }
-  let img = new Image();
-  img.src = url;
+  const img = createImageToAdd(url, "quote", quoteNumber);
+
+  // const img = new Image();
+  // img.src = url;
+  // img.id = "add-" + className + "-" + number;
+  // img.classList.add(className);
   quoteInputContainer.parentNode.insertBefore(
     img,
     quoteInputContainer.nextSibling
   );
   addQuoteInput.value = "";
-  quotes.push(img);
-  addEventListenersToQuotes();
+  quoteNumber++;
+  // quotes.push(img);
+  // addEventListenersToQuotes();
 }
 
-function addEventListenersToQuotes() {
-  for (let i = 0; i < quotes.length; i++) {
-    quotes[i].addEventListener("dragstart", () => {
-      drag(event);
-    });
+// function addEventListenersToQuotes() {
+//   for (let i = 0; i < quotes.length; i++) {
+//     quotes[i].addEventListener("dragstart", () => {
+//       drag(event);
+//     });
+//   }
+// }
+
+function sidebarClickEventListener() {
+  const el = event.target;
+  if (el.classList.contains("wallpaper")) {
+    const src = el.src;
+    main.style.backgroundImage = "url(" + src + ")";
   }
+}
+
+function sidebarDragEventListener() {
+  const el = event.target;
+  if (
+    el.classList.contains("image") ||
+    el.classList.contains("text") ||
+    el.classList.contains("quote")
+  )
+    drag(el);
+}
+
+function createImageToAdd(url, className, number) {
+  const img = new Image();
+  img.src = url;
+  img.id = "add-" + className + "-" + number;
+  img.classList.add(className);
+  return img;
 }

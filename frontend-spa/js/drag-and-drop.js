@@ -1,33 +1,48 @@
 const imagesContainer = document.querySelector(".images-container");
 const textsContainer = document.querySelector(".text-container");
 const quotesContainer = document.querySelector(".quotes-container");
+const main = document.querySelector("main");
 
 export function addDragAndDropEventListeners() {
   const boxes = document.querySelectorAll(".box");
-  boxes.forEach((box) => {
-    box.addEventListener("drop", () => {
-      drop(event, box);
-    });
+  // boxes.forEach((box) => {
+  //   box.addEventListener("drop", () => {
+  //     drop(event, box);
+  //   });
 
-    box.addEventListener("dragover", () => {
-      allowDrop(event);
-    });
+  // box.addEventListener("dragover", () => {
+  //   allowDrop(event);
+  // });
+
+  main.addEventListener("drop", () => {
+    mainDropEventListener();
+  });
+
+  main.addEventListener("dragover", () => {
+    mainDragOverEventListener();
+  });
+
+  main.addEventListener("dragstart", () => {
+    mainDragStartEventListener();
   });
 }
 
-function allowDrop(e) {
+function allowDrop() {
+  const e = event;
   e.preventDefault();
 }
 
-export function drag(e) {
-  e.dataTransfer.setData("elementID", e.target.id);
+export function drag(el) {
+  const e = event;
+  e.dataTransfer.setData("elementID", el.id);
 }
 
-function drop(e, box) {
+function drop(box) {
+  const e = event;
   e.preventDefault();
-  removePreviousElement(box);
-  let data = e.dataTransfer.getData("elementID");
-  let el = document.getElementById(data);
+  if (box.firstChild) removePreviousElement(box);
+  const data = e.dataTransfer.getData("elementID");
+  const el = document.getElementById(data);
   box.appendChild(el);
 }
 
@@ -40,5 +55,37 @@ export function removePreviousElement(box) {
     textsContainer.appendChild(previousElement);
   } else if (previousElement.classList.contains("quote")) {
     quotesContainer.appendChild(previousElement);
+  }
+}
+
+function mainDropEventListener() {
+  let el = event.target;
+  while (!el.classList.contains("box")) {
+    el = el.parentNode;
+  }
+
+  drop(el);
+}
+
+function mainDragOverEventListener() {
+  let el = event.target;
+  if (el.closest(".box")) {
+    while (!el.classList.contains("box")) {
+      el = el.parentNode;
+    }
+
+    allowDrop();
+  }
+}
+
+function mainDragStartEventListener() {
+  const el = event.target;
+  if (el.closest(".box")) {
+    if (
+      el.classList.contains("image") ||
+      el.classList.contains("text") ||
+      el.classList.contains("quote")
+    )
+      drag(el);
   }
 }
