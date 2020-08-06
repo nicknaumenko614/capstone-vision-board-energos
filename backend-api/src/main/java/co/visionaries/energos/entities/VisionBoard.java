@@ -32,7 +32,9 @@ public class VisionBoard {
     protected VisionBoard() {
     }
 
-    public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing, String gridBorderRadius, String gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName) {
+    public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing,
+                       String gridBorderRadius, String gridBorderThickness, String gridBorderColor,
+                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName) {
         this.visionBoardName = visionBoardName;
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
