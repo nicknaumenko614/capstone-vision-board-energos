@@ -1,0 +1,26 @@
+GET http://localhost:8080/api/images
+
+###
+
+GET http://localhost:8080/api/images/1
+
+
+###
+
+PATCH http://localhost:8080/api/visionboards/1/updateimage
+Content-Type: application/json
+
+{
+  "id": "5",
+  "imageIsZoomed": true,
+  "imageHasBorder": true,
+  "imageBorderRadius": "2%",
+  "imageRotate": 4,
+  "imageIsFlipped": true,
+  "imageParentElement": "block4"
+
+}
+
+###
+
+DELETE http://localhost:8080/api/images/1/delete

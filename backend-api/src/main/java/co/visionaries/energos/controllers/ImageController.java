@@ -46,7 +46,6 @@ public class ImageController {
     public void updateImage (@PathVariable long visionBoardId, @RequestBody Image image) {
         Image imageToUpdate = imageStorage.retrieveImageById(image.getId());
         imageToUpdate.setImageIsZoomed(image.isImageIsZoomed());
-        imageToUpdate.setImageLink(image.getImageLink());
         imageToUpdate.setImageHasBorder(image.isImageHasBorder());
         imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
         imageToUpdate.setImageRotate(image.getImageRotate());

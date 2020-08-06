@@ -24,7 +24,7 @@ public class VisionBoard {
     private Collection<Text> texts;
     @ManyToMany
     private Collection<Quote> quotes;
-    @ManyToMany
+    @OneToMany
     private Collection<Image> images;
     @ManyToMany
     private Collection<Background> backgrounds;
