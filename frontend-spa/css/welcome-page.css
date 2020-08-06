@@ -25,34 +25,32 @@
   transform: scale(1.2);
 }
 
-.welcome-page {
+.welcome-design {
   position: absolute;
   text-align: center;
-  /* background-color: aqua; */
   width: 80%;
   height: 20%;
   left: 10%;
   top: 10%;
   position: absolute;
-  font-size: 60pt;
+  font-size: 25pt;
 }
 
 .welcome-design-board {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--color2); 
-    /* width: 80%;
-    height: 50%; */
-    left: 10%;
-    /* top: 5%; */
+    left: 18%;
     padding: 10px;
     position: absolute;
     margin-top: 15%;
+    
 }
 
 .welcome-box {
     background-color: var(--color6);
-    width: 80px;
-    height: 70px;
+    width: 400px;
+    height: 400px;
+    margin: 20px;
 }
 
