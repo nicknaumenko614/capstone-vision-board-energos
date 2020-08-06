@@ -23,7 +23,7 @@ public class QuoteStorageTests {
 
     @Test
     public void shouldBeAbleToSaveNewQuote() {
-        Quote testQuote = new Quote("testQuote", "100", "300", "www.link.com", true, "20", 15, false, "block2", visionBoard1);
+        Quote testQuote = new Quote("testQuote", false, "www.link.com", true, "20", 15, false, "block2", visionBoard1);
         underTest.saveQuote(testQuote);
         verify(quoteRepo).save(testQuote);
     }

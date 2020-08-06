@@ -11,8 +11,7 @@ public class Quote {
     @GeneratedValue
     private long id;
     private String quoteName;
-    private String quoteHeight;
-    private String quoteWidth;
+    private boolean quoteIsZoomed;
     private String quoteLink;
     private boolean quoteHasBorder;
     private String quoteBorderRadius;
@@ -26,10 +25,9 @@ public class Quote {
     protected Quote() {
     }
 
-    public Quote(String quoteName, String quoteHeight, String quoteWidth, String quoteLink, boolean quoteHasBorder, String quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, String quoteParentElement, VisionBoard visionBoard) {
+    public Quote(String quoteName, boolean quoteIsZoomed, String quoteLink, boolean quoteHasBorder, String quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, String quoteParentElement, VisionBoard visionBoard) {
         this.quoteName = quoteName;
-        this.quoteHeight = quoteHeight;
-        this.quoteWidth = quoteWidth;
+        this.quoteIsZoomed = quoteIsZoomed;
         this.quoteLink = quoteLink;
         this.quoteHasBorder = quoteHasBorder;
         this.quoteBorderRadius = quoteBorderRadius;
@@ -51,20 +49,12 @@ public class Quote {
         this.quoteName = quoteName;
     }
 
-    public String getQuoteHeight() {
-        return quoteHeight;
+    public boolean isQuoteIsZoomed() {
+        return quoteIsZoomed;
     }
 
-    public void setQuoteHeight(String quoteHeight) {
-        this.quoteHeight = quoteHeight;
-    }
-
-    public String getQuoteWidth() {
-        return quoteWidth;
-    }
-
-    public void setQuoteWidth(String quoteWidth) {
-        this.quoteWidth = quoteWidth;
+    public void setQuoteIsZoomed(boolean quoteIsZoomed) {
+        this.quoteIsZoomed = quoteIsZoomed;
     }
 
     public String getQuoteLink() {

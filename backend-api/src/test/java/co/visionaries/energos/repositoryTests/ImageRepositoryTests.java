@@ -23,15 +23,15 @@ public class ImageRepositoryTests {
     @Test
     public void saveShouldBeAbleToUpdateImageAttributes() {
 
-        Image testImage = new Image("testImage", "100", "150", "www.link.com", true, "25", 0, false, "grid1", visionBoard1);
+        Image testImage = new Image("testImage", false, "www.link.com", true, "25", 0, false, "grid1", visionBoard1);
         imageRepo.save(testImage);
-        String newImageHeight = "500";
-        testImage.setImageHeight(newImageHeight);
+        String newImageBorderRadius = "50";
+        testImage.setImageBorderRadius(newImageBorderRadius);
         imageRepo.save(testImage);
         entityManager.flush();
         entityManager.clear();
 
         Image retrievedImage = imageRepo.findById(testImage.getId()).get();
-        assertThat(retrievedImage.getImageHeight()).isEqualTo(newImageHeight);
+        assertThat(retrievedImage.getImageBorderRadius()).isEqualTo(newImageBorderRadius);
     }
 }
