@@ -52,7 +52,6 @@ public class ImageController {
         imageToUpdate.setImageRotate(image.getImageRotate());
         imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
         imageToUpdate.setImageParentElement(image.getImageParentElement());
-        imageToUpdate.setVisionBoard(image.getVisionBoard());
     }
 
 }

@@ -17,8 +17,8 @@ public class Image {
     private boolean imageIsFlipped = false;
     private String imageParentElement;
 
-    @ManyToMany (mappedBy = "images")
-    private Collection<VisionBoard> visionBoards;
+    @ManyToOne
+    private VisionBoard visionBoard;
 
 
 
@@ -105,11 +105,11 @@ public class Image {
         this.imageParentElement = imageParentElement;
     }
 
-    public Collection<VisionBoard> getVisionBoards() {
-        return visionBoards;
+    public VisionBoard getVisionBoard() {
+        return visionBoard;
     }
 
-    public void setVisionBoards(Collection<VisionBoard> visionBoards) {
-        this.visionBoards = visionBoards;
+    public void setVisionBoard(VisionBoard visionBoard) {
+        this.visionBoard = visionBoard;
     }
 }
