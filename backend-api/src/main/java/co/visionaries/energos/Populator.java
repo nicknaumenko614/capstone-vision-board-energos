@@ -25,11 +25,12 @@ public class Populator implements CommandLineRunner {
     private VisionBoardRepository visionBoardRepo;
 
     public void run(String... args) throws Exception {
-        Image image1 = new Image ("img1", false, );
+        Image image1 = new Image ("img1", false, "/images/gallery-images/airplane.jpg",
+                false, "0px", 0, false, "images-container");
 
         VisionBoard visionBoard1 = new VisionBoard("Default", false, true, "10px",
                 "0%", "2px", "#393E41", "solid", "",
-                "#F9FCFF", "0", image1, )
+                "#F9FCFF", "0");
     }
 
 }
