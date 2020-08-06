@@ -33,10 +33,10 @@ public class ImageController {
         imageStorage.deleteImage(imageId);
     }
 
-    @PostMapping("/api/images/addimage")
-    public void addImageToVisionBoard(@RequestBody Image image) {
-//        VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
-//        image.setVisionBoard(visionBoard);
+    @PostMapping("/api/visionboards/{visionBoardId}/addimage")
+    public void addImageToVisionBoard(@PathVariable long visionBoardId, @RequestBody Image image) {
+        VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        image.setVisionBoard(visionBoard);
 //        Image imageToAdd = new Image(image.getImageName(), image.getImageHeight(), image.getImageWidth(), image.getImageLink(), image.isImageHasBorder(), image.getImageBorderRadius(), image.getImageRotate()
 //                , image.isImageIsFlipped(), image.getImageParentElement(), visionBoard);
         imageStorage.saveImage(image);

@@ -8,6 +8,8 @@ import co.visionaries.energos.storage.TextStorage;
 import co.visionaries.energos.storage.VisionBoardStorage;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 @RestController
 public class VisionBoardController {
     VisionBoardStorage visionBoardStorage;
@@ -20,6 +22,10 @@ public class VisionBoardController {
         this.imageStorage = imageStorage;
         this.quoteStorage = quoteStorage;
         this.textStorage = textStorage;
+    }
+    @GetMapping("/api/visionboards")
+    public Collection<VisionBoard> getAllVisionBoards() {
+        return visionBoardStorage.getAllVisionBoards();
     }
 
     @GetMapping("/api/visionboards/{visionBoardId}")
