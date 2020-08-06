@@ -25,7 +25,7 @@ public class ImageRepositoryTests {
 
         Image testImage = new Image("testImage", "100", "150", "www.link.com", true, "25", 0, false, "grid1", visionBoard1);
         imageRepo.save(testImage);
-        int newImageHeight = 500;
+        String newImageHeight = "500";
         testImage.setImageHeight(newImageHeight);
         imageRepo.save(testImage);
         entityManager.flush();

@@ -11,8 +11,7 @@ public class Image {
     @GeneratedValue
     private long id;
     private String imageName;
-    private String imageHeight;
-    private String imageWidth;
+    private boolean imageIsZoomed;
     private String imageLink;
     private boolean imageHasBorder = false;
     private String imageBorderRadius;
@@ -27,10 +26,9 @@ public class Image {
     protected Image() {
     }
 
-    public Image(String imageName, String imageHeight, String imageWidth, String imageLink, boolean imageHasBorder, String imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
+    public Image(String imageName, boolean imageIsZoomed, String imageLink, boolean imageHasBorder, String imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
         this.imageName = imageName;
-        this.imageHeight = imageHeight;
-        this.imageWidth = imageWidth;
+        this.imageIsZoomed = imageIsZoomed;
         this.imageLink = imageLink;
         this.imageHasBorder = imageHasBorder;
         this.imageBorderRadius = imageBorderRadius;
@@ -52,20 +50,12 @@ public class Image {
         this.imageName = imageName;
     }
 
-    public String getImageHeight() {
-        return imageHeight;
+    public boolean isImageIsZoomed() {
+        return imageIsZoomed;
     }
 
-    public void setImageHeight(String imageHeight) {
-        this.imageHeight = imageHeight;
-    }
-
-    public String getImageWidth() {
-        return imageWidth;
-    }
-
-    public void setImageWidth(String imageWidth) {
-        this.imageWidth = imageWidth;
+    public void setImageIsZoomed(boolean imageIsZoomed) {
+        this.imageIsZoomed = imageIsZoomed;
     }
 
     public String getImageLink() {
@@ -123,5 +113,4 @@ public class Image {
     public void setVisionBoard(VisionBoard visionBoard) {
         this.visionBoard = visionBoard;
     }
-
 }

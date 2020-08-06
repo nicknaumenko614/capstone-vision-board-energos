@@ -29,9 +29,9 @@ public class VisionBoardRepositoryTests {
 
     @Test
     public void saveShouldBeAbleToUpdateVisionBoardAttributes() {
-        VisionBoard testVisionBoard = new VisionBoard(false, false, 20, 15, 10, "#2222", "solid", "www.image.com", "#0000", "template1", texts, quotes, images);
+        VisionBoard testVisionBoard = new VisionBoard(false, false, "20", "15", "10", "#2222", "solid", "www.image.com", "#0000", "template1", texts, quotes, images);
         visionBoardRepo.save(testVisionBoard);
-        int newGridSpacing = 50;
+        String newGridSpacing = "50";
         testVisionBoard.setGridSpacing(newGridSpacing);
         visionBoardRepo.save(testVisionBoard);
         entityManager.flush();

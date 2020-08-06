@@ -30,7 +30,7 @@ public class VisionBoardStorageTests {
 
     @Test
     public void shouldBeAbleToSaveNewVisionBoard() {
-        VisionBoard testVisionBoard = new VisionBoard(true, true, 20, 15, 5, "#23fr45", "solid", "www.fakeLink.com", "#45GR34", "block3", texts, quotes, images);
+        VisionBoard testVisionBoard = new VisionBoard(true, true, "20", "15", "5", "#23fr45", "solid", "www.fakeLink.com", "#45GR34", "block3", texts, quotes, images);
         underTest.saveVisionBoard(testVisionBoard);
         verify(visionBoardRepo).save(testVisionBoard);
     }

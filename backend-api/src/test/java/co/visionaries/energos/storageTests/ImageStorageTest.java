@@ -25,7 +25,7 @@ public class ImageStorageTest {
 
     @Test
     public void shouldBeAbleToSaveNewImage() {
-        Image testImage = new Image("testImage", 100, 150, "www.link.com", true, 25, 0, false, "grid1", visionBoard1);
+        Image testImage = new Image("testImage", "100", "150", "www.link.com", true, "25", 0, false, "grid1", visionBoard1);
         underTest.saveImage(testImage);
         verify(imageRepo).save(testImage);
     }
