@@ -42,7 +42,7 @@ public class ImageController {
         imageStorage.saveImage(image);
     }
 
-    @PatchMapping
+    @PatchMapping()
     public void updateImage (@PathVariable long visionBoardId, @RequestBody Image image) {
         Image imageToUpdate = imageStorage.retrieveImageById(image.getId());
         imageToUpdate.setImageIsZoomed(image.isImageIsZoomed());

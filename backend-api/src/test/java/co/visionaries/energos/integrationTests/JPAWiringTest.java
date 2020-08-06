@@ -23,11 +23,11 @@ public class JPAWiringTest {
 
         VisionBoard visionBoard = null;
         Image testImage = imageRepo.save(new Image("Image1", false, "www.imagelink.com", false, "25px", 180, false, "block1", visionBoard));
-        testImage.setImageIsFlipped(true);//This is whatever function that sets imageIsFlipped to true
+        testImage.setImageIsFlipped(true);
         imageRepo.save(testImage);
         entityManager.flush();
         entityManager.clear();
         Image retrievedImage = imageRepo.findById(testImage.getId()).get();
-        assertTrue(retrievedImage.isImageIsFlipped()); //The getter may have a different name, maybe isImageIsFlipped()
+        assertTrue(retrievedImage.isImageIsFlipped());
     }
 }
