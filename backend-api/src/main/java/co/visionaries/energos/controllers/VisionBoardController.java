@@ -22,13 +22,19 @@ public class VisionBoardController {
         this.textStorage = textStorage;
     }
 
-    @GetMapping()
-    public VisionBoard getVisionBoardById (@PathVariable long visionBoardId) {
+    @GetMapping("/api/visionboards/{visionBoardId}")
+    public VisionBoard getVisionBoardById(@PathVariable long visionBoardId) {
         return visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
     }
 
-    @PatchMapping()
-    public void updateVisionBoard (@RequestBody VisionBoard visionBoard) {
+    @PostMapping("/api/visionboards/add")
+    public VisionBoard addVisionBoard(@RequestBody VisionBoard visionBoard) {
+        visionBoardStorage.saveVisionBoard(visionBoard);
+        return visionBoardStorage.retrieveVisionBoardbyId(visionBoard.getId());
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/update")
+    public void updateVisionBoard(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
         VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoard.getId());
         visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
         visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
@@ -41,7 +47,6 @@ public class VisionBoardController {
         visionBoardToUpdate.setThemeDark(visionBoard.isThemeDark());
         visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
     }
-
 
 
 }

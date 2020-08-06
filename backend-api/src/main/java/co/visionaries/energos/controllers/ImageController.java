@@ -18,22 +18,22 @@ public class ImageController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping()
+    @GetMapping("/api/images")
     public Collection<Image> getAllImages() {
         return imageStorage.getAllImages();
     }
 
-    @GetMapping()
+    @GetMapping("/api/images/{imageId}")
     public Image getImageById(@PathVariable long imageId) {
         return imageStorage.retrieveImageById(imageId);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/api/images/{imageId}/delete")
     public void deleteImage(@PathVariable long imageId) {
         imageStorage.deleteImage(imageId);
     }
 
-    @PostMapping()
+    @PostMapping("/api/visionboards/{visionBoardId}/addimage")
     public void addImageToVisionBoard(@PathVariable long visionBoardId, @RequestBody Image image) {
         VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         image.setVisionBoard(visionBoard);
@@ -42,7 +42,7 @@ public class ImageController {
         imageStorage.saveImage(image);
     }
 
-    @PatchMapping()
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateimage")
     public void updateImage (@PathVariable long visionBoardId, @RequestBody Image image) {
         Image imageToUpdate = imageStorage.retrieveImageById(image.getId());
         imageToUpdate.setImageIsZoomed(image.isImageIsZoomed());

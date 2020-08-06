@@ -11,6 +11,7 @@ public class VisionBoard {
     @Id
     @GeneratedValue
     private long id;
+    private String visionBoardName;
     private boolean isThemeDark;
     private boolean hasGrid;
     private String gridSpacing;
@@ -32,7 +33,8 @@ public class VisionBoard {
     protected VisionBoard() {
     }
 
-    public VisionBoard(boolean isThemeDark, boolean hasGrid, String gridSpacing, String gridBorderRadius, String gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
+    public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing, String gridBorderRadius, String gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
+        this.visionBoardName = visionBoardName;
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
         this.gridSpacing = gridSpacing;
@@ -46,6 +48,14 @@ public class VisionBoard {
         this.texts = texts;
         this.quotes = quotes;
         this.images = images;
+    }
+
+    public String getVisionBoardName() {
+        return visionBoardName;
+    }
+
+    public void setVisionBoardName(String visionBoardName) {
+        this.visionBoardName = visionBoardName;
     }
 
     public long getId() {
