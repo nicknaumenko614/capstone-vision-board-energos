@@ -1,9 +1,7 @@
 package co.visionaries.energos.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Image {
@@ -18,15 +16,16 @@ public class Image {
     private int imageRotate;
     private boolean imageIsFlipped = false;
     private String imageParentElement;
-    @ManyToOne
-    private VisionBoard visionBoard;
+
+    @ManyToMany (mappedBy = "images")
+    private Collection<VisionBoard> visionBoards;
 
 
 
     protected Image() {
     }
 
-    public Image(String imageName, boolean imageIsZoomed, String imageLink, boolean imageHasBorder, String imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
+    public Image(String imageName, boolean imageIsZoomed, String imageLink, boolean imageHasBorder, String imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement) {
         this.imageName = imageName;
         this.imageIsZoomed = imageIsZoomed;
         this.imageLink = imageLink;
@@ -35,7 +34,7 @@ public class Image {
         this.imageRotate = imageRotate;
         this.imageIsFlipped = imageIsFlipped;
         this.imageParentElement = imageParentElement;
-        this.visionBoard = visionBoard;
+
     }
 
     public long getId() {
@@ -106,11 +105,11 @@ public class Image {
         this.imageParentElement = imageParentElement;
     }
 
-    public VisionBoard getVisionBoard() {
-        return visionBoard;
+    public Collection<VisionBoard> getVisionBoards() {
+        return visionBoards;
     }
 
-    public void setVisionBoard(VisionBoard visionBoard) {
-        this.visionBoard = visionBoard;
+    public void setVisionBoards(Collection<VisionBoard> visionBoards) {
+        this.visionBoards = visionBoards;
     }
 }

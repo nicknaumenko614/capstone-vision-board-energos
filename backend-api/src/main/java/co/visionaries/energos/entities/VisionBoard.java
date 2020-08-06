@@ -1,9 +1,6 @@
 package co.visionaries.energos.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -23,17 +20,19 @@ public class VisionBoard {
     private String backgroundColor;
     private String gridTemplateName;
 
-    @OneToMany
+    @ManyToMany
     private Collection<Text> texts;
-    @OneToMany
+    @ManyToMany
     private Collection<Quote> quotes;
-    @OneToMany
+    @ManyToMany
     private Collection<Image> images;
+    @ManyToMany
+    private Collection<Background> backgrounds;
 
     protected VisionBoard() {
     }
 
-    public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing, String gridBorderRadius, String gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
+    public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing, String gridBorderRadius, String gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images, Collection<Background> backgrounds) {
         this.visionBoardName = visionBoardName;
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
@@ -48,6 +47,7 @@ public class VisionBoard {
         this.texts = texts;
         this.quotes = quotes;
         this.images = images;
+        this.backgrounds = backgrounds;
     }
 
     public String getVisionBoardName() {
@@ -56,6 +56,14 @@ public class VisionBoard {
 
     public void setVisionBoardName(String visionBoardName) {
         this.visionBoardName = visionBoardName;
+    }
+
+    public Collection<Background> getBackgrounds() {
+        return backgrounds;
+    }
+
+    public void setBackgrounds(Collection<Background> backgrounds) {
+        this.backgrounds = backgrounds;
     }
 
     public long getId() {
