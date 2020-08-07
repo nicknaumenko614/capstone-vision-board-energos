@@ -1,10 +1,10 @@
 package co.visionaries.energos.controllers;
 
 import co.visionaries.energos.entities.Background;
+import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.storage.BackgroundStorage;
 import co.visionaries.energos.storage.VisionBoardStorage;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -21,5 +21,19 @@ public BackgroundController(BackgroundStorage backgroundStorage, VisionBoardStor
 
 @GetMapping("/api/backgrounds")
 public Collection<Background> getAllBackgrounds() { return backgroundStorage.getAllBackgrounds();}
+
+@GetMapping("/api/backgrounds/{backgroundId}")
+public Background getBackgroundById(@PathVariable long backgroundId) { return backgroundStorage.retrieveBackgroundById(backgroundId);}
+
+@DeleteMapping("/api/backgrounds/{backgroundId/delete")
+public void deleteBackground(@PathVariable long backgroundId) { backgroundStorage.deleteBackground(backgroundId);}
+
+@PostMapping("api/visionboards/{visionBoardId}/addbackground")
+public void addBackgroundToVisionBoard(@PathVariable long visionBoardId, @RequestBody Background background) {
+    VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+    background.setVisionBoard(visionBoard);
+    backgroundStorage.saveBackground(background);
+}
+
 
 }
