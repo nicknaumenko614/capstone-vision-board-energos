@@ -35,4 +35,16 @@ public class QuoteController {
         quote.setVisionBoard(visionBoard);
         quoteStorage.saveQuote(quote);
     }
+
+    @PatchMapping("/api/quotes/updatequote")
+    public Quote updateQuote(@RequestBody Quote quote) {
+        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quote.getId());
+        quoteToUpdate.setQuoteIsZoomed(quote.isQuoteIsZoomed());
+        quoteToUpdate.setQuoteHasBorder(quote.isQuoteHasBorder());
+        quoteToUpdate.setQuoteBorderRadius(quote.getQuoteBorderRadius());
+        quoteToUpdate.setQuoteRotate(quote.getQuoteRotate());
+        quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
+        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
+        return quoteToUpdate;
+    }
 }
