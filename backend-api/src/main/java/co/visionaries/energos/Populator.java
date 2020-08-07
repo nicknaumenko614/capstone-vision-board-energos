@@ -30,41 +30,41 @@ public class Populator implements CommandLineRunner {
 
     public void run(String... args) throws Exception {
         Image image1 = new Image ("img1", false, "/images/gallery-images/airplane.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image2 = new Image ("img2", false, "/images/gallery-images/baby-berner1.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image3 = new Image ("img3", false, "/images/gallery-images/baby-berner2.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image4 = new Image ("img4", false, "/images/gallery-images/dollars.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image5 = new Image ("img5", false, "/images/gallery-images/family-sunset.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image6 = new Image ("img6", false, "/images/gallery-images/grad-cap.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image7 = new Image ("img7", false, "/images/gallery-images/health-is-wealth.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image8 = new Image ("img8", false, "/images/gallery-images/health.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image9 = new Image ("img9", false, "/images/gallery-images/house-pool.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image10 = new Image ("img10", false, "/images/gallery-images/luggage-beach.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image11 = new Image ("img11", false, "/images/gallery-images/mercedes.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image12 = new Image ("img12", false, "/images/gallery-images/paper-love.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image13 = new Image ("img13", false, "/images/gallery-images/pom.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image14 = new Image ("img14", false, "/images/gallery-images/running.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image15 = new Image ("img15", false, "/images/gallery-images/runningII.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image16 = new Image ("img16", false, "/images/gallery-images/success-focus-life-achievements.jpeg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image17 = new Image ("img17", false, "/images/gallery-images/wedding.jpeg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
         Image image18 = new Image ("img18", false, "/images/gallery-images/woman-and-man-hugging-on-street.jpg",
-                false, "0px", 0, false, "images-container");
+                false, "0px", 0, false, "images-container", visionBoard);
 
         imageRepo.save(image1);
         imageRepo.save(image2);
@@ -128,6 +128,8 @@ public class Populator implements CommandLineRunner {
         quoteRepo.save(quote9);
         quoteRepo.save(quote10);
         quoteRepo.save(quote11);
+
+        Text text1 = new Text()
 
     }
 
