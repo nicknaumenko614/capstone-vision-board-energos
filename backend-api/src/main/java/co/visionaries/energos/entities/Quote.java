@@ -45,7 +45,7 @@ public class Quote {
         return quoteHtmlId;
     }
 
-    public void setQuoteHtmlId(String quoteName) {
+    public void setQuoteHtmlId(String quoteHtmlId) {
         this.quoteHtmlId = quoteHtmlId;
     }
 

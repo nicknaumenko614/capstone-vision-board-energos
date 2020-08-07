@@ -49,7 +49,7 @@ public class Image {
         return imageHtmlId;
     }
 
-    public void setImageHtmlId(String imageName) {
+    public void setImageHtmlId(String imageHtmlId) {
         this.imageHtmlId = imageHtmlId;
     }
 

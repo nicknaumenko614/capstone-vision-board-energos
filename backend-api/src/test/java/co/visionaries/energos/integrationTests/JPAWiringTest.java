@@ -22,7 +22,7 @@ public class JPAWiringTest {
     public void flippedFlagComesOutOfDbTheWayItWentIn(){
 
         VisionBoard visionBoard = null;
-        Image testImage = imageRepo.save(new Image("Image1", false, "www.imagelink.com", false, "25px", 180, false, "block1", visionBoard));
+        Image testImage = imageRepo.save(new Image("Image1", false, "www.imagelink.com", false, "25%", 180, false, "block1", visionBoard));
         testImage.setImageIsFlipped(true);
         imageRepo.save(testImage);
         entityManager.flush();

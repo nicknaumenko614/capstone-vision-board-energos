@@ -10,29 +10,20 @@ public class Background {
     @Id
     @GeneratedValue
     private long id;
-    private String backgroundHtmlId;
     private String backgroundLink;
     @ManyToOne
     private VisionBoard visionBoard;
 
     protected Background() { }
 
-    public Background(String backgroundHtmlId, String backgroundLink, VisionBoard visionBoard) {
-        this.backgroundHtmlId = backgroundHtmlId;
+    public Background(String backgroundLink, VisionBoard visionBoard) {
+
         this.backgroundLink = backgroundLink;
         this.visionBoard = visionBoard;
     }
 
     public long getId() {
         return id;
-    }
-
-    public String getBackgroundHtmlId() {
-        return backgroundHtmlId;
-    }
-
-    public void setBackgroundHtmlId(String backgroundHtmlId) {
-        this.backgroundHtmlId = backgroundHtmlId;
     }
 
     public String getBackgroundLink() {

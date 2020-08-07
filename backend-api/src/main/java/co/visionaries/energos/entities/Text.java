@@ -47,6 +47,14 @@ public class Text {
         return id;
     }
 
+    public String getTextHtmlId() {
+        return textHtmlId;
+    }
+
+    public void setTextHtmlId(String textHtmlId) {
+        this.textHtmlId = textHtmlId;
+    }
+
     public String getTextContent() {
         return textContent;
     }
@@ -129,14 +137,6 @@ public class Text {
 
     public VisionBoard getVisionBoard() {
         return visionBoard;
-    }
-
-    public String getTextHtmlId() {
-        return textHtmlId;
-    }
-
-    public void setTextHtmlId(String textHtmlId) {
-        this.textHtmlId = textHtmlId;
     }
 
     public void setVisionBoard(VisionBoard visionBoard) {

@@ -21,11 +21,12 @@ public class ImageStorageTest {
         underTest = new ImageStorage(imageRepo);
     }
 
-//    @Test
-//    public void shouldBeAbleToSaveNewImage() {
-//        Image testImage = new Image("testImage", false, "www.link.com", true, "25", 0, false, "grid1", );
-//        underTest.saveImage(testImage);
-//        verify(imageRepo).save(testImage);
-//    }
+    @Test
+    public void shouldBeAbleToSaveNewImage() {
+        Image testImage = new Image("testImage", false, "www.link.com", true,
+                "25", 0, false, "grid1", visionBoard1);
+        underTest.saveImage(testImage);
+        verify(imageRepo).save(testImage);
+    }
 
 }

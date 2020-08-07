@@ -1,31 +1,26 @@
 package co.visionaries.energos.entities;
 
-import co.visionaries.energos.repositories.BackgroundRepository;
-import co.visionaries.energos.repositories.ImageRepository;
-import co.visionaries.energos.repositories.QuoteRepository;
-import co.visionaries.energos.repositories.TextRepository;
-import co.visionaries.energos.storage.ImageStorage;
-import co.visionaries.energos.storage.VisionBoardStorage;
+import co.visionaries.energos.storage.*;
 import org.springframework.stereotype.Component;
 
 @Component
 public class VisionBoardFactory {
     private VisionBoardStorage visionBoardStorage;
+    private TextStorage textStorage;
+    private QuoteStorage quoteStorage;
+    private BackgroundStorage backgroundStorage;
     private ImageStorage imageStorage;
-    private ImageRepository imageRepo;
-    private TextRepository textRepo;
-    private QuoteRepository quoteRepo;
-    private BackgroundRepository backgroundRepo;
 
-
-    public VisionBoardFactory(VisionBoardStorage visionBoardStorage, ImageStorage imageStorage, ImageRepository imageRepo, TextRepository textRepo, QuoteRepository quoteRepo, BackgroundRepository backgroundRepo) {
+    public VisionBoardFactory(VisionBoardStorage visionBoardStorage, TextStorage textStorage,
+                              QuoteStorage quoteStorage, BackgroundStorage backgroundStorage,
+                              ImageStorage imageStorage) {
         this.visionBoardStorage = visionBoardStorage;
+        this.textStorage = textStorage;
+        this.quoteStorage = quoteStorage;
+        this.backgroundStorage = backgroundStorage;
         this.imageStorage = imageStorage;
-        this.imageRepo = imageRepo;
-        this.textRepo = textRepo;
-        this.quoteRepo = quoteRepo;
-        this.backgroundRepo = backgroundRepo;
     }
+
 
     public VisionBoard createDefaultBoard(String boardName) {
         VisionBoard visionBoard = new VisionBoard(boardName, false, true, "10px", "0%",
@@ -70,22 +65,22 @@ public class VisionBoardFactory {
 
         imageStorage.saveImage(image1);
         imageStorage.saveImage(image2);
-//        imageRepo.save(image3);
-//        imageRepo.save(image4);
-//        imageRepo.save(image5);
-//        imageRepo.save(image6);
-//        imageRepo.save(image7);
-//        imageRepo.save(image8);
-//        imageRepo.save(image9);
-//        imageRepo.save(image10);
-//        imageRepo.save(image11);
-//        imageRepo.save(image12);
-//        imageRepo.save(image13);
-//        imageRepo.save(image14);
-//        imageRepo.save(image15);
-//        imageRepo.save(image16);
-//        imageRepo.save(image17);
-//        imageRepo.save(image18);
+//        imageStorage.saveImage(image3);
+//        imageStorage.saveImage(image4);
+//        imageStorage.saveImage(image5);
+//        imageStorage.saveImage(image6);
+//        imageStorage.saveImage(image7);
+//        imageStorage.saveImage(image8);
+//        imageStorage.saveImage(image9);
+//        imageStorage.saveImage(image10);
+//        imageStorage.saveImage(image11);
+//        imageStorage.saveImage(image12);
+//        imageStorage.saveImage(image13);
+//        imageStorage.saveImage(image14);
+//        imageStorage.saveImage(image15);
+//        imageStorage.saveImage(image16);
+//        imageStorage.saveImage(image17);
+//        imageStorage.saveImage(image18);
 
         Quote quote1 = new Quote("quote-img1", false, "/images/quotes/quote1.png", false, "0px",
                 0, false, "quotes-container", visionBoard);
@@ -110,17 +105,17 @@ public class VisionBoardFactory {
 //        Quote quote11 = new Quote("quote-img11", false, "/images/quotes/quote11.png", false, "0px",
 //                0, false,"quotes-container", visionBoard);
 
-        quoteRepo.save(quote1);
-        quoteRepo.save(quote2);
-//        quoteRepo.save(quote3);
-//        quoteRepo.save(quote4);
-//        quoteRepo.save(quote5);
-//        quoteRepo.save(quote6);
-//        quoteRepo.save(quote7);
-//        quoteRepo.save(quote8);
-//        quoteRepo.save(quote9);
-//        quoteRepo.save(quote10);
-//        quoteRepo.save(quote11);
+        quoteStorage.saveQuote(quote1);
+        quoteStorage.saveQuote(quote2);
+//        quoteStorage.saveQuote(quote3);
+//        quoteStorage.saveQuote(quote4);
+//        quoteStorage.saveQuote(quote5);
+//        quoteStorage.saveQuote(quote6);
+//        quoteStorage.saveQuote(quote7);
+//        quoteStorage.saveQuote(quote8);
+//        quoteStorage.saveQuote(quote9);
+//        quoteStorage.saveQuote(quote10);
+//        quoteStorage.saveQuote(quote11);
 
         Text text1 = new Text("text1", "Dream Big!", "12pt", false, "#393E41", "#393E41",
                 "Amaranth", false, false, false, "text-container", visionBoard);
@@ -139,30 +134,30 @@ public class VisionBoardFactory {
 //        Text text8 = new Text("text8", "#GOALS", "12pt", false, "#393E41", "#393E41",
 //                "Amaranth", false, false, false, "text-container", visionBoard);
 
-        textRepo.save(text1);
-        textRepo.save(text2);
-//        textRepo.save(text3);
-//        textRepo.save(text4);
-//        textRepo.save(text5);
-//        textRepo.save(text6);
-//        textRepo.save(text7);
-//        textRepo.save(text8);
+        textStorage.saveText(text1);
+        textStorage.saveText(text2);
+//        textStorage.saveText(text3);
+//        textStorage.saveText(text4);
+//        textStorage.saveText(text5);
+//        textStorage.saveText(text6);
+//        textStorage.saveText(text7);
+//        textStorage.saveText(text8);
 
-        Background background1 = new Background("background1", "./images/backgrounds/background1.jpg", visionBoard);
-        Background background2 = new Background("background2", "./images/backgrounds/background2.jpg", visionBoard);
-//        Background background3 = new Background("background3", "./images/backgrounds/background3.jpeg", visionBoard);
-//        Background background4 = new Background("background4", "./images/backgrounds/background4.jpg", visionBoard);
-//        Background background5 = new Background("background5", "./images/backgrounds/background5.jpg", visionBoard);
-//        Background background6 = new Background("background6", "./images/backgrounds/background6.jpg", visionBoard);
-//        Background background7 = new Background("background7", "./images/backgrounds/background7.jpg", visionBoard);
+        Background background1 = new Background( "./images/backgrounds/background1.jpg", visionBoard);
+        Background background2 = new Background("./images/backgrounds/background2.jpg", visionBoard);
+//        Background background3 = new Background("./images/backgrounds/background3.jpeg", visionBoard);
+//        Background background4 = new Background("./images/backgrounds/background4.jpg", visionBoard);
+//        Background background5 = new Background("./images/backgrounds/background5.jpg", visionBoard);
+//        Background background6 = new Background("./images/backgrounds/background6.jpg", visionBoard);
+//        Background background7 = new Background("./images/backgrounds/background7.jpg", visionBoard);
 
-        backgroundRepo.save(background1);
-        backgroundRepo.save(background2);
-//        backgroundRepo.save(background3);
-//        backgroundRepo.save(background4);
-//        backgroundRepo.save(background5);
-//        backgroundRepo.save(background6);
-//        backgroundRepo.save(background7);
+        backgroundStorage.saveBackground(background1);
+        backgroundStorage.saveBackground(background2);
+//        backgroundStorage.saveBackground(background3);
+//        backgroundStorage.saveBackground(background4);
+//        backgroundStorage.saveBackground(background5);
+//        backgroundStorage.saveBackground(background6);
+//        backgroundStorage.saveBackground(background7);
 
 
         return visionBoard;
