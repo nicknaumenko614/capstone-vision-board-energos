@@ -33,14 +33,14 @@ export const updateVisionBoard = async (visionboardId) => {
   ).then((response) => response.json());
 };
 
-// export const deleteVisionBoard = async (visionboardId) => {
-//   return fetch(
-//     `http://localhost:8080/api/visionboards/${visionboardId}/delete`,
-//     {
-//       method: "DELETE",
-//     }
-//   ).then((response) => response.json());
-// };
+export const deleteVisionBoard = async (visionboardId) => {
+  return fetch(
+    `http://localhost:8080/api/visionboards/${visionboardId}/delete`,
+    {
+      method: "DELETE",
+    }
+  ).then((response) => response.json());
+};
 
 export const fetchBackgrounds = async () => {
   return fetch("http://localhost:8080/api/backgrounds").then((response) =>
@@ -71,20 +71,10 @@ export const fetchImages = async () => {
 };
 
 export const postNewImage = async (visionBoardId, image) => {
-  return fetch(`http://localhost:8080/api/visionboards/${visionBoardId}/add`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(image),
-  }).then((response) => response.json());
-};
-
-export const updateImage = async (image) => {
   return fetch(
-    `http://localhost:8080/api/images/updateimage`,
+    `http://localhost:8080/api/visionboards/${visionBoardId}/addimage`,
     {
-      method: "PATCH",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -93,7 +83,17 @@ export const updateImage = async (image) => {
   ).then((response) => response.json());
 };
 
-export const deleteBackground = async (imageId) => {
+export const updateImage = async (image) => {
+  return fetch(`http://localhost:8080/api/images/updateimage`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(image),
+  }).then((response) => response.json());
+};
+
+export const deleteImage = async (imageId) => {
   return fetch(`http://localhost:8080/api/images/${imageId}/delete`, {
     method: "DELETE",
   }).then((response) => response.json());
@@ -105,21 +105,11 @@ export const fetchTexts = async () => {
   );
 };
 
-export const postNewImage = async (visionBoardId, text) => {
-  return fetch(`http://localhost:8080/api/visionboards/${visionBoardId}/add`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(text),
-  }).then((response) => response.json());
-};
-
-export const updateImage = async (text) => {
+export const postText = async (visionBoardId, text) => {
   return fetch(
-    `http://localhost:8080/api/images/updateimage`,
+    `http://localhost:8080/api/visionboards/${visionBoardId}/addtext`,
     {
-      method: "PATCH",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
@@ -128,8 +118,53 @@ export const updateImage = async (text) => {
   ).then((response) => response.json());
 };
 
-export const deleteBackground = async (textId) => {
-  return fetch(`http://localhost:8080/api/images/${textId}/delete`, {
+export const updateText = async (text) => {
+  return fetch(`http://localhost:8080/api/texts/updatetext`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(text),
+  }).then((response) => response.json());
+};
+
+export const deleteText = async (textId) => {
+  return fetch(`http://localhost:8080/api/texts/${textId}/delete`, {
+    method: "DELETE",
+  }).then((response) => response.json());
+};
+
+export const fetchQuotes = async () => {
+  return fetch("http://localhost:8080/api/quotes").then((response) =>
+    response.json()
+  );
+};
+
+export const postNewQuote = async (visionBoardId, quote) => {
+  return fetch(
+    `http://localhost:8080/api/visionboards/${visionBoardId}/addquote`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote),
+    }
+  ).then((response) => response.json());
+};
+
+export const updateQuote = async (quote) => {
+  return fetch(`http://localhost:8080/api/quotes/updatequote`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(quote),
+  }).then((response) => response.json());
+};
+
+export const deleteQuote = async (quoteId) => {
+  return fetch(`http://localhost:8080/api/quotes/${quoteId}/delete`, {
     method: "DELETE",
   }).then((response) => response.json());
 };
