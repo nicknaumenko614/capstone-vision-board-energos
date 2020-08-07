@@ -40,11 +40,11 @@ public class VisionBoardController {
     }
 
     @PatchMapping("/api/visionboards/{visionBoardId}/update")
-    public void updateVisionBoard(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+    public VisionBoard updateVisionBoard(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
         VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoard.getId());
         visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
         visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
-        visionBoardToUpdate.setBackgroundImageLink(visionBoard.getBackgroundImageLink());
+
         visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
         visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
         visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
@@ -52,6 +52,8 @@ public class VisionBoardController {
         visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
         visionBoardToUpdate.setThemeDark(visionBoard.isThemeDark());
         visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
+
+        return visionBoardToUpdate;
     }
 
 

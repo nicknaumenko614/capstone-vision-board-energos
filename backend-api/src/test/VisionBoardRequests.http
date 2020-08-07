@@ -2,29 +2,30 @@ GET http://localhost:8080/api/visionboards
 
 ###
 
-GET http://localhost:8080/api/visionboards/1
+GET http://localhost:8080/api/visionboards/10
 
 
 ###
 
-PATCH http://localhost:8080/api/images/updateimage
+PATCH http://localhost:8080/api/visionboards/10/update
 Content-Type: application/json
 
 {
-  "id": "5",
-  "imageIsZoomed": true,
-  "imageHasBorder": true,
-  "imageBorderRadius": "2%",
-  "imageRotate": 4,
-  "imageIsFlipped": true,
-  "imageParentElement": "block4",
-  "visionBoard": "presetImages"
-
+  "id": 10,
+  "hasGrid": false,
+  "gridSpacing": "100px",
+  "gridBorderRadius": "100%",
+  "gridBorderThickness": "50px",
+  "gridBorderColor": "#0000",
+  "gridBorderStyle": "dotted",
+  "backgroundImageLink": "asdf",
+  "backgroundColor": "#0000",
+  "gridTemplateName": "5"
 }
 
 ###
 
-DELETE http://localhost:8080/api/visionboards/1/delete
+DELETE http://localhost:8080/api/visionboards/2/delete
 
 ###
 
