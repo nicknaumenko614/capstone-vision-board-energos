@@ -27,5 +27,11 @@ public class TextController {
     @GetMapping("/api/text/{textId}")
     public Text getTextById(@PathVariable long textId) { return textStorage.retrieveTextById(textId);}
 
+    @DeleteMapping("/api/text/{textId}/delete")
+    public void deleteText(@PathVariable long textId){
+        textStorage.deleteText(textId);}
+
+    }
+
 
     }
