@@ -22,13 +22,11 @@ public BackgroundController(BackgroundStorage backgroundStorage, VisionBoardStor
 @GetMapping("/api/backgrounds")
 public Collection<Background> getAllBackgrounds() { return backgroundStorage.getAllBackgrounds();}
 
-@GetMapping("/api/backgrounds/{backgroundId}")
-public Background getBackgroundById(@PathVariable long backgroundId) { return backgroundStorage.retrieveBackgroundById(backgroundId);}
 
-@DeleteMapping("/api/backgrounds/{backgroundId/delete")
+@DeleteMapping("/api/backgrounds/{backgroundId}/delete")
 public void deleteBackground(@PathVariable long backgroundId) { backgroundStorage.deleteBackground(backgroundId);}
 
-@PostMapping("api/visionboards/{visionBoardId}/addbackground")
+@PostMapping("api/backgrounds/{visionBoardId}/add")
 public void addBackgroundToVisionBoard(@PathVariable long visionBoardId, @RequestBody Background background) {
     VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
     background.setVisionBoard(visionBoard);

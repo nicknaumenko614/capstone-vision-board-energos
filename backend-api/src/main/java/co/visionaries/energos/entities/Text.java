@@ -1,5 +1,7 @@
 package co.visionaries.energos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -21,6 +23,7 @@ public class Text {
     private Boolean isFontItalicized;
     private Boolean isFontUnderlined;
     private String textParentElement;
+    @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
 

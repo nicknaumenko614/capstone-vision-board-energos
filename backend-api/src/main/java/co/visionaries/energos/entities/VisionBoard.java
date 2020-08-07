@@ -20,13 +20,13 @@ public class VisionBoard {
     private String backgroundColor;
     private String gridTemplateName;
 
-    @ManyToMany
+    @OneToMany
     private Collection<Text> texts;
     @OneToMany
     private Collection<Quote> quotes;
     @OneToMany (mappedBy = "visionBoard")
     private Collection<Image> images;
-    @ManyToMany
+    @OneToMany
     private Collection<Background> backgrounds;
 
     protected VisionBoard() {

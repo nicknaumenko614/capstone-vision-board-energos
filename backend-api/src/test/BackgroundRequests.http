@@ -1,0 +1,15 @@
+GET http://localhost:8080/api/backgrounds
+
+###
+
+GET http://localhost:8080/api/backgrounds/20
+
+###
+
+POST http://localhost:8080/api/backgrounds/1/add
+Content-Type: application/json
+
+{
+    "id":1,
+    "backgroundLink": "./imedrtfhsdhsdhsdgfh1.jpg"
+  },

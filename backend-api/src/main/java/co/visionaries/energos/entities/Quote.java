@@ -1,5 +1,7 @@
 package co.visionaries.energos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,7 +20,7 @@ public class Quote {
     private int quoteRotate;
     private boolean quoteIsFlipped;
     private String quoteParentElement;
-
+    @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
 

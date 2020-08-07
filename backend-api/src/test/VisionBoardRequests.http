@@ -25,21 +25,25 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/visionboards/2/delete
+DELETE http://localhost:8080/api/visionboards/10/delete
 
 ###
 
-POST http://localhost:8080/api/images/addimage
+POST http://localhost:8080/api/visionboards/add
 Content-Type: application/json
 
 {
-  "imageName": "CrazyRussian",
-  "imageIsZoomed": false,
-  "imageLink": "/images/gallery-images/airplane.jpg",
-  "imageHasBorder": false,
-  "imageBorderRadius": "0px",
-  "imageRotate": 0,
-  "imageIsFlipped": false,
-  "imageParentElement": "images-container"
+  "id": 10,
+  "visionBoardName": "defaultBoard1",
+  "isThemeDark": false,
+  "hasGrid": false,
+  "gridSpacing": "100px",
+  "gridBorderRadius": "100%",
+  "gridBorderThickness": "50px",
+  "gridBorderColor": "#0000",
+  "gridBorderStyle": "dotted",
+  "backgroundImageLink": "asdf",
+  "backgroundColor": "#0000",
+  "gridTemplateName": "5"
 
 }

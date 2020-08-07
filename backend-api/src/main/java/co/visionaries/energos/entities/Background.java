@@ -1,5 +1,7 @@
 package co.visionaries.energos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,6 +13,7 @@ public class Background {
     @GeneratedValue
     private long id;
     private String backgroundLink;
+    @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
 
