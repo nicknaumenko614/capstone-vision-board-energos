@@ -18,8 +18,7 @@ public class TextController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-//    @GetMapping("/api/texts")
-//    public Collection<Text> getAllTexts {
-//        return textStorage.getAllTexts()
-//    }
+@GetMapping("/api/text")
+    public Collection<Text> getAllTexts(){return textStorage.getAllTexts();}
+    
 }
