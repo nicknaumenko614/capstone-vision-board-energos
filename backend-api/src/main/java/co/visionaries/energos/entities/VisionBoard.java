@@ -22,7 +22,7 @@ public class VisionBoard {
 
     @ManyToMany
     private Collection<Text> texts;
-    @ManyToMany
+    @OneToMany
     private Collection<Quote> quotes;
     @OneToMany
     private Collection<Image> images;
