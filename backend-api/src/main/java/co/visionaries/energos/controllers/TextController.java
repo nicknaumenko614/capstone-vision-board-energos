@@ -1,6 +1,7 @@
 package co.visionaries.energos.controllers;
 
 import co.visionaries.energos.entities.Text;
+import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.storage.TextStorage;
 import co.visionaries.energos.storage.VisionBoardStorage;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,13 +26,25 @@ public class TextController {
     }
 
     @GetMapping("/api/text/{textId}")
-    public Text getTextById(@PathVariable long textId) { return textStorage.retrieveTextById(textId);}
+    public Text getTextById(@PathVariable long textId) {
+        return textStorage.retrieveTextById(textId);
+    }
 
     @DeleteMapping("/api/text/{textId}/delete")
-    public void deleteText(@PathVariable long textId){
-        textStorage.deleteText(textId);}
+    public void deleteText(@PathVariable long textId) {
+        textStorage.deleteText(textId);
+    }
+
+    @PostMapping("/api/visionboards/{visionBoardId}/addtext")
+    public void addTextToVisionBoard(@PathVariable long visionBoardId, @RequestBody Text text) {
+        VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        text.setVisionBoard(visionBoard);
+        textStorage.saveText(text);
 
     }
 
 
-    }
+}
+
+
+
