@@ -2,6 +2,7 @@ package co.visionaries.energos;
 
 import co.visionaries.energos.entities.Image;
 import co.visionaries.energos.entities.Quote;
+import co.visionaries.energos.entities.Text;
 import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.repositories.ImageRepository;
 import co.visionaries.energos.repositories.QuoteRepository;
@@ -129,7 +130,31 @@ public class Populator implements CommandLineRunner {
         quoteRepo.save(quote10);
         quoteRepo.save(quote11);
 
-        Text text1 = new Text()
+        Text text1 = new Text("text1", "Dream Big!", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+        Text text2 = new Text("text2", "Be your own inspiration", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+        Text text3 = new Text("text3", "CONFIDENT", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+        Text text4 = new Text("text4", "Success is based on your drive!", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+        Text text5 = new Text("text5", "Success doesn't come to you, you go to it", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+        Text text6 = new Text("text6", "Vision Board 2020", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+        Text text7 = new Text("text7", "NAME", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+        Text text8 = new Text("text8", "#GOALS", "12pt", false, "#393E41", "#393E41",
+                "Amaranth", false, false, false, "text-container", visionBoard);
+
+        textRepo.save(text1);
+        textRepo.save(text2);
+        textRepo.save(text3);
+        textRepo.save(text4);
+        textRepo.save(text5);
+        textRepo.save(text6);
+        textRepo.save(text7);
+        textRepo.save(text8);
 
     }
 
