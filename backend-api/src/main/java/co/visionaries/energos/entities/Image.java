@@ -1,14 +1,13 @@
 package co.visionaries.energos.entities;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 public class Image {
     @Id
     @GeneratedValue
     private long id;
-    private String imageName;
+    private String imageHtmlId;
     private boolean imageIsZoomed;
     private String imageLink;
     private boolean imageHasBorder = false;
@@ -25,8 +24,9 @@ public class Image {
     protected Image() {
     }
 
-    public Image(String imageName, boolean imageIsZoomed, String imageLink, boolean imageHasBorder, String imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement) {
-        this.imageName = imageName;
+    public Image(String imageHtmlId, boolean imageIsZoomed, String imageLink, boolean imageHasBorder, String imageBorderRadius,
+                 int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
+        this.imageHtmlId = imageHtmlId;
         this.imageIsZoomed = imageIsZoomed;
         this.imageLink = imageLink;
         this.imageHasBorder = imageHasBorder;
@@ -34,6 +34,7 @@ public class Image {
         this.imageRotate = imageRotate;
         this.imageIsFlipped = imageIsFlipped;
         this.imageParentElement = imageParentElement;
+        this.visionBoard = visionBoard;
 
     }
 
@@ -41,12 +42,12 @@ public class Image {
         return id;
     }
 
-    public String getImageName() {
-        return imageName;
+    public String getImageHtmlId() {
+        return imageHtmlId;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public void setImageHtmlId(String imageName) {
+        this.imageHtmlId = imageHtmlId;
     }
 
     public boolean isImageIsZoomed() {
