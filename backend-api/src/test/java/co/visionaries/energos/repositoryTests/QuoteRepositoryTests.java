@@ -26,12 +26,12 @@ public class QuoteRepositoryTests {
         Quote testQuote = new Quote("testQuote", false, "www.quote.com", true, "25", 50, true, "block1", visionBoard1);
         quoteRepo.save(testQuote);
         String newQuoteName = "newTestQuote";
-        testQuote.setQuoteName(newQuoteName);
+        testQuote.setQuoteHtmlId(newQuoteName);
         quoteRepo.save(testQuote);
         entityManager.flush();
         entityManager.clear();
 
         Quote retrievedQuote = quoteRepo.findById(testQuote.getId()).get();
-        assertThat(retrievedQuote.getQuoteName()).isEqualTo(newQuoteName);
+        assertThat(retrievedQuote.getQuoteHtmlId()).isEqualTo(newQuoteName);
     }
 }

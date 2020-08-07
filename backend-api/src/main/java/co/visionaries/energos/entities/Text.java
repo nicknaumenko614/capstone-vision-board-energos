@@ -131,6 +131,14 @@ public class Text {
         return visionBoard;
     }
 
+    public String getTextHtmlId() {
+        return textHtmlId;
+    }
+
+    public void setTextHtmlId(String textHtmlId) {
+        this.textHtmlId = textHtmlId;
+    }
+
     public void setVisionBoard(VisionBoard visionBoard) {
         this.visionBoard = visionBoard;
     }

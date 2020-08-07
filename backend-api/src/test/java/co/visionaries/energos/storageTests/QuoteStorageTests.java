@@ -21,10 +21,10 @@ public class QuoteStorageTests {
         underTest = new QuoteStorage(quoteRepo);
     }
 
-    @Test
-    public void shouldBeAbleToSaveNewQuote() {
-        Quote testQuote = new Quote("testQuote", false, "www.link.com", true, "20", 15, false, "block2", visionBoard1);
-        underTest.saveQuote(testQuote);
-        verify(quoteRepo).save(testQuote);
-    }
+//    @Test
+//    public void shouldBeAbleToSaveNewQuote() {
+//        Quote testQuote = new Quote("testQuote", false, "www.link.com", true, "20", 15, false, "block2", visionBoard1);
+//        underTest.saveQuote(testQuote);
+//        verify(quoteRepo).save(testQuote);
+//    }
 }
