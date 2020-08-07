@@ -25,5 +25,8 @@ public class QuoteController {
     @GetMapping("/api/quotes/{quoteId}")
     public Quote getQuoteById(@PathVariable long quoteId){ return quoteStorage.retrieveQuoteById(quoteId);}
 
-
+    @DeleteMapping("/api/quotes/{quoteId}/delete")
+    public void deleteQuote(@PathVariable long quoteId) {
+        quoteStorage.deleteQuote(quoteId);
+    }
 }

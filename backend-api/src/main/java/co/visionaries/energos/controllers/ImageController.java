@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-public class ImageController {
+public class
+ImageController {
     ImageStorage imageStorage;
     VisionBoardStorage visionBoardStorage;
 
