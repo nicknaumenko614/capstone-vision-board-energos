@@ -4,10 +4,7 @@ import co.visionaries.energos.entities.Text;
 import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.storage.TextStorage;
 import co.visionaries.energos.storage.VisionBoardStorage;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -41,7 +38,6 @@ public class TextController {
         VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         text.setVisionBoard(visionBoard);
         textStorage.saveText(text);
-
     }
 
 
