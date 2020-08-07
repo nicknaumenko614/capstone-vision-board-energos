@@ -58,11 +58,43 @@ export const postNewBackgrounds = async (background) => {
   }).then((response) => response.json());
 };
 
-export const deleteBackground = async (background) => {
-    return fetch(
-      `http://localhost:8080/api/visionboards/${background}/delete`,
-      {
-        method: "DELETE",
-      }
-    ).then((response) => response.json());
-  };
+export const deleteBackground = async (backgroundId) => {
+  return fetch(`http://localhost:8080/api/backgrounds/${backgroundId}/delete`, {
+    method: "DELETE",
+  }).then((response) => response.json());
+};
+
+export const fetchImages = async () => {
+  return fetch("http://localhost:8080/api/images").then((response) =>
+    response.json()
+  );
+};
+
+export const postNewImage = async (visionBoardId, image) => {
+  return fetch(`http://localhost:8080/api/visionboards/${visionBoardId}/add`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(image),
+  }).then((response) => response.json());
+};
+
+export const updateImage = async (image) => {
+  return fetch(
+    `http://localhost:8080/api/images/updateimage`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(image),
+    }
+  ).then((response) => response.json());
+};
+
+export const deleteBackground = async (imageId) => {
+  return fetch(`http://localhost:8080/api/images/${imageId}/delete`, {
+    method: "DELETE",
+  }).then((response) => response.json());
+};
