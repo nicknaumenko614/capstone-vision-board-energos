@@ -1,5 +1,7 @@
 package co.visionaries.energos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,7 @@ public class Image {
     private boolean imageIsFlipped = false;
     private String imageParentElement;
 
+    @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
 

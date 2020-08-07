@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/images/21/delete
+DELETE http://localhost:8080/api/images/2/delete
 
 ###
 
