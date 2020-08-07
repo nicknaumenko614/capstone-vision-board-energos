@@ -1,6 +1,7 @@
 package co.visionaries.energos;
 
 import co.visionaries.energos.entities.Image;
+import co.visionaries.energos.entities.Quote;
 import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.repositories.ImageRepository;
 import co.visionaries.energos.repositories.QuoteRepository;
@@ -93,6 +94,41 @@ public class Populator implements CommandLineRunner {
                 "#F9FCFF", "0", presetImages);
 
         visionBoardRepo.save(visionBoard1);
+
+        Quote quote1 = new Quote("quote-img1", false, "/images/quotes/quote1.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote2 = new Quote("quote-img2", false, "/images/quotes/quote2.jpg", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote3 = new Quote("quote-img3", false, "/images/quotes/quote3.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote4 = new Quote("quote-img4", false, "/images/quotes/quote4.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote5 = new Quote("quote-img5", false, "/images/quotes/quote5.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote6 = new Quote("quote-img6", false, "/images/quotes/quote6.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote7 = new Quote("quote-img7", false, "/images/quotes/quote7.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote8 = new Quote("quote-img8", false, "/images/quotes/quote8.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote9 = new Quote("quote-img9", false, "/images/quotes/quote9.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote10 = new Quote("quote-img10", false, "/images/quotes/quote10.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+        Quote quote11 = new Quote("quote-img11", false, "/images/quotes/quote11.png", false, "0px",
+                0, false,"quotes-container", visionBoard);
+
+        quoteRepo.save(quote1);
+        quoteRepo.save(quote2);
+        quoteRepo.save(quote3);
+        quoteRepo.save(quote4);
+        quoteRepo.save(quote5);
+        quoteRepo.save(quote6);
+        quoteRepo.save(quote7);
+        quoteRepo.save(quote8);
+        quoteRepo.save(quote9);
+        quoteRepo.save(quote10);
+        quoteRepo.save(quote11);
 
     }
 
