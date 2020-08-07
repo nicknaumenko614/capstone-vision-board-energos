@@ -10,8 +10,18 @@ public class VisionBoardFactory {
     }
 
     public VisionBoard createDefaultBoard() {
-        VisionBoard visionBoard = new VisionBoard("Default", false, true, "10px", "0%", "2px", "#393E41", "solid", "", "#F9FCFF"
+        VisionBoard visionBoard = new VisionBoard("Default", false, true, "10px", "0%",
+                "2px", "#393E41", "solid", "", "#F9FCFF", "0");
+
+
+
+        
+
+
+        return visionBoard;
     }
+
+
 }
 
 

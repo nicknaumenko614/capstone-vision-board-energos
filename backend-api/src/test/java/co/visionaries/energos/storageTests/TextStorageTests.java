@@ -23,7 +23,7 @@ public class TextStorageTests {
 
     @Test
     public void shouldBeAbleToSaveNewText() {
-        Text testText = new Text("Sample Text", "12", true, "#00000", "#34ffre", "Times", false, false, false, "block2", visionBoard1);
+        Text testText = new Text(, "Sample Text", "12", true, "#00000", "#34ffre", "Times", false, false, false, "block2", visionBoard1, );
         underTest.saveText(testText);
         verify(textRepo).save(testText);
     }

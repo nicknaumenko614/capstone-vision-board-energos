@@ -34,7 +34,7 @@ public class VisionBoard {
 
     public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing,
                        String gridBorderRadius, String gridBorderThickness, String gridBorderColor,
-                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Image> images) {
+                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName) {
         this.visionBoardName = visionBoardName;
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
@@ -46,7 +46,6 @@ public class VisionBoard {
         this.backgroundImageLink = backgroundImageLink;
         this.backgroundColor = backgroundColor;
         this.gridTemplateName = gridTemplateName;
-        this.images = images;
     }
 
     public String getVisionBoardName() {

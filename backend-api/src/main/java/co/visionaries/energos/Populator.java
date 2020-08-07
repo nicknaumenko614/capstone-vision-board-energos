@@ -12,7 +12,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -91,7 +90,7 @@ public class Populator implements CommandLineRunner {
 
         VisionBoard visionBoard1 = new VisionBoard("Default", false, true, "10px",
                 "0%", "2px", "#393E41", "solid", "",
-                "#F9FCFF", "0", presetImages);
+                "#F9FCFF", "0");
 
         visionBoardRepo.save(visionBoard1);
 

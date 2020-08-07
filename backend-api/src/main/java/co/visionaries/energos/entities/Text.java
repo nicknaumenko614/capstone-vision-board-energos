@@ -10,6 +10,7 @@ public class Text {
     @Id
     @GeneratedValue
     private long id;
+    private String textHtmlId;
     private String textContent;
     private String fontSize;
     private Boolean hasFontShadow;
@@ -26,7 +27,8 @@ public class Text {
     protected Text() {
     }
 
-    public Text(String textContent, String fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
+    public Text(String textHtmlId, String textContent, String fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
+        this.textHtmlId = textHtmlId;
         this.textContent = textContent;
         this.fontSize = fontSize;
         this.hasFontShadow = hasFontShadow;
@@ -38,6 +40,7 @@ public class Text {
         this.isFontUnderlined = isFontUnderlined;
         this.textParentElement = textParentElement;
         this.visionBoard = visionBoard;
+
     }
 
     public long getId() {
