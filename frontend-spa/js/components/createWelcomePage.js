@@ -14,17 +14,15 @@ export const createWelcomePage = (visionBoards) => {
       </div>
     `;
 
-  const main = document.createElement("main");
   const welcomeDesignBoard = document.createElement("div");
   welcomeDesignBoard.classList.add("welcome-design-board");
   visionBoards.forEach((visionBoard) => {
     const welcomeBox = document.createElement("div");
     welcomeBox.classList.add("welcome-box");
     welcomeDesignBoard.appendChild(welcomeBox);
-    main.appendChild(welcomeDesignBoard);
   });
 
-    container.append(img, header, main);  
+    container.append(img, header, welcomeDesignBoard);  
 
     return container;
 };
