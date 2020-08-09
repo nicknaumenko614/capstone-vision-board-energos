@@ -5,27 +5,29 @@ import { addDragAndDropEventListeners } from "./drag-and-drop.js";
 import { setupDefaultBoard } from "./components/renderDesignBoards.js";
 import { fetchVisionBoards } from "./apiHelper.js";
 
-export const renderPage = (visionBoards) => {
-    const body = document.body;
-    
-}
+export const renderPage = () => {
+  const body = document.body;
 
+  clearElementChildren(body);
+};
 
+export const clearElementChildren = (element) => {
+  while (element.firstChild) {
+    element.firstChild.remove();
+  }
+};
 
-fetchVisionBoards().then((visionBoards) => {
-    renderPage(visionBoards);
-})
+renderPage();
 
-
-
-
+// fetchVisionBoards().then((visionBoards) => {
+//   renderPage(visionBoards);
+// });
 
 // setupDefaultBoard();
 // addSideBarEventListeners();
 // addEventListenersToTemplates();
 // addSettingsEventListeners();
 // addDragAndDropEventListeners();
-
 
 // how to get height for elements to send in JSON (API)
 // let el = document.querySelector(".my-element");
