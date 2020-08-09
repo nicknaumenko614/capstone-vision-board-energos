@@ -23,6 +23,7 @@ public class Text {
     private Boolean isFontItalicized;
     private Boolean isFontUnderlined;
     private String textParentElement;
+
     @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;

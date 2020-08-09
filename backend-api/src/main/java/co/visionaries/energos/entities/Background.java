@@ -13,6 +13,7 @@ public class Background {
     @GeneratedValue
     private long id;
     private String backgroundLink;
+
     @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;

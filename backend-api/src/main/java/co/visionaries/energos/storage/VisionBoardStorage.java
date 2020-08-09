@@ -19,6 +19,10 @@ public class VisionBoardStorage {
         return visionBoardRepo.findById(visionBoardId).get();
     }
 
+//    public VisionBoard retrieveVisionBoardByName (String boardName) {
+//        return visionBoardRepo.fin
+//    }
+
     public VisionBoard saveVisionBoard(VisionBoard visionBoard) {
         return visionBoardRepo.save(visionBoard);
     }

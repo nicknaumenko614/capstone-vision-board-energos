@@ -2,48 +2,29 @@ GET http://localhost:8080/api/visionboards
 
 ###
 
-GET http://localhost:8080/api/visionboards/10
+GET http://localhost:8080/api/visionboards/1
 
 
 ###
 
-PATCH http://localhost:8080/api/visionboards/10/update
+POST http://localhost:8080/api/visionboards/add/john1
+
+
+###
+
+PATCH http://localhost:8080/api/visionboards/1/update
 Content-Type: application/json
 
 {
-  "id": 10,
+
+
   "hasGrid": false,
   "gridSpacing": "100px",
   "gridBorderRadius": "100%",
   "gridBorderThickness": "50px",
-  "gridBorderColor": "#0000",
+  "gridBorderColor": "#9999",
   "gridBorderStyle": "dotted",
   "backgroundImageLink": "asdf",
   "backgroundColor": "#0000",
   "gridTemplateName": "5"
-}
-
-###
-
-DELETE http://localhost:8080/api/visionboards/10/delete
-
-###
-
-POST http://localhost:8080/api/visionboards/add
-Content-Type: application/json
-
-{
-  "id": 10,
-  "visionBoardName": "defaultBoard1",
-  "isThemeDark": false,
-  "hasGrid": false,
-  "gridSpacing": "100px",
-  "gridBorderRadius": "100%",
-  "gridBorderThickness": "50px",
-  "gridBorderColor": "#0000",
-  "gridBorderStyle": "dotted",
-  "backgroundImageLink": "asdf",
-  "backgroundColor": "#0000",
-  "gridTemplateName": "5"
-
 }

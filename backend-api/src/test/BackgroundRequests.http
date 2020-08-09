@@ -2,7 +2,7 @@ GET http://localhost:8080/api/backgrounds
 
 ###
 
-GET http://localhost:8080/api/backgrounds/20
+GET http://localhost:8080/api/backgrounds/27
 
 ###
 
@@ -12,4 +12,4 @@ Content-Type: application/json
 {
     "id":1,
     "backgroundLink": "./imedrtfhsdhsdhsdgfh1.jpg"
-  },
+  }

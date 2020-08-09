@@ -20,6 +20,7 @@ public class Quote {
     private int quoteRotate;
     private boolean quoteIsFlipped;
     private String quoteParentElement;
+
     @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
