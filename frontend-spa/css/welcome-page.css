@@ -70,7 +70,7 @@
   width: 400px;
   height: 400px;
   margin: 20px;
-  font-size: 100pt;
+  font-size: 150pt;
   border: 2px solid var(--color1);
   line-height: 400px;
   text-align: center;
@@ -82,11 +82,16 @@
   height: 100%;
   width: 100%;
   cursor: pointer;
+  text-shadow: 0 0 5px var(--color5), 0 0 5px var(--color5),
+    0 0 5px var(--color5), 0 0 5px var(--color5), 0 0 5px var(--color5),
+    0 0 5px var(--color5), 0 0 5px var(--color5), 0 0 5px var(--color5),
+    0 0 5px var(--color5), 0 0 5px var(--color5);
 }
 
 .add-vision-board .add-form {
   font-size: 20pt;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 20pt;
   position: absolute;
   left: 50%;
