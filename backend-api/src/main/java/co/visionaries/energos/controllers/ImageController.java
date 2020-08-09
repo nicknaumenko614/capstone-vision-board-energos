@@ -52,13 +52,8 @@ ImageController {
         imageToUpdate.setImageRotate(image.getImageRotate());
         imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
         imageToUpdate.setImageParentElement(image.getImageParentElement());
+        imageStorage.saveImage(imageToUpdate);
         return imageToUpdate;
     }
 
 }
-//    @PatchMapping("/api/artists/{artistId}/album")
-//    public Artist addAlbumToArtist(@PathVariable long artistId, @RequestBody Album album) {
-//        Artist artist = artistStorage.retrieveById(artistId);
-//        Album albumToAdd = new Album(album.getAlbumTitle(), album.getImagePath(), artist, album.getReleaseYear(), album.getRecordLabel());
-//        albumStorage.save(albumToAdd);
-//        return albumToAdd.getArtist();
