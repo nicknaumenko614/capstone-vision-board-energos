@@ -9,10 +9,10 @@ import { createWelcomePage } from "./components/createWelcomePage.js";
 const fakeArray = ["Kendyl's Vision Board", 1, 2, 3];
 
 export const renderPage = () => {
-  const body = document.body;
+  const containerBody = document.querySelector(".container-body");
 
-  clearElementChildren(body);
-  body.appendChild(createWelcomePage(fakeArray));
+  clearElementChildren(containerBody);
+  containerBody.appendChild(createWelcomePage(fakeArray));
 };
 
 export const clearElementChildren = (element) => {

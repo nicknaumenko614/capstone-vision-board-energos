@@ -1,5 +1,3 @@
-import { renderPage } from "../app";
-
 let formShown = "false";
 
 export const createWelcomePage = (visionBoards) => {
