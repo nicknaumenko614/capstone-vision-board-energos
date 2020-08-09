@@ -54,6 +54,19 @@
     width: 400px;
     height: 400px;
     margin: 20px;
+    position: relative;
+    background-image: url(/images/LemonLimeVBThumbnailBackground.png);
+    background-size: cover;
+}
+
+.welcome-box span {
+  position: absolute;
+  font-size: 30pt;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .add-vision-board {
