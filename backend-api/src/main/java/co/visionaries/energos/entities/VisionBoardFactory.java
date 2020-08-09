@@ -25,7 +25,9 @@ public class VisionBoardFactory {
     public VisionBoard createDefaultBoard(String boardName) {
         VisionBoard visionBoard = new VisionBoard(boardName, false, true, "10px", "0%",
                 "2px", "#393E41", "solid", "", "#F9FCFF", "0");
+
         visionBoardStorage.saveVisionBoard(visionBoard);
+
         Image image1 = new Image("img1", false, "/images/gallery-images/airplane.jpg",
                 false, "0px", 0, false, "images-container", visionBoard);
         Image image2 = new Image("img2", false, "/images/gallery-images/baby-berner1.jpg",
@@ -143,7 +145,7 @@ public class VisionBoardFactory {
 //        textStorage.saveText(text7);
 //        textStorage.saveText(text8);
 
-        Background background1 = new Background( "./images/backgrounds/background1.jpg", visionBoard);
+        Background background1 = new Background("./images/backgrounds/background1.jpg", visionBoard);
         Background background2 = new Background("./images/backgrounds/background2.jpg", visionBoard);
 //        Background background3 = new Background("./images/backgrounds/background3.jpeg", visionBoard);
 //        Background background4 = new Background("./images/backgrounds/background4.jpg", visionBoard);

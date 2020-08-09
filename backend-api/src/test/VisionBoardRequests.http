@@ -2,12 +2,12 @@ GET http://localhost:8080/api/visionboards
 
 ###
 
-GET http://localhost:8080/api/visionboards/1
+GET http://localhost:8080/api/visionboards/28
 
 
 ###
 
-POST http://localhost:8080/api/visionboards/add/john1
+POST http://localhost:8080/api/visionboards/add/johnsdadd
 
 
 ###

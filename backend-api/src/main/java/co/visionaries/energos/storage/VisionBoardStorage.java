@@ -6,6 +6,7 @@ import co.visionaries.energos.repositories.VisionBoardRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class VisionBoardStorage {
@@ -19,9 +20,12 @@ public class VisionBoardStorage {
         return visionBoardRepo.findById(visionBoardId).get();
     }
 
-//    public VisionBoard retrieveVisionBoardByName (String boardName) {
-//        return visionBoardRepo.fin
-//    }
+    public VisionBoard retrieveVisionBoardByName(String boardName) {
+
+        Optional<VisionBoard> visionBoardOptional = visionBoardRepo.findByVisionBoardName(boardName);
+        VisionBoard visionBoard = visionBoardOptional.get();
+        return visionBoard;
+    }
 
     public VisionBoard saveVisionBoard(VisionBoard visionBoard) {
         return visionBoardRepo.save(visionBoard);

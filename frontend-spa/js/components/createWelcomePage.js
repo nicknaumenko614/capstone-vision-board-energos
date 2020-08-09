@@ -33,6 +33,7 @@ export const createWelcomePage = (visionBoards) => {
   addVisionBoardDiv.classList.add("add-vision-board");
 
   const plusSign = document.createElement("div");
+  plusSign.classList.add("plus-sign");
   plusSign.innerText = "+";
   addVisionBoardDiv.appendChild(plusSign);
   addVisionBoardDiv.addEventListener("click", () => {

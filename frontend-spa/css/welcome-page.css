@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
 
 :root {
-    --color1: #393e41;
-    --color1a: #393e4177;
-    --color2: #b2ebe0;
-    --color2a: #b2ebe0aa;
-    --color3: #f9fcff;
-    --color4: #f3d1dc;
-    --color5: #e7c874;
-    --color5a: #e7c87477;
-    --color6: #0162b7;
-    --color6a: #0162b767;
-  }
+  --color1: #393e41;
+  --color1a: #393e4177;
+  --color2: #b2ebe0;
+  --color2a: #b2ebe0aa;
+  --color3: #f9fcff;
+  --color4: #f3d1dc;
+  --color5: #e7c874;
+  --color5a: #e7c87477;
+  --color6: #0162b7;
+  --color6a: #0162b767;
+}
 
 .logo-image {
   position: fixed;
@@ -34,23 +34,23 @@
 }
 
 .welcome-design-board {
-    display: flex;
-    flex-wrap: wrap;
-    left: 18%;
-    padding: 10px;
-    position: absolute;
-    margin-top: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  left: 18%;
+  padding: 10px;
+  position: absolute;
+  margin-top: 15%;
 }
 
 .welcome-box {
-    background-color: var(--color6);
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-    position: relative;
-    background-image: url(/images/LemonLimeVBThumbnailBackground.png);
-    background-size: cover;
-    cursor: pointer;
+  background-color: var(--color6);
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  position: relative;
+  background-image: url(/images/LemonLimeVBThumbnailBackground.png);
+  background-size: cover;
+  cursor: pointer;
 }
 
 .welcome-box span {
@@ -67,14 +67,16 @@
 
 .add-vision-board {
   background-color: var(--color3);
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-    font-size: 100pt;
-    border: 2px solid var(--color1);
-    line-height: 400px;
-    text-align: center;
-    color: var(--color1);
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  font-size: 100pt;
+  border: 2px solid var(--color1);
+  line-height: 400px;
+  text-align: center;
+  color: var(--color1);
 }
 
-
+.add-vision-board .plus-sign {
+  cursor: pointer;
+}
