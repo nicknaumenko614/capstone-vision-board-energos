@@ -18,6 +18,23 @@ export const clearElementChildren = (element) => {
 };
 
 renderPage();
+{/* <body>
+    <img class="logo-image" src="./images/logo.png" alt="Energos Logo" />
+    <header>
+      <div class="welcome-design">
+        <h1>Welcome!</h1>
+        <h2>Choose Your Vision Board</h2>
+      </div>
+    </header>
+    <main>
+      <div class="welcome-design-board">
+        <div class="welcome-row"></div>
+        <div class="welcome-box"></div>
+        <div class="welcome-box"></div>
+        <div class="welcome-box"></div>
+      </div>
+    </main>
+  </body> */}
 
 // fetchVisionBoards().then((visionBoards) => {
 //   renderPage(visionBoards);
