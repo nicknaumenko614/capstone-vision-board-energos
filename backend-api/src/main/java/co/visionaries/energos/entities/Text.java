@@ -1,5 +1,7 @@
 package co.visionaries.energos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +12,7 @@ public class Text {
     @Id
     @GeneratedValue
     private long id;
+    private String textHtmlId;
     private String textContent;
     private String fontSize;
     private Boolean hasFontShadow;
@@ -20,13 +23,16 @@ public class Text {
     private Boolean isFontItalicized;
     private Boolean isFontUnderlined;
     private String textParentElement;
+
+    @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
 
     protected Text() {
     }
 
-    public Text(String textContent, String fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
+    public Text(String textHtmlId, String textContent, String fontSize, Boolean hasFontShadow, String fontShadowColor, String fontColor, String fontFamily, Boolean isFontBold, Boolean isFontItalicized, Boolean isFontUnderlined, String textParentElement, VisionBoard visionBoard) {
+        this.textHtmlId = textHtmlId;
         this.textContent = textContent;
         this.fontSize = fontSize;
         this.hasFontShadow = hasFontShadow;
@@ -38,10 +44,19 @@ public class Text {
         this.isFontUnderlined = isFontUnderlined;
         this.textParentElement = textParentElement;
         this.visionBoard = visionBoard;
+
     }
 
     public long getId() {
         return id;
+    }
+
+    public String getTextHtmlId() {
+        return textHtmlId;
+    }
+
+    public void setTextHtmlId(String textHtmlId) {
+        this.textHtmlId = textHtmlId;
     }
 
     public String getTextContent() {

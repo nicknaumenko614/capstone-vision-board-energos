@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-public class ImageController {
+public class
+ImageController {
     ImageStorage imageStorage;
     VisionBoardStorage visionBoardStorage;
 
@@ -18,22 +19,22 @@ public class ImageController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping()
+    @GetMapping("/api/images")
     public Collection<Image> getAllImages() {
         return imageStorage.getAllImages();
     }
 
-    @GetMapping()
+    @GetMapping("/api/images/{imageId}")
     public Image getImageById(@PathVariable long imageId) {
         return imageStorage.retrieveImageById(imageId);
     }
 
-    @DeleteMapping()
+    @DeleteMapping("/api/images/{imageId}/delete")
     public void deleteImage(@PathVariable long imageId) {
         imageStorage.deleteImage(imageId);
     }
 
-    @PostMapping()
+    @PostMapping("/api/visionboards/{visionBoardId}/addimage")
     public void addImageToVisionBoard(@PathVariable long visionBoardId, @RequestBody Image image) {
         VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         image.setVisionBoard(visionBoard);
@@ -42,23 +43,17 @@ public class ImageController {
         imageStorage.saveImage(image);
     }
 
-    @PatchMapping
-    public void updateImage (@PathVariable long visionBoardId, @RequestBody Image image) {
+    @PatchMapping("/api/images/updateimage")
+    public Image updateImage (@RequestBody Image image) {
         Image imageToUpdate = imageStorage.retrieveImageById(image.getId());
         imageToUpdate.setImageIsZoomed(image.isImageIsZoomed());
-        imageToUpdate.setImageLink(image.getImageLink());
         imageToUpdate.setImageHasBorder(image.isImageHasBorder());
         imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
         imageToUpdate.setImageRotate(image.getImageRotate());
         imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
         imageToUpdate.setImageParentElement(image.getImageParentElement());
-        imageToUpdate.setVisionBoard(image.getVisionBoard());
+        imageStorage.saveImage(imageToUpdate);
+        return imageToUpdate;
     }
 
 }
-//    @PatchMapping("/api/artists/{artistId}/album")
-//    public Artist addAlbumToArtist(@PathVariable long artistId, @RequestBody Album album) {
-//        Artist artist = artistStorage.retrieveById(artistId);
-//        Album albumToAdd = new Album(album.getAlbumTitle(), album.getImagePath(), artist, album.getReleaseYear(), album.getRecordLabel());
-//        albumStorage.save(albumToAdd);
-//        return albumToAdd.getArtist();

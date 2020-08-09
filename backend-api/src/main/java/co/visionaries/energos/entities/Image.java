@@ -1,16 +1,15 @@
 package co.visionaries.energos.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 
 @Entity
 public class Image {
     @Id
     @GeneratedValue
     private long id;
-    private String imageName;
+    private String imageHtmlId;
     private boolean imageIsZoomed;
     private String imageLink;
     private boolean imageHasBorder = false;
@@ -18,6 +17,8 @@ public class Image {
     private int imageRotate;
     private boolean imageIsFlipped = false;
     private String imageParentElement;
+
+    @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
 
@@ -26,8 +27,9 @@ public class Image {
     protected Image() {
     }
 
-    public Image(String imageName, boolean imageIsZoomed, String imageLink, boolean imageHasBorder, String imageBorderRadius, int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
-        this.imageName = imageName;
+    public Image(String imageHtmlId, boolean imageIsZoomed, String imageLink, boolean imageHasBorder, String imageBorderRadius,
+                 int imageRotate, boolean imageIsFlipped, String imageParentElement, VisionBoard visionBoard) {
+        this.imageHtmlId = imageHtmlId;
         this.imageIsZoomed = imageIsZoomed;
         this.imageLink = imageLink;
         this.imageHasBorder = imageHasBorder;
@@ -36,18 +38,19 @@ public class Image {
         this.imageIsFlipped = imageIsFlipped;
         this.imageParentElement = imageParentElement;
         this.visionBoard = visionBoard;
+
     }
 
     public long getId() {
         return id;
     }
 
-    public String getImageName() {
-        return imageName;
+    public String getImageHtmlId() {
+        return imageHtmlId;
     }
 
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
+    public void setImageHtmlId(String imageHtmlId) {
+        this.imageHtmlId = imageHtmlId;
     }
 
     public boolean isImageIsZoomed() {
