@@ -36,8 +36,10 @@ export const createWelcomePage = (visionBoards) => {
   plusSign.classList.add("plus-sign");
   plusSign.innerText = "+";
   addVisionBoardDiv.appendChild(plusSign);
+  const form = createAddVisionBoardForm();
+  addVisionBoardDiv.appendChild(form);
   addVisionBoardDiv.addEventListener("click", () => {
-    renderAddVisionBoardForm(addVisionBoardDiv);
+    renderAddVisionBoardForm(plusSign, form);
   })
   welcomeDesignBoard.appendChild(addVisionBoardDiv);
 
@@ -46,10 +48,26 @@ export const createWelcomePage = (visionBoards) => {
     return container;
 };
 
-function renderAddVisionBoardForm(addVisionBoardDiv){
-    addVisionBoardDiv.innerHTML = `
-    <label>Vision Board Name</label>
-    `
+function renderAddVisionBoardForm(plusSign, addNewVisionBoardForm){
+    plusSign.style.display = "none";
+    addNewVisionBoardForm.style.display = "block";
+}
+
+function createAddVisionBoardForm(){
+  const addNewVisionBoardForm = document.createElement("div");
+  addNewVisionBoardForm.classList.add("add-form");
+  addNewVisionBoardForm.style.display = "none";
+  const label = document.createElement("label");
+  label.innerText = "Enter Your Name:";
+  const input = document.createElement("input");
+  input.type = "text";
+  input.required = "true";
+  input.classList.add("vision-board-name");
+  const button = document.createElement("button");
+  button.innerText = "Submit";
+  addNewVisionBoardForm.append(label, input, button);
+
+  return addNewVisionBoardForm;
 }
 
 

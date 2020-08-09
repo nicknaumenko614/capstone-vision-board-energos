@@ -75,8 +75,42 @@
   line-height: 400px;
   text-align: center;
   color: var(--color1);
+  position: relative;
 }
 
 .add-vision-board .plus-sign {
+  height: 100%;
+  width: 100%;
   cursor: pointer;
+}
+
+.add-vision-board .add-form {
+  font-size: 20pt;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  line-height: 20pt;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.add-vision-board input {
+  display: block;
+  width: 100%;
+}
+
+.add-vision-board input {
+  margin: 25px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color1);
+  font-size: 20pt;
+  outline: none;
+  text-align: center;
+}
+
+.add-vision-board button {
+  padding: 5px 15px;
+  font-size: 15pt;
 }
