@@ -1,0 +1,18 @@
+GET http://localhost:8080/api/backgrounds
+
+###
+
+GET http://localhost:8080/api/backgrounds/27
+
+###
+
+POST http://localhost:8080/api/backgrounds/1/add
+Content-Type: application/json
+
+{
+    "backgroundLink": "./imedrtfhsdhsdhsdgfh1.jpg"
+  }
+
+###
+
+DELETE http://localhost:8080/api/backgrounds/8/delete

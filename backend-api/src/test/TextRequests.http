@@ -1,0 +1,43 @@
+GET http://localhost:8080/api/texts
+
+###
+
+GET http://localhost:8080/api/texts/20
+
+
+###
+
+PATCH http://localhost:8080/api/texts/updatetext
+Content-Type: application/json
+
+{
+  "id": "2",
+  "imageIsZoomed": true,
+  "imageHasBorder": true,
+  "imageBorderRadius": "2%",
+  "imageRotate": 4,
+  "imageIsFlipped": true,
+  "imageParentElement": "block4"
+
+}
+
+###
+
+DELETE http://localhost:8080/api/images/21/delete
+
+###
+
+POST http://localhost:8080/api/visionboards/1/addimage
+Content-Type: application/json
+
+{
+  "imageHtmlId": "CrazyRussian",
+  "imageIsZoomed": false,
+  "imageLink": "/images/gallery-images/airplane.jpg",
+  "imageHasBorder": false,
+  "imageBorderRadius": "0px",
+  "imageRotate": 0,
+  "imageIsFlipped": false,
+  "imageParentElement": "images-container"
+
+}

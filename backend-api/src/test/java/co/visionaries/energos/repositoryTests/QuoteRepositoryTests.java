@@ -23,15 +23,15 @@ public class QuoteRepositoryTests {
 
     @Test
     public void saveShouldBeAbleToUpdateQuoteAttributes() {
-        Quote testQuote = new Quote("testQuote", false, "www.quote.com", true, "25", 50, true, "block1", visionBoard1);
+        Quote testQuote = new Quote("testQuote", false, "www.quote.com", true, "25%", 50, true, "block1", visionBoard1);
         quoteRepo.save(testQuote);
-        String newQuoteName = "newTestQuote";
-        testQuote.setQuoteName(newQuoteName);
+        String newQuoteLinkName = "newQuoteLink";
+        testQuote.setQuoteLink(newQuoteLinkName);
         quoteRepo.save(testQuote);
         entityManager.flush();
         entityManager.clear();
 
         Quote retrievedQuote = quoteRepo.findById(testQuote.getId()).get();
-        assertThat(retrievedQuote.getQuoteName()).isEqualTo(newQuoteName);
+        assertThat(retrievedQuote.getQuoteLink()).isEqualTo(newQuoteLinkName);
     }
 }

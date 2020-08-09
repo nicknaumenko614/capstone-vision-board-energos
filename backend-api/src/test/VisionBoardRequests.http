@@ -1,0 +1,30 @@
+GET http://localhost:8080/api/visionboards
+
+###
+
+GET http://localhost:8080/api/visionboards/1
+
+
+###
+
+POST http://localhost:8080/api/visionboards/add/john1
+
+
+###
+
+PATCH http://localhost:8080/api/visionboards/1/update
+Content-Type: application/json
+
+{
+
+
+  "hasGrid": false,
+  "gridSpacing": "100px",
+  "gridBorderRadius": "100%",
+  "gridBorderThickness": "50px",
+  "gridBorderColor": "#9999",
+  "gridBorderStyle": "dotted",
+  "backgroundImageLink": "asdf",
+  "backgroundColor": "#0000",
+  "gridTemplateName": "5"
+}

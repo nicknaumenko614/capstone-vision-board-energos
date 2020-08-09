@@ -1,9 +1,6 @@
 package co.visionaries.energos.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
@@ -11,6 +8,7 @@ public class VisionBoard {
     @Id
     @GeneratedValue
     private long id;
+    private String visionBoardName;
     private boolean isThemeDark;
     private boolean hasGrid;
     private String gridSpacing;
@@ -22,17 +20,22 @@ public class VisionBoard {
     private String backgroundColor;
     private String gridTemplateName;
 
-    @OneToMany
+    @OneToMany(mappedBy = "visionBoard")
     private Collection<Text> texts;
-    @OneToMany
+    @OneToMany(mappedBy = "visionBoard")
     private Collection<Quote> quotes;
-    @OneToMany
+    @OneToMany(mappedBy = "visionBoard")
     private Collection<Image> images;
+    @OneToMany(mappedBy = "visionBoard")
+    private Collection<Background> backgrounds;
 
     protected VisionBoard() {
     }
 
-    public VisionBoard(boolean isThemeDark, boolean hasGrid, String gridSpacing, String gridBorderRadius, String gridBorderThickness, String gridBorderColor, String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName, Collection<Text> texts, Collection<Quote> quotes, Collection<Image> images) {
+    public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing,
+                       String gridBorderRadius, String gridBorderThickness, String gridBorderColor,
+                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName) {
+        this.visionBoardName = visionBoardName;
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
         this.gridSpacing = gridSpacing;
@@ -43,9 +46,22 @@ public class VisionBoard {
         this.backgroundImageLink = backgroundImageLink;
         this.backgroundColor = backgroundColor;
         this.gridTemplateName = gridTemplateName;
-        this.texts = texts;
-        this.quotes = quotes;
-        this.images = images;
+    }
+
+    public String getVisionBoardName() {
+        return visionBoardName;
+    }
+
+    public void setVisionBoardName(String visionBoardName) {
+        this.visionBoardName = visionBoardName;
+    }
+
+    public Collection<Background> getBackgrounds() {
+        return backgrounds;
+    }
+
+    public void setBackgrounds(Collection<Background> backgrounds) {
+        this.backgrounds = backgrounds;
     }
 
     public long getId() {

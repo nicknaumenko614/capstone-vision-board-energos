@@ -1,5 +1,7 @@
 package co.visionaries.energos.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ public class Quote {
     @Id
     @GeneratedValue
     private long id;
-    private String quoteName;
+    private String quoteHtmlId;
     private boolean quoteIsZoomed;
     private String quoteLink;
     private boolean quoteHasBorder;
@@ -19,14 +21,15 @@ public class Quote {
     private boolean quoteIsFlipped;
     private String quoteParentElement;
 
+    @JsonIgnore
     @ManyToOne
     private VisionBoard visionBoard;
 
     protected Quote() {
     }
 
-    public Quote(String quoteName, boolean quoteIsZoomed, String quoteLink, boolean quoteHasBorder, String quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, String quoteParentElement, VisionBoard visionBoard) {
-        this.quoteName = quoteName;
+    public Quote(String quoteHtmlId, boolean quoteIsZoomed, String quoteLink, boolean quoteHasBorder, String quoteBorderRadius, int quoteRotate, boolean quoteIsFlipped, String quoteParentElement, VisionBoard visionBoard) {
+        this.quoteHtmlId = quoteHtmlId;
         this.quoteIsZoomed = quoteIsZoomed;
         this.quoteLink = quoteLink;
         this.quoteHasBorder = quoteHasBorder;
@@ -41,12 +44,12 @@ public class Quote {
         return id;
     }
 
-    public String getQuoteName() {
-        return quoteName;
+    public String getQuoteHtmlId() {
+        return quoteHtmlId;
     }
 
-    public void setQuoteName(String quoteName) {
-        this.quoteName = quoteName;
+    public void setQuoteHtmlId(String quoteHtmlId) {
+        this.quoteHtmlId = quoteHtmlId;
     }
 
     public boolean isQuoteIsZoomed() {
