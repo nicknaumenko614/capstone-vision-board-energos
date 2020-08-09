@@ -18,17 +18,17 @@ public class TextController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping("/api/text")
+    @GetMapping("/api/texts")
     public Collection<Text> getAllTexts() {
         return textStorage.getAllTexts();
     }
 
-    @GetMapping("/api/text/{textId}")
+    @GetMapping("/api/texts/{textId}")
     public Text getTextById(@PathVariable long textId) {
         return textStorage.retrieveTextById(textId);
     }
 
-    @DeleteMapping("/api/text/{textId}/delete")
+    @DeleteMapping("/api/texts/{textId}/delete")
     public void deleteText(@PathVariable long textId) {
         textStorage.deleteText(textId);
     }
@@ -53,6 +53,7 @@ public class TextController {
         textToUpdate.setFontItalicized(text.getFontItalicized());
         textToUpdate.setFontUnderlined(text.getFontUnderlined());
         textToUpdate.setTextParentElement(text.getTextParentElement());
+        textStorage.saveText(textToUpdate);
         return textToUpdate;
 
 
