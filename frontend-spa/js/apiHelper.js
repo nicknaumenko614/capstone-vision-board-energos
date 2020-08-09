@@ -4,13 +4,9 @@ export const fetchVisionBoards = async () => {
   );
 };
 
-export const postNewVisionBoard = async (visionboard) => {
-  return fetch("http://localhost:8080/api/visionboards/add", {
+export const postNewVisionBoard = async (boardName) => {
+  return fetch(`http://localhost:8080/api/visionboards/add/${boardName}`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(visionboard),
   }).then((response) => response.json());
 };
 
@@ -20,9 +16,9 @@ export const fetchSingleVisionBoard = (visionboardId) => {
   ).then((response) => response.json());
 };
 
-export const updateVisionBoard = async (visionboardId) => {
+export const updateVisionBoard = async (visionboard) => {
   return fetch(
-    `http://localhost:8080/api/visionboards/${visionboardId}/update`,
+    `http://localhost:8080/api/visionboards/${visionboard.id}/update`,
     {
       method: "PATCH",
       headers: {
@@ -33,14 +29,14 @@ export const updateVisionBoard = async (visionboardId) => {
   ).then((response) => response.json());
 };
 
-export const deleteVisionBoard = async (visionboardId) => {
-  return fetch(
-    `http://localhost:8080/api/visionboards/${visionboardId}/delete`,
-    {
-      method: "DELETE",
-    }
-  ).then((response) => response.json());
-};
+// export const deleteVisionBoard = async (visionboardId) => {
+//   return fetch(
+//     `http://localhost:8080/api/visionboards/${visionboardId}/delete`,
+//     {
+//       method: "DELETE",
+//     }
+//   ).then((response) => response.json());
+// };
 
 export const fetchBackgrounds = async () => {
   return fetch("http://localhost:8080/api/backgrounds").then((response) =>
@@ -48,8 +44,8 @@ export const fetchBackgrounds = async () => {
   );
 };
 
-export const postNewBackgrounds = async (background) => {
-  return fetch("http://localhost:8080/api/background/add", {
+export const postNewBackgrounds = async (visionBoardId, background) => {
+  return fetch(`http://localhost:8080/api/backgrounds/${visionBoardId}/add`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -84,7 +80,7 @@ export const postNewImage = async (visionBoardId, image) => {
 };
 
 export const updateImage = async (image) => {
-  return fetch(`http://localhost:8080/api/images/updateimage`, {
+  return fetch("http://localhost:8080/api/images/updateimage", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
