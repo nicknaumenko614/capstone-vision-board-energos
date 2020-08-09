@@ -29,7 +29,7 @@ public class QuoteController {
         quoteStorage.deleteQuote(quoteId);
     }
 
-    @PostMapping("/api/visionboard/{visionBoardId}/addquote")
+    @PostMapping("/api/visionboards/{visionBoardId}/addquote")
     public void addQuoteToVisionBoard(@PathVariable long visionBoardId, @RequestBody Quote quote) {
         VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         quote.setVisionBoard(visionBoard);
@@ -45,6 +45,7 @@ public class QuoteController {
         quoteToUpdate.setQuoteRotate(quote.getQuoteRotate());
         quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
         quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
+        quoteStorage.saveQuote(quoteToUpdate);
         return quoteToUpdate;
     }
 }

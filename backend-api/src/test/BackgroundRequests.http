@@ -10,6 +10,9 @@ POST http://localhost:8080/api/backgrounds/1/add
 Content-Type: application/json
 
 {
-    "id":1,
     "backgroundLink": "./imedrtfhsdhsdhsdgfh1.jpg"
   }
+
+###
+
+DELETE http://localhost:8080/api/backgrounds/8/delete
