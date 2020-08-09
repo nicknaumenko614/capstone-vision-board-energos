@@ -35,7 +35,7 @@ public class BackgroundController {
         backgroundStorage.deleteBackground(backgroundId);
     }
 
-    @PostMapping("api/backgrounds/{visionBoardId}/add")
+    @PostMapping("/api/backgrounds/{visionBoardId}/add")
     public void addBackgroundToVisionBoard(@PathVariable long visionBoardId, @RequestBody Background background) {
         VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         background.setVisionBoard(visionBoard);

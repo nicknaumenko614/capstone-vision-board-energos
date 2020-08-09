@@ -13,12 +13,6 @@
     --color6a: #0162b767;
   }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .logo-image {
   position: fixed;
   right: 0;
@@ -46,7 +40,6 @@
     padding: 10px;
     position: absolute;
     margin-top: 15%;
-    
 }
 
 .welcome-box {

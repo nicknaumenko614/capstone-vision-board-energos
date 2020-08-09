@@ -1,5 +1,3 @@
-let formShown = "false";
-
 export const createWelcomePage = (visionBoards) => {
   const container = document.createElement("div");
 
@@ -7,7 +5,7 @@ export const createWelcomePage = (visionBoards) => {
   const img = new Image();
   img.classList.add("logo-image");
   img.src = "./images/logo.png";
-  img.alt = "Energos Logo";
+  img.alt = "Energós Logo";
 
   const header = document.createElement("header");
   header.innerHTML = `
@@ -23,7 +21,7 @@ export const createWelcomePage = (visionBoards) => {
     const welcomeBox = document.createElement("div");
     welcomeBox.classList.add("welcome-box");
     const span = document.createElement("span");
-    span.innerText = visionBoard;
+    span.innerText = `${visionBoard.visionBoardName}`;
     welcomeBox.appendChild(span);
     welcomeDesignBoard.appendChild(welcomeBox);
     welcomeBox.addEventListener("click", (visionBoard) => {
@@ -33,9 +31,12 @@ export const createWelcomePage = (visionBoards) => {
 
   const addVisionBoardDiv = document.createElement("div");
   addVisionBoardDiv.classList.add("add-vision-board");
-  addVisionBoardDiv.innerText = "+";
+
+  const plusSign = document.createElement("div");
+  plusSign.innerText = "+";
+  addVisionBoardDiv.appendChild(plusSign);
   addVisionBoardDiv.addEventListener("click", () => {
-    if(formShown === "false") renderAddVisionBoardForm(addVisionBoardDiv);
+    renderAddVisionBoardForm(addVisionBoardDiv);
   })
   welcomeDesignBoard.appendChild(addVisionBoardDiv);
 

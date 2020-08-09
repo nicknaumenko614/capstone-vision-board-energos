@@ -40,7 +40,7 @@ public class TextController {
         textStorage.saveText(text);
     }
 
-    @PatchMapping("/api/text/updatetext")
+    @PatchMapping("/api/texts/updatetext")
     public Text updateText (@RequestBody Text text) {
         Text textToUpdate = textStorage.retrieveTextById(text.getId());
         textToUpdate.setTextContent(text.getTextContent());

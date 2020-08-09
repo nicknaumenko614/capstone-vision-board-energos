@@ -8,11 +8,11 @@ import { createWelcomePage } from "./components/createWelcomePage.js";
 
 const fakeArray = ["Kendyl's Vision Board", 1, 2, 3];
 
-export const renderPage = () => {
+export const renderPage = (visionBoards) => {
   const containerBody = document.querySelector(".container-body");
 
   clearElementChildren(containerBody);
-  containerBody.appendChild(createWelcomePage(fakeArray));
+  containerBody.appendChild(createWelcomePage(visionBoards));
 };
 
 export const clearElementChildren = (element) => {
@@ -21,13 +21,13 @@ export const clearElementChildren = (element) => {
   }
 };
 
-renderPage();
+// renderPage();
 
 
 
-// fetchVisionBoards().then((visionBoards) => {
-//   renderPage(visionBoards);
-// });
+fetchVisionBoards().then((visionBoards) => {
+  renderPage(visionBoards);
+});
 
 // setupDefaultBoard();
 // addSideBarEventListeners();
