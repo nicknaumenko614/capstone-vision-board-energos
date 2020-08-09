@@ -6,7 +6,7 @@ import { setupDefaultBoard } from "./components/renderDesignBoards.js";
 import { fetchVisionBoards } from "./apiHelper.js";
 import { createWelcomePage } from "./components/createWelcomePage.js";
 
-const fakeArray = [0, 1, 2, 3];
+const fakeArray = ["Kendyl's Vision Board", 1, 2, 3];
 
 export const renderPage = () => {
   const body = document.body;

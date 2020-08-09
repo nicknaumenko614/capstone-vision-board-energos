@@ -19,6 +19,9 @@ export const createWelcomePage = (visionBoards) => {
   visionBoards.forEach((visionBoard) => {
     const welcomeBox = document.createElement("div");
     welcomeBox.classList.add("welcome-box");
+    const span = document.createElement("span");
+    span.innerText = visionBoard;
+    welcomeBox.appendChild(span);
     welcomeDesignBoard.appendChild(welcomeBox);
   });
 
