@@ -23,6 +23,8 @@ export const clearElementChildren = (element) => {
 
 renderPage();
 
+
+
 // fetchVisionBoards().then((visionBoards) => {
 //   renderPage(visionBoards);
 // });

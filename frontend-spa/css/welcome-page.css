@@ -57,6 +57,7 @@
     position: relative;
     background-image: url(/images/LemonLimeVBThumbnailBackground.png);
     background-size: cover;
+    cursor: pointer;
 }
 
 .welcome-box span {
