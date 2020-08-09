@@ -42,7 +42,6 @@
 .welcome-design-board {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--color2); 
     left: 18%;
     padding: 10px;
     position: absolute;
@@ -56,4 +55,17 @@
     height: 400px;
     margin: 20px;
 }
+
+.add-vision-board {
+  background-color: var(--color3);
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+    font-size: 100pt;
+    border: 2px solid var(--color1);
+    line-height: 400px;
+    text-align: center;
+    color: var(--color1);
+}
+
 

@@ -6,14 +6,13 @@ import { setupDefaultBoard } from "./components/renderDesignBoards.js";
 import { fetchVisionBoards } from "./apiHelper.js";
 import { createWelcomePage } from "./components/createWelcomePage.js";
 
-const fakeArray = [0, 1, 2];
+const fakeArray = [0, 1, 2, 3];
 
 export const renderPage = () => {
   const body = document.body;
 
   clearElementChildren(body);
   body.appendChild(createWelcomePage(fakeArray));
-
 };
 
 export const clearElementChildren = (element) => {

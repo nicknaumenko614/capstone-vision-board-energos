@@ -22,6 +22,11 @@ export const createWelcomePage = (visionBoards) => {
     welcomeDesignBoard.appendChild(welcomeBox);
   });
 
+  const addVisionBoardDiv = document.createElement("div");
+  addVisionBoardDiv.classList.add("add-vision-board");
+  addVisionBoardDiv.innerText = "+";
+  welcomeDesignBoard.appendChild(addVisionBoardDiv);
+
     container.append(img, header, welcomeDesignBoard);  
 
     return container;
