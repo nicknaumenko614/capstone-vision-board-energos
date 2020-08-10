@@ -26,7 +26,7 @@ export const createWelcomePage = (visionBoards) => {
     span.innerText = `${visionBoard.visionBoardName}`;
     welcomeBox.appendChild(span);
     welcomeDesignBoard.appendChild(welcomeBox);
-    welcomeBox.addEventListener("click", (visionBoard) => {
+    welcomeBox.addEventListener("click", () => {
       renderVisionBoard(visionBoard);
     });
   });

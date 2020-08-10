@@ -43,7 +43,7 @@ export function createLeftSideBar(visionboard) {
   return sidebar;
 }
 
-export function addButtonsToContainer(el) {
+function addButtonsToContainer(el) {
   el.innerHTML = `
         <div class="templates icon-div">
           <i class="material-icons icon-text">view_quilt</i>
@@ -66,7 +66,7 @@ export function addButtonsToContainer(el) {
     `;
 }
 
-export function populateTemplates(el) {
+function populateTemplates(el) {
   el.innerHTML = `
     <img id="template1" src="/images/templates/design-board1.JPG" />
     <img id="template2" src="/images/templates/design-board2.JPG" />

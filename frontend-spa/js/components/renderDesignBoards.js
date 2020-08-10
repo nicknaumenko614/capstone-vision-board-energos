@@ -1,16 +1,11 @@
 export function renderDesignBoard(i) {
+  i = parseInt(i);
   if (i === 0) return renderDesignBoard1();
   if (i === 1) return renderDesignBoard2();
   if (i === 2) return renderDesignBoard3();
   if (i === 3) return renderDesignBoard4();
   if (i === 4) return renderDesignBoard5();
   if (i === 5) return renderDesignBoard6();
-}
-
-export function setupDefaultBoard() {
-  const main = document.querySelector("main");
-  const designBoard = renderDesignBoard(0);
-  main.appendChild(designBoard);
 }
 
 function renderDesignBoard1() {
