@@ -1,4 +1,5 @@
 import { fetchBackgrounds } from "../apiHelpers/apiHelper-Backgrounds.js";
+import { fetchImages } from "../apiHelpers/apiHelper-Images.js";
 
 export function createLeftSideBar(visionboard) {
   const sidebar = document.createElement("section");
