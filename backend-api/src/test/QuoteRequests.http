@@ -62,3 +62,12 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/quotes/4/updateQuoteIsFlipped
+Content-Type: application/json
+
+{
+  "quoteIsFlipped": "true"
+}
+
+###

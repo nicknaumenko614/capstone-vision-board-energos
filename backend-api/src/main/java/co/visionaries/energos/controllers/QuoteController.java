@@ -68,6 +68,14 @@ public class QuoteController {
         quoteStorage.saveQuote(quoteToUpdate);
         return quoteToUpdate;
     }
+
+    @PatchMapping("/api/quotes/{quoteId}/updateQuoteIsFlipped")
+    public Quote updateQuoteIsFlipped(@PathVariable long quoteId, @RequestBody Quote quote) {
+        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quoteId);
+        quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
+        quoteStorage.saveQuote(quoteToUpdate);
+        return quoteToUpdate;
+    }
 }
 
 
@@ -75,5 +83,5 @@ public class QuoteController {
 //
 //
 //
-//        quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
+//
 //        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
