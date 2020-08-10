@@ -57,3 +57,12 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/texts/7/updateFontShadowColor
+Content-Type: application/json
+
+{
+  "fontShadowColor": "#393E43"
+}
+
+###

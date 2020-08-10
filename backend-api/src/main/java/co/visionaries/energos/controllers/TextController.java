@@ -57,17 +57,27 @@ public class TextController {
     }
 
     @PatchMapping("/api/texts/{textId}/updateHasFontShadow")
-    public Text updateHasFontShadow (@PathVariable long textId, @RequestBody Text text) {
+    public Text updateHasFontShadow(@PathVariable long textId, @RequestBody Text text) {
         Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setHasFontShadow(text.getHasFontShadow());
         textStorage.saveText(textToUpdate);
         return textToUpdate;
     }
+
+    @PatchMapping("/api/texts/{textId}/updateFontShadowColor")
+    public Text updateFontShadowColor(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
+        textToUpdate.setFontShadowColor(text.getFontShadowColor());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
 }
 
 
 
-//        textToUpdate.setFontShadowColor(text.getFontShadowColor());
+
+//
 //        textToUpdate.setFontColor(text.getFontColor());
 //        textToUpdate.setFontFamily(text.getFontFamily());
 //        textToUpdate.setFontBold(text.getFontBold());
