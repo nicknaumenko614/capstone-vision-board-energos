@@ -36,6 +36,7 @@ export function createLeftSideBar(visionboard) {
 
   const settingsContainer = document.createElement("div");
   settingsContainer.classList.add("settings-container");
+  populateSettings(settingsContainer);
 
   sidebarContent.append(
     templatesContainer,
@@ -165,7 +166,79 @@ function populateQuotes(el, visionboard) {
       el.appendChild(img);
     });
   });
-
 }
 
+function populateSettings(el) {
+  el.innerHTML = `
+  <div class="dark-theme-toggle-switch">
+            <label class="switch-label">Dark Theme</label>
+            <label class="switch">
+              <input class="dark-theme-checkbox checkboxes" type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
 
+          <div class="grid-toggle-switch">
+            <label class="switch-label">Show Grid</label>
+            <label class="switch">
+              <input class="grid-checkbox checkboxes" type="checkbox" checked />
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div class="spacing-container border-settings">
+            <label class="switch-label">Spacing</label>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              class="spacing-slider"
+              id="spacing-slider"
+            />
+          </div>
+
+          <div class="border-radius-container border-settings">
+            <label class="switch-label">Border Radius</label>
+            <input
+              type="range"
+              min="0"
+              max="50"
+              value="50"
+              class="spacing-slider"
+              id="border-radius-slider"
+            />
+          </div>
+
+          <div class="border-thickness-container border-settings">
+            <label class="switch-label">Border Thickness</label>
+            <input
+              type="range"
+              min="0"
+              max="30"
+              value="2"
+              class="spacing-slider"
+              id="border-thickness-slider"
+            />
+          </div>
+          <div class="border-color-container border-settings">
+            <label class="switch-label">Border Color</label>
+            <input type="color" class="border-color" />
+          </div>
+          <div class="border-style-container border-settings">
+            <label class="switch-label">Border Style</label>
+            <select class="border-style">
+              <option value="dotted">Dotted</option>
+              <option value="dashed">Dashed</option>
+              <option value="solid" selected>Solid</option>
+              <option value="double">Double</option>
+              <option value="ridge">Ridge</option>
+              <option value="groove">Groove</option>
+              <option value="inset">Inset</option>
+              <option value="outset">Outset</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </div>
+  `;
+}
