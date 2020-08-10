@@ -26,6 +26,7 @@ public class VisionBoardController {
         this.quoteStorage = quoteStorage;
         this.textStorage = textStorage;
     }
+
     @GetMapping("/api/visionboards")
     public Collection<VisionBoard> getAllVisionBoards() {
         return visionBoardStorage.getAllVisionBoards();
@@ -38,9 +39,8 @@ public class VisionBoardController {
 
     @PostMapping("/api/visionboards/add/{boardName}")
     public void addVisionBoard(@PathVariable String boardName) {
-       visionBoardFactory.createDefaultBoard(boardName);
-
-       VisionBoard newVisionBoard = visionBoardStorage.retrieveVisionBoardByName(boardName);
+        visionBoardFactory.createDefaultBoard(boardName);
+        VisionBoard newVisionBoard = visionBoardStorage.retrieveVisionBoardByName(boardName);
 
 //       long newVisionBoardId = newVisionBoard.getId();
 //
@@ -52,22 +52,43 @@ public class VisionBoardController {
 //        visionBoardStorage.deleteVisionBoard(visionBoardId);
 //    }
 
-    @PatchMapping("/api/visionboards/{visionBoardId}/updateThemedark")
-    public VisionBoard updateVisionBoard(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateThemeDark")
+    public VisionBoard updateThemeDark(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
         VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
-//        visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
-//        visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
+        visionBoardToUpdate.setThemeDark(visionBoard.isThemeDark());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateBackgroundColor")
+    public VisionBoard updateBackgroundColor(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridSpacing")
+    public VisionBoard updateGridSpacing(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderColor")
+    public VisionBoard updateGridBorderColor(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+
 //        visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
 //        visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
 //        visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
 //        visionBoardToUpdate.setGridBorderThickness(visionBoard.getGridBorderThickness());
 //        visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
-        visionBoardToUpdate.setThemeDark(visionBoard.isThemeDark());
-//        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
-        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
-
-        return visionBoardToUpdate;
-    }
-
-
+    //        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
 }

@@ -12,17 +12,17 @@ public class Text {
     @Id
     @GeneratedValue
     private long id;
-    private String textHtmlId;
-    private String textContent;
-    private String fontSize;
-    private Boolean hasFontShadow;
-    private String fontShadowColor;
-    private String fontColor;
-    private String fontFamily;
-    private Boolean isFontBold;
-    private Boolean isFontItalicized;
-    private Boolean isFontUnderlined;
-    private String textParentElement;
+    private String textHtmlId = "";
+    private String textContent = "";
+    private String fontSize = "20px";
+    private Boolean hasFontShadow = false;
+    private String fontShadowColor = "";
+    private String fontColor = "";
+    private String fontFamily = "";
+    private Boolean isFontBold = false;
+    private Boolean isFontItalicized = false;
+    private Boolean isFontUnderlined = false;
+    private String textParentElement = "";
 
     @JsonIgnore
     @ManyToOne

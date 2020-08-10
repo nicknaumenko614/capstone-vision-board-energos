@@ -8,17 +8,17 @@ public class VisionBoard {
     @Id
     @GeneratedValue
     private long id;
-    private String visionBoardName;
-    private boolean themeDark;
-    private boolean hasGrid;
-    private String gridSpacing;
-    private String gridBorderRadius;
-    private String gridBorderThickness;
-    private String gridBorderColor;
-    private String gridBorderStyle;
-    private String backgroundImageLink;
-    private String backgroundColor;
-    private int gridTemplateName;
+    private String visionBoardName = "";
+    private boolean themeDark = false;
+    private boolean hasGrid = true;
+    private String gridSpacing = "10px";
+    private String gridBorderRadius = "0%";
+    private String gridBorderThickness = "2px";
+    private String gridBorderColor = "";
+    private String gridBorderStyle = "none";
+    private String backgroundImageLink = "";
+    private String backgroundColor = "#F9FCFF";
+    private int gridTemplateName = 0;
 
     @OneToMany(mappedBy = "visionBoard")
     private Collection<Text> texts;

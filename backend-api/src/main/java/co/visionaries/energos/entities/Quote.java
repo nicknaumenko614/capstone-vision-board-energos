@@ -12,14 +12,14 @@ public class Quote {
     @Id
     @GeneratedValue
     private long id;
-    private String quoteHtmlId;
-    private boolean quoteIsZoomed;
-    private String quoteLink;
-    private boolean quoteHasBorder;
-    private String quoteBorderRadius;
-    private int quoteRotate;
-    private boolean quoteIsFlipped;
-    private String quoteParentElement;
+    private String quoteHtmlId = "";
+    private boolean quoteIsZoomed = false;
+    private String quoteLink = "";
+    private boolean quoteHasBorder = false;
+    private String quoteBorderRadius = "0%";
+    private int quoteRotate = 0;
+    private boolean quoteIsFlipped = false;
+    private String quoteParentElement = "";
 
     @JsonIgnore
     @ManyToOne

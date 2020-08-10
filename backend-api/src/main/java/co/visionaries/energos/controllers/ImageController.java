@@ -38,8 +38,6 @@ ImageController {
     public void addImageToVisionBoard(@PathVariable long visionBoardId, @RequestBody Image image) {
         VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         image.setVisionBoard(visionBoard);
-//        Image imageToAdd = new Image(image.getImageName(), image.getImageHeight(), image.getImageWidth(), image.getImageLink(), image.isImageHasBorder(), image.getImageBorderRadius(), image.getImageRotate()
-//                , image.isImageIsFlipped(), image.getImageParentElement(), visionBoard);
         imageStorage.saveImage(image);
     }
 
@@ -50,6 +48,7 @@ ImageController {
         imageStorage.saveImage(imageToUpdate);
         return imageToUpdate;
     }
+
 
 }
 

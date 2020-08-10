@@ -9,14 +9,14 @@ public class Image {
     @Id
     @GeneratedValue
     private long id;
-    private String imageHtmlId;
-    private boolean imageIsZoomed;
-    private String imageLink;
+    private String imageHtmlId = "";
+    private boolean imageIsZoomed = false;
+    private String imageLink = "";
     private boolean imageHasBorder = false;
-    private String imageBorderRadius;
-    private int imageRotate;
+    private String imageBorderRadius = "0%";
+    private int imageRotate = 0;
     private boolean imageIsFlipped = false;
-    private String imageParentElement;
+    private String imageParentElement = "";
 
     @JsonIgnore
     @ManyToOne

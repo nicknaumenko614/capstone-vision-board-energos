@@ -29,7 +29,7 @@ Content-Type: application/json
   "gridTemplateName": "5"
 }
 ###
-PATCH http://localhost:8080/api/visionboards/1/updateThemedark
+PATCH http://localhost:8080/api/visionboards/1/updateThemeDark
 Content-Type: application/json
 
 {
