@@ -21,6 +21,7 @@ export function createLeftSideBar(visionboard) {
 
   const imagesContainer = document.createElement("div");
   imagesContainer.classList.add("images-container");
+  populateImages(imagesContainer, visionboard);
 
   const textContainer = document.createElement("div");
   textContainer.classList.add("text-container");
@@ -97,4 +98,22 @@ function populateWallpapers(el, visionboard) {
       el.appendChild(img);
     });
   });
+}
+
+function populateImages(el, visionboard) {
+    el.innerHTML = `
+    <div class="input-container">
+    <label>Image URL</label>
+    <input type="text" class="add-image" />
+  </div>
+    `;
+
+    fetchImages(`${visionboard.id}`).then((images) => {
+        images.forEach((image) => {
+          const img = new Image();
+          img.classList.add("image");
+          img.src = `${image.imageLink}`;
+          el.appendChild(img);
+        });
+      });
 }
