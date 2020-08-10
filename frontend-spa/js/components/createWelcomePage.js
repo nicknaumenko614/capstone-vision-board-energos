@@ -64,7 +64,7 @@ function createAddVisionBoardForm(){
   input.required = "true";
   input.classList.add("vision-board-name");
   const button = document.createElement("button");
-  button.innerText = "Submit";
+  button.innerText = "Create Vision Board";
   addNewVisionBoardForm.append(label, input, button);
 
   return addNewVisionBoardForm;

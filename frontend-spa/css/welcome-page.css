@@ -63,6 +63,12 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  color: var(--color1);
+  transition: 0.3s ease;
+}
+
+.welcome-box:hover span {
+  color: var(--color3);
 }
 
 .add-vision-board {
@@ -72,7 +78,7 @@
   margin: 20px;
   font-size: 150pt;
   border: 2px solid var(--color1);
-  line-height: 400px;
+  line-height: 380px;
   text-align: center;
   color: var(--color1);
   position: relative;
@@ -82,10 +88,18 @@
   height: 100%;
   width: 100%;
   cursor: pointer;
-  text-shadow: 0 0 5px var(--color5), 0 0 5px var(--color5),
-    0 0 5px var(--color5), 0 0 5px var(--color5), 0 0 5px var(--color5),
-    0 0 5px var(--color5), 0 0 5px var(--color5), 0 0 5px var(--color5),
-    0 0 5px var(--color5), 0 0 5px var(--color5);
+  text-shadow: 0 0 5px var(--color2), 0 0 5px var(--color2),
+    0 0 5px var(--color2), 0 0 5px var(--color2), 0 0 5px var(--color2),
+    0 0 5px var(--color2), 0 0 5px var(--color2), 0 0 5px var(--color2),
+    0 0 5px var(--color2), 0 0 5px var(--color2);
+}
+
+.add-vision-board:hover .plus-sign {
+  background-color: var(--color2a);
+  text-shadow: 0 0 5px var(--color3), 0 0 5px var(--color3),
+    0 0 5px var(--color3), 0 0 5px var(--color3), 0 0 5px var(--color3),
+    0 0 5px var(--color3), 0 0 5px var(--color3), 0 0 5px var(--color3),
+    0 0 5px var(--color3), 0 0 5px var(--color3);
 }
 
 .add-vision-board .add-form {
@@ -103,9 +117,6 @@
 .add-vision-board input {
   display: block;
   width: 100%;
-}
-
-.add-vision-board input {
   margin: 25px 0;
   background-color: transparent;
   border: none;
@@ -118,4 +129,9 @@
 .add-vision-board button {
   padding: 5px 15px;
   font-size: 15pt;
+  cursor: pointer;
+}
+
+.add-vision-board:hover {
+  background-color: var(--color5a);
 }
