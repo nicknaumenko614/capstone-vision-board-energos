@@ -44,12 +44,28 @@ public class QuoteController {
         quoteStorage.saveQuote(quoteToUpdate);
         return quoteToUpdate;
     }
+
+    @PatchMapping("/api/quotes/{quoteId}/updateQuoteHasBorder")
+    public Quote updateQuoteHasBorder(@PathVariable long quoteId, @RequestBody Quote quote) {
+        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quoteId);
+        quoteToUpdate.setQuoteHasBorder(quote.isQuoteHasBorder());
+        quoteStorage.saveQuote(quoteToUpdate);
+        return quoteToUpdate;
+    }
+
+    @PatchMapping("/api/quotes/{quoteId}/updateQuoteBorderRadius")
+    public Quote updateQuoteBorderRadius(@PathVariable long quoteId, @RequestBody Quote quote) {
+        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quoteId);
+        quoteToUpdate.setQuoteBorderRadius(quote.getQuoteBorderRadius());
+        quoteStorage.saveQuote(quoteToUpdate);
+        return quoteToUpdate;
+    }
 }
 
 
 //
-//        quoteToUpdate.setQuoteHasBorder(quote.isQuoteHasBorder());
-//        quoteToUpdate.setQuoteBorderRadius(quote.getQuoteBorderRadius());
+//
+//
 //        quoteToUpdate.setQuoteRotate(quote.getQuoteRotate());
 //        quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
 //        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());

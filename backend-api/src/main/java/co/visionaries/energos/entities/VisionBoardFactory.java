@@ -29,9 +29,9 @@ public class VisionBoardFactory {
         visionBoardStorage.saveVisionBoard(visionBoard);
 
         Image image1 = new Image("img1", false, "/images/gallery-images/airplane.jpg",
-                false, "0px", 0, false, "images-container", visionBoard);
+                false, "0%", 0, false, "images-container", visionBoard);
         Image image2 = new Image("img2", false, "/images/gallery-images/baby-berner1.jpg",
-                false, "0px", 0, false, "images-container", visionBoard);
+                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image3 = new Image ("img3", false, "/images/gallery-images/baby-berner2.jpg",
 //                false, "0px", 0, false, "images-container", visionBoard);
 //        Image image4 = new Image ("img4", false, "/images/gallery-images/dollars.jpg",
@@ -84,9 +84,9 @@ public class VisionBoardFactory {
 //        imageStorage.saveImage(image17);
 //        imageStorage.saveImage(image18);
 
-        Quote quote1 = new Quote("quote-img1", false, "/images/quotes/quote1.png", false, "0px",
+        Quote quote1 = new Quote("quote-img1", false, "/images/quotes/quote1.png", false, "0%",
                 0, false, "quotes-container", visionBoard);
-        Quote quote2 = new Quote("quote-img2", false, "/images/quotes/quote2.jpg", false, "0px",
+        Quote quote2 = new Quote("quote-img2", false, "/images/quotes/quote2.jpg", false, "0%",
                 0, false, "quotes-container", visionBoard);
 //        Quote quote3 = new Quote("quote-img3", false, "/images/quotes/quote3.png", false, "0px",
 //                0, false,"quotes-container", visionBoard);
