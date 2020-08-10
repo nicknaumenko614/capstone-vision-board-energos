@@ -52,18 +52,18 @@ public class VisionBoardController {
 //        visionBoardStorage.deleteVisionBoard(visionBoardId);
 //    }
 
-    @PatchMapping("/api/visionboards/{visionBoardId}/update")
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateThemedark")
     public VisionBoard updateVisionBoard(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
         VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
-        visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
-        visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
-        visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
-        visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
-        visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
-        visionBoardToUpdate.setGridBorderThickness(visionBoard.getGridBorderThickness());
-        visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
+//        visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
+//        visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
+//        visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
+//        visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
+//        visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
+//        visionBoardToUpdate.setGridBorderThickness(visionBoard.getGridBorderThickness());
+//        visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
         visionBoardToUpdate.setThemeDark(visionBoard.isThemeDark());
-        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
+//        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
         visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
 
         return visionBoardToUpdate;

@@ -1,7 +1,7 @@
 import {clearElementChildren} from "../app.js";
 import { renderDesignBoard } from "./renderDesignBoards.js";
 
-export function createVisionBoard(visionBoard){
+export function renderVisionBoard(visionBoard){
     const containerBody = document.querySelector(".container-body");
 
     clearElementChildren(containerBody);

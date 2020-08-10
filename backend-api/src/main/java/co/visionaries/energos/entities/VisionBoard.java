@@ -9,7 +9,7 @@ public class VisionBoard {
     @GeneratedValue
     private long id;
     private String visionBoardName;
-    private boolean isThemeDark;
+    private boolean themeDark;
     private boolean hasGrid;
     private String gridSpacing;
     private String gridBorderRadius;
@@ -36,7 +36,7 @@ public class VisionBoard {
                        String gridBorderRadius, String gridBorderThickness, String gridBorderColor,
                        String gridBorderStyle, String backgroundImageLink, String backgroundColor, int gridTemplateName) {
         this.visionBoardName = visionBoardName;
-        this.isThemeDark = isThemeDark;
+        this.themeDark = isThemeDark;
         this.hasGrid = hasGrid;
         this.gridSpacing = gridSpacing;
         this.gridBorderRadius = gridBorderRadius;
@@ -69,11 +69,11 @@ public class VisionBoard {
     }
 
     public boolean isThemeDark() {
-        return isThemeDark;
+        return themeDark;
     }
 
     public void setThemeDark(boolean themeDark) {
-        isThemeDark = themeDark;
+        this.themeDark = themeDark;
     }
 
     public boolean isHasGrid() {

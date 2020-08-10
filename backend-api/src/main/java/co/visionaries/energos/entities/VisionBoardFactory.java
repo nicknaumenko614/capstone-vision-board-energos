@@ -24,7 +24,7 @@ public class VisionBoardFactory {
 
     public VisionBoard createDefaultBoard(String boardName) {
         VisionBoard visionBoard = new VisionBoard(boardName, false, true, "10px", "0%",
-                "2px", "#393E41", "solid", "", "#F9FCFF", "0");
+                "2px", "#393E41", "solid", "", "#F9FCFF", 0);
 
         visionBoardStorage.saveVisionBoard(visionBoard);
 

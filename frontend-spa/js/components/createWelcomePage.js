@@ -1,7 +1,8 @@
+import {renderVisionBoard} from "./createVisionBoard.js";
+
 export const createWelcomePage = (visionBoards) => {
   const container = document.createElement("div");
-
-
+  
   const img = new Image();
   img.classList.add("logo-image");
   img.src = "./images/logo.png";
@@ -25,7 +26,7 @@ export const createWelcomePage = (visionBoards) => {
     welcomeBox.appendChild(span);
     welcomeDesignBoard.appendChild(welcomeBox);
     welcomeBox.addEventListener("click", (visionBoard) => {
-        renderVisionBoard();
+        renderVisionBoard(visionBoard);
       });
   });
 
@@ -66,6 +67,7 @@ function createAddVisionBoardForm(){
   const button = document.createElement("button");
   button.innerText = "Create Vision Board";
   addNewVisionBoardForm.append(label, input, button);
+  // button.
   
   return addNewVisionBoardForm;
 }

@@ -16,9 +16,9 @@ export const fetchSingleVisionBoard = (visionboardId) => {
   ).then((response) => response.json());
 };
 
-export const updateVisionBoard = async (visionboard) => {
+export const updateVisionBoard = async (id, visionboard) => {
   return fetch(
-    `http://localhost:8080/api/visionboards/${visionboard.id}/update`,
+    `http://localhost:8080/api/visionboards/${id}/update`,
     {
       method: "PATCH",
       headers: {
