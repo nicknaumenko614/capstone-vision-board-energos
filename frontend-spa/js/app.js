@@ -1,16 +1,12 @@
-import { addSettingsEventListeners } from "./settings.js";
-import { addSideBarEventListeners } from "./sidebar.js";
-import { addEventListenersToTemplates } from "./templates.js";
-import { addDragAndDropEventListeners } from "./drag-and-drop.js";
-import { setupDefaultBoard } from "./components/renderDesignBoards.js";
 import { fetchVisionBoards } from "./apiHelpers/apiHelper-VisionBoards.js";
 import { createWelcomePage } from "./components/createWelcomePage.js";
+import { createLeftSideBar } from "./components/createLeftSideBar.js";
 
 export const renderPage = (visionBoards) => {
   const containerBody = document.querySelector(".container-body");
 
   clearElementChildren(containerBody);
-  containerBody.appendChild(createWelcomePage(visionBoards));
+  containerBody.appendChild(populateWallpapers(containerBody));
 };
 
 export const clearElementChildren = (element) => {
