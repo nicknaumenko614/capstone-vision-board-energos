@@ -53,3 +53,12 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/quotes/4/updateQuoteRotate
+Content-Type: application/json
+
+{
+  "quoteRotate": "10"
+}
+
+###

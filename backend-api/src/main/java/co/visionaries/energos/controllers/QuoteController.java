@@ -60,12 +60,20 @@ public class QuoteController {
         quoteStorage.saveQuote(quoteToUpdate);
         return quoteToUpdate;
     }
+
+    @PatchMapping("/api/quotes/{quoteId}/updateQuoteRotate")
+    public Quote updateQuoteRotate(@PathVariable long quoteId, @RequestBody Quote quote) {
+        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quoteId);
+        quoteToUpdate.setQuoteRotate(quote.getQuoteRotate());
+        quoteStorage.saveQuote(quoteToUpdate);
+        return quoteToUpdate;
+    }
 }
 
 
 //
 //
 //
-//        quoteToUpdate.setQuoteRotate(quote.getQuoteRotate());
+//
 //        quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
 //        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
