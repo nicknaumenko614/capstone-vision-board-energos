@@ -48,3 +48,12 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/texts/7/updateHasFontShadow
+Content-Type: application/json
+
+{
+  "hasFontShadow": "true"
+}
+
+###
