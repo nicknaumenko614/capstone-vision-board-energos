@@ -41,3 +41,12 @@ Content-Type: application/json
   "imageParentElement": "images-container"
 
 }
+
+###
+
+PATCH http://localhost:8080/api/images/2/updateImageZoom
+Content-Type: application/json
+
+{
+"imageIsZoomed": "true"
+}

@@ -43,17 +43,19 @@ ImageController {
         imageStorage.saveImage(image);
     }
 
-    @PatchMapping("/api/images/updateimage")
-    public Image updateImage (@RequestBody Image image) {
-        Image imageToUpdate = imageStorage.retrieveImageById(image.getId());
+    @PatchMapping("/api/images/{imageId}/updateImageZoom")
+    public Image updateImage (@PathVariable long imageId, @RequestBody Image image) {
+        Image imageToUpdate = imageStorage.retrieveImageById(imageId);
         imageToUpdate.setImageIsZoomed(image.isImageIsZoomed());
-        imageToUpdate.setImageHasBorder(image.isImageHasBorder());
-        imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
-        imageToUpdate.setImageRotate(image.getImageRotate());
-        imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
-        imageToUpdate.setImageParentElement(image.getImageParentElement());
         imageStorage.saveImage(imageToUpdate);
         return imageToUpdate;
     }
 
 }
+
+
+//        imageToUpdate.setImageHasBorder(image.isImageHasBorder());
+//        imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
+//        imageToUpdate.setImageRotate(image.getImageRotate());
+//        imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
+//        imageToUpdate.setImageParentElement(image.getImageParentElement());
