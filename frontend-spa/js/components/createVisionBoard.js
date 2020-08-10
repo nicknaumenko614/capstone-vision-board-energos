@@ -15,6 +15,7 @@ export function createVisionBoard(visionBoard){
     containerBody.appendChild(createLeftSideBar());
 
     const main = document.createElement("main");
-    main.appendChild(renderDesignBoard(`${visionBoard.gridTemplateName}`))
+    main.appendChild(renderDesignBoard(`${visionBoard.gridTemplateName}`));
+    containerBody.appendChild(main);
 }
 
