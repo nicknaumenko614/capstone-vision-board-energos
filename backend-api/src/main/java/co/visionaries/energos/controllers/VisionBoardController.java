@@ -84,11 +84,45 @@ public class VisionBoardController {
         return visionBoardToUpdate;
     }
 
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderRadius")
+    public VisionBoard updateGridBorderRadius(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
 
-//        visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
-//        visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
-//        visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
-//        visionBoardToUpdate.setGridBorderThickness(visionBoard.getGridBorderThickness());
-//        visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
-    //        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderStyle")
+    public VisionBoard updateGridBorderStyle(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderThickness")
+    public VisionBoard updateGridBorderThickness(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderThickness(visionBoard.getGridBorderThickness());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateBorderHasGrid")
+    public VisionBoard updateBorderHasGrid(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateBorderTemplateName")
+    public VisionBoard updateBorderTemplateName(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
 }
