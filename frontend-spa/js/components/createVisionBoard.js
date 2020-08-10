@@ -1,6 +1,7 @@
 import { clearElementChildren } from "../app.js";
 import { renderDesignBoard } from "./renderDesignBoards.js";
 import { createLeftSideBar } from "./createLeftSideBar.js";
+import { addSideBarEventListeners } from "../eventListeners/sidebar.js";
 
 export function renderVisionBoard(visionboard) {
   const containerBody = document.querySelector(".container-body");
@@ -18,4 +19,11 @@ export function renderVisionBoard(visionboard) {
   const main = document.createElement("main");
   main.appendChild(renderDesignBoard(`${visionboard.gridTemplateName}`));
   containerBody.appendChild(main);
+
+
+  addAllEventListeners();
+}
+
+function addAllEventListeners() {
+  addSideBarEventListeners();
 }
