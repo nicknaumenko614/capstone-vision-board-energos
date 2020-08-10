@@ -39,3 +39,12 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/texts/7/updateFontSize
+Content-Type: application/json
+
+{
+  "fontSize": "15pt"
+}
+
+###
