@@ -38,7 +38,7 @@ export const createWelcomePage = (visionBoards) => {
   addVisionBoardDiv.appendChild(plusSign);
   const form = createAddVisionBoardForm();
   addVisionBoardDiv.appendChild(form);
-  addVisionBoardDiv.addEventListener("click", () => {
+  addVisionBoardDiv.addEventListener("click", () => {   
     renderAddVisionBoardForm(plusSign, form);
   })
   welcomeDesignBoard.appendChild(addVisionBoardDiv);
@@ -58,7 +58,7 @@ function createAddVisionBoardForm(){
   addNewVisionBoardForm.classList.add("add-form");
   addNewVisionBoardForm.style.display = "none";
   const label = document.createElement("label");
-  label.innerText = "Enter Your Name:";
+  label.innerText = "Vision Board Name:";
   const input = document.createElement("input");
   input.type = "text";
   input.required = "true";
@@ -66,7 +66,7 @@ function createAddVisionBoardForm(){
   const button = document.createElement("button");
   button.innerText = "Create Vision Board";
   addNewVisionBoardForm.append(label, input, button);
-
+  
   return addNewVisionBoardForm;
 }
 
