@@ -6,8 +6,6 @@ import { setupDefaultBoard } from "./components/renderDesignBoards.js";
 import { fetchVisionBoards } from "./apiHelper.js";
 import { createWelcomePage } from "./components/createWelcomePage.js";
 
-const fakeArray = ["Kendyl's Vision Board", 1, 2, 3];
-
 export const renderPage = (visionBoards) => {
   const containerBody = document.querySelector(".container-body");
 
@@ -20,10 +18,6 @@ export const clearElementChildren = (element) => {
     element.firstChild.remove();
   }
 };
-
-// renderPage();
-
-
 
 fetchVisionBoards().then((visionBoards) => {
   renderPage(visionBoards);
