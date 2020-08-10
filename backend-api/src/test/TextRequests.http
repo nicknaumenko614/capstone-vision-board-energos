@@ -1,8 +1,8 @@
-GET http://localhost:8080/api/texts
+GET http://localhost:8080/api/texts/visionboard/1
 
 ###
 
-GET http://localhost:8080/api/texts/20
+GET http://localhost:8080/api/texts/7
 
 
 ###
@@ -11,33 +11,41 @@ PATCH http://localhost:8080/api/texts/updatetext
 Content-Type: application/json
 
 {
-  "id": "2",
-  "imageIsZoomed": true,
-  "imageHasBorder": true,
-  "imageBorderRadius": "2%",
-  "imageRotate": 4,
-  "imageIsFlipped": true,
-  "imageParentElement": "block4"
+  "id": 7,
+  "textHtmlId": "text2",
+  "textContent": "This is updated content.",
+  "fontSize": "20px",
+  "hasFontShadow": true,
+  "fontShadowColor": "#34fg54",
+  "fontColor": "#fgrt45",
+  "fontFamily": "Times",
+  "textParentElement": "block4",
+  "fontBold": false,
+  "fontItalicized": false,
+  "fontUnderlined": true
 
 }
 
 ###
 
-DELETE http://localhost:8080/api/images/21/delete
+DELETE http://localhost:8080/api/texts/7/delete
 
 ###
 
-POST http://localhost:8080/api/visionboards/1/addimage
+POST http://localhost:8080/api/visionboards/1/addtext
 Content-Type: application/json
 
 {
-  "imageHtmlId": "CrazyRussian",
-  "imageIsZoomed": false,
-  "imageLink": "/images/gallery-images/airplane.jpg",
-  "imageHasBorder": false,
-  "imageBorderRadius": "0px",
-  "imageRotate": 0,
-  "imageIsFlipped": false,
-  "imageParentElement": "images-container"
+  "textHtmlId": "text5",
+  "textContent": "Dream Big with Nick!",
+  "fontSize": "12pt",
+  "hasFontShadow": false,
+  "fontShadowColor": "#393E41",
+  "fontColor": "#393E41",
+  "fontFamily": "Amaranth",
+  "textParentElement": "block9",
+  "fontBold": true,
+  "fontItalicized": true,
+  "fontUnderlined": false
 
 }

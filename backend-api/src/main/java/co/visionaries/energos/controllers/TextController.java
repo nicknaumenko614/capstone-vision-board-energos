@@ -18,9 +18,9 @@ public class TextController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping("/api/texts")
-    public Collection<Text> getAllTexts() {
-        return textStorage.getAllTexts();
+    @GetMapping("/api/texts/visionboard/{visionBoardId}")
+    public Collection<Text> getAllTexts(@PathVariable long visionBoardId) {
+        return visionBoardStorage.retrieveVisionBoardbyId(visionBoardId).getTexts();
     }
 
     @GetMapping("/api/texts/{textId}")
@@ -41,7 +41,7 @@ public class TextController {
     }
 
     @PatchMapping("/api/texts/updatetext")
-    public Text updateText (@RequestBody Text text) {
+    public Text updateText(@RequestBody Text text) {
         Text textToUpdate = textStorage.retrieveTextById(text.getId());
         textToUpdate.setTextContent(text.getTextContent());
         textToUpdate.setFontSize(text.getFontSize());

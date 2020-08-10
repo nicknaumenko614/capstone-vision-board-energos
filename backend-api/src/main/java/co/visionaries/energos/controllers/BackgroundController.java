@@ -20,9 +20,9 @@ public class BackgroundController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping("/api/backgrounds/visionboard/{visionboardId}")
-    public Collection<Background> getAllBackgrounds(@PathVariable long visionboardId) {
-        return visionBoardStorage.retrieveVisionBoardbyId(visionboardId).getBackgrounds();
+    @GetMapping("/api/backgrounds/visionboard/{visionBoardId}")
+    public Collection<Background> getAllBackgrounds(@PathVariable long visionBoardId) {
+        return visionBoardStorage.retrieveVisionBoardbyId(visionBoardId).getBackgrounds();
     }
 
     @GetMapping("/api/backgrounds/{backgroundId}")
