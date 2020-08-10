@@ -3,7 +3,7 @@ import { addSideBarEventListeners } from "./sidebar.js";
 import { addEventListenersToTemplates } from "./templates.js";
 import { addDragAndDropEventListeners } from "./drag-and-drop.js";
 import { setupDefaultBoard } from "./components/renderDesignBoards.js";
-import { fetchVisionBoards, updateVisionBoard } from "./apiHelper.js";
+import { fetchVisionBoards, updateVisionBoard } from "./apiHelper-VisionBoards.js";
 import { createWelcomePage } from "./components/createWelcomePage.js";
 
 export const renderPage = (visionBoards) => {
@@ -23,14 +23,7 @@ fetchVisionBoards().then((visionBoards) => {
   renderPage(visionBoards);
 });
 
-const myjson = {
-  "hasGrid": "true"
-}
 
-updateVisionBoard(1, myjson).then(visionBoard =>{
-  console.log(visionBoard);
-
-});
 
 // setupDefaultBoard();
 // addSideBarEventListeners();
