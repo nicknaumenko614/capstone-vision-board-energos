@@ -17,8 +17,14 @@ export const fetchQuotes = async (visionBoardId) => {
     ).then((response) => response.json());
   };
   
-  export const updateQuote = async (quote) => {
-    return fetch(`http://localhost:8080/api/quotes/updatequote`, {
+  export const deleteQuote = async (quoteId) => {
+    return fetch(`http://localhost:8080/api/quotes/${quoteId}/delete`, {
+      method: "DELETE",
+    }).then((response) => response.json());
+  };
+
+  export const updateQuoteIsZoomed = async (id, quote) => {
+    return fetch(`http://localhost:8080/api/quotes/${id}/updateQuoteIsZoomed`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -26,10 +32,53 @@ export const fetchQuotes = async (visionBoardId) => {
       body: JSON.stringify(quote),
     }).then((response) => response.json());
   };
-  
-  export const deleteQuote = async (quoteId) => {
-    return fetch(`http://localhost:8080/api/quotes/${quoteId}/delete`, {
-      method: "DELETE",
+
+  export const updateQuoteHasBorder = async (id, quote) => {
+    return fetch(`http://localhost:8080/api/quotes/${id}/updateQuoteHasBorder`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote),
     }).then((response) => response.json());
   };
-  
+
+  export const updateQuoteBorderRadius = async (id, quote) => {
+    return fetch(`http://localhost:8080/api/quotes/${id}/updateQuoteBorderRadius`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote),
+    }).then((response) => response.json());
+  };
+
+  export const updateQuoteRotate = async (id, quote) => {
+    return fetch(`http://localhost:8080/api/quotes/${id}/updateQuoteRotate`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote),
+    }).then((response) => response.json());
+  };
+
+  export const updateQuoteIsFlipped = async (id, quote) => {
+    return fetch(`http://localhost:8080/api/quotes/${id}/updateQuoteIsFlipped`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote),
+    }).then((response) => response.json());
+  };
+
+  export const updateQuoteParentElement = async (id, quote) => {
+    return fetch(`http://localhost:8080/api/quotes/${id}/updateQuoteParentElement`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote),
+    }).then((response) => response.json());
+  };
