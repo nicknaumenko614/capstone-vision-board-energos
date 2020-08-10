@@ -33,3 +33,27 @@ Content-Type: application/json
 {
   "gridSpacing": "28px"
 }
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderColor
+Content-Type: application/json
+
+{
+  "gridBorderColor": "#WEWEWE"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderRadius
+Content-Type: application/json
+
+{
+  "gridBorderRadius": "45%"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderStyle
+Content-Type: application/json
+
+{
+  "gridBorderStyle": "dotted"
+}
