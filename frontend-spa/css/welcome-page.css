@@ -40,6 +40,8 @@
   padding: 10px;
   position: absolute;
   margin-top: 15%;
+  overflow-y: scroll;
+  height: 70%;
 }
 
 .welcome-box {

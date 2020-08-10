@@ -1,8 +1,9 @@
-import {renderVisionBoard} from "./createVisionBoard.js";
+import { renderVisionBoard } from "./createVisionBoard.js";
+import { postNewVisionBoard } from "../apiHelpers/apiHelper-VisionBoards.js";
 
 export const createWelcomePage = (visionBoards) => {
   const container = document.createElement("div");
-  
+
   const img = new Image();
   img.classList.add("logo-image");
   img.src = "./images/logo.png";
@@ -26,8 +27,8 @@ export const createWelcomePage = (visionBoards) => {
     welcomeBox.appendChild(span);
     welcomeDesignBoard.appendChild(welcomeBox);
     welcomeBox.addEventListener("click", (visionBoard) => {
-        renderVisionBoard(visionBoard);
-      });
+      renderVisionBoard(visionBoard);
+    });
   });
 
   const addVisionBoardDiv = document.createElement("div");
@@ -39,22 +40,22 @@ export const createWelcomePage = (visionBoards) => {
   addVisionBoardDiv.appendChild(plusSign);
   const form = createAddVisionBoardForm();
   addVisionBoardDiv.appendChild(form);
-  addVisionBoardDiv.addEventListener("click", () => {   
+  addVisionBoardDiv.addEventListener("click", () => {
     renderAddVisionBoardForm(plusSign, form);
-  })
+  });
   welcomeDesignBoard.appendChild(addVisionBoardDiv);
 
-    container.append(img, header, welcomeDesignBoard);  
+  container.append(img, header, welcomeDesignBoard);
 
-    return container;
+  return container;
 };
 
-function renderAddVisionBoardForm(plusSign, addNewVisionBoardForm){
-    plusSign.style.display = "none";
-    addNewVisionBoardForm.style.display = "block";
+function renderAddVisionBoardForm(plusSign, addNewVisionBoardForm) {
+  plusSign.style.display = "none";
+  addNewVisionBoardForm.style.display = "block";
 }
 
-function createAddVisionBoardForm(){
+function createAddVisionBoardForm() {
   const addNewVisionBoardForm = document.createElement("div");
   addNewVisionBoardForm.classList.add("add-form");
   addNewVisionBoardForm.style.display = "none";
@@ -67,9 +68,13 @@ function createAddVisionBoardForm(){
   const button = document.createElement("button");
   button.innerText = "Create Vision Board";
   addNewVisionBoardForm.append(label, input, button);
-  // button.
-  
+  button.addEventListener("click", () => {
+    let newName = input.value;
+    if (newName === "" || newName == null) return false;
+    postNewVisionBoard(newName).then(() => {
+      location.reload();
+    });
+  });
+
   return addNewVisionBoardForm;
 }
-
-

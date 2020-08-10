@@ -7,7 +7,7 @@ export const fetchVisionBoards = async () => {
 export const postNewVisionBoard = async (boardName) => {
   return fetch(`http://localhost:8080/api/visionboards/add/${boardName}`, {
     method: "POST",
-  }).then((response) => response.json());
+  })
 };
 
 export const fetchSingleVisionBoard = (visionboardId) => {

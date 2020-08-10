@@ -3,7 +3,7 @@ import { addSideBarEventListeners } from "./sidebar.js";
 import { addEventListenersToTemplates } from "./templates.js";
 import { addDragAndDropEventListeners } from "./drag-and-drop.js";
 import { setupDefaultBoard } from "./components/renderDesignBoards.js";
-import { fetchVisionBoards, updateVisionBoard } from "./apiHelper-VisionBoards.js";
+import { fetchVisionBoards } from "./apiHelpers/apiHelper-VisionBoards.js";
 import { createWelcomePage } from "./components/createWelcomePage.js";
 
 export const renderPage = (visionBoards) => {
