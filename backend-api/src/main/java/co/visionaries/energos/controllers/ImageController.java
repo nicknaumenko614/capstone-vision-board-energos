@@ -43,10 +43,18 @@ ImageController {
         imageStorage.saveImage(image);
     }
 
-    @PatchMapping("/api/images/{imageId}/updateImageZoom")
-    public Image updateImage (@PathVariable long imageId, @RequestBody Image image) {
+    @PatchMapping("/api/images/{imageId}/updateImageIsZoomed")
+    public Image updateImageZoom(@PathVariable long imageId, @RequestBody Image image) {
         Image imageToUpdate = imageStorage.retrieveImageById(imageId);
         imageToUpdate.setImageIsZoomed(image.isImageIsZoomed());
+        imageStorage.saveImage(imageToUpdate);
+        return imageToUpdate;
+    }
+
+    @PatchMapping("/api/images/{imageId}/updateImageHasBorder")
+    public Image updateImageBorder(@PathVariable long imageId, @RequestBody Image image) {
+        Image imageToUpdate = imageStorage.retrieveImageById(imageId);
+        imageToUpdate.setImageHasBorder(image.isImageHasBorder());
         imageStorage.saveImage(imageToUpdate);
         return imageToUpdate;
     }

@@ -44,9 +44,22 @@ Content-Type: application/json
 
 ###
 
-PATCH http://localhost:8080/api/images/2/updateImageZoom
+PATCH http://localhost:8080/api/images/2/updateImageIsZoomed
 Content-Type: application/json
 
 {
 "imageIsZoomed": "true"
 }
+
+###
+
+PATCH http://localhost:8080/api/images/2/updateImageHasBorder
+Content-Type: application/json
+
+{
+  "imageHasBorder": "true"
+}
+
+###
+
+
