@@ -49,8 +49,6 @@ ImageController {
         return imageToUpdate;
     }
 
-
-
     @PatchMapping("/api/images/{imageId}/updateImageHasBorder")
     public Image updateImageBorder(@PathVariable long imageId, @RequestBody Image image) {
         Image imageToUpdate = imageStorage.retrieveImageById(imageId);

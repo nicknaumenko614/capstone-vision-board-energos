@@ -7,22 +7,6 @@ GET http://localhost:8080/api/images/20
 
 ###
 
-PATCH http://localhost:8080/api/images/updateimage
-Content-Type: application/json
-
-{
-  "id": "2",
-  "imageIsZoomed": true,
-  "imageHasBorder": true,
-  "imageBorderRadius": "2%",
-  "imageRotate": 4,
-  "imageIsFlipped": true,
-  "imageParentElement": "block4"
-
-}
-
-###
-
 DELETE http://localhost:8080/api/images/21/delete
 
 ###
