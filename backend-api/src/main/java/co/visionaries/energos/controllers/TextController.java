@@ -72,17 +72,55 @@ public class TextController {
         return textToUpdate;
     }
 
+    @PatchMapping("/api/texts/{textId}/updateFontColor")
+    public Text updateFontColor(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
+        textToUpdate.setFontColor(text.getFontColor());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateFontFamily")
+    public Text updateFontFamily(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
+        textToUpdate.setFontFamily(text.getFontFamily());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateIsFontBold")
+    public Text updateIsFontBold(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
+        textToUpdate.setFontBold(text.getFontBold());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateIsFontItalicized")
+    public Text updateIsFontItalicized(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
+        textToUpdate.setFontItalicized(text.getFontItalicized());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateIsFontUnderlined")
+    public Text updateIsFontUnderlined(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
+        textToUpdate.setFontUnderlined(text.getFontUnderlined());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateTextParentElement")
+    public Text updateTextParentElement(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
+        textToUpdate.setTextParentElement(text.getTextParentElement());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
 }
 
 
-
-
-//
-//        textToUpdate.setFontColor(text.getFontColor());
-//        textToUpdate.setFontFamily(text.getFontFamily());
-//        textToUpdate.setFontBold(text.getFontBold());
-//        textToUpdate.setFontItalicized(text.getFontItalicized());
-//        textToUpdate.setFontUnderlined(text.getFontUnderlined());
-//        textToUpdate.setTextParentElement(text.getTextParentElement());
 
 

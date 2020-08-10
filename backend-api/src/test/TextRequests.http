@@ -66,3 +66,57 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/texts/7/updateFontColor
+Content-Type: application/json
+
+{
+  "fontColor": "#393E42"
+}
+
+###
+
+PATCH http://localhost:8080/api/texts/7/updateFontFamily
+Content-Type: application/json
+
+{
+  "fontFamily": "Ariel"
+}
+
+###
+
+PATCH http://localhost:8080/api/texts/7/updateIsFontBold
+Content-Type: application/json
+
+{
+  "fontBold": true
+}
+
+###
+
+PATCH http://localhost:8080/api/texts/7/updateIsFontItalicized
+Content-Type: application/json
+
+{
+  "fontItalicized": true
+}
+
+###
+
+PATCH http://localhost:8080/api/texts/7/updateIsFontUnderlined
+Content-Type: application/json
+
+{
+  "fontUnderlined": true
+}
+
+###
+
+PATCH http://localhost:8080/api/texts/7/updateTextParentElement
+Content-Type: application/json
+
+{
+  "textParentElement": "text-container"
+}
+
+###
