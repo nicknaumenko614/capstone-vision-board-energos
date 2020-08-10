@@ -31,7 +31,7 @@ PATCH http://localhost:8080/api/quotes/4/updateQuoteIsZoomed
 Content-Type: application/json
 
 {
-  "quoteIsZoomed": "true"
+  "quoteIsZoomed": true
 }
 
 ###
@@ -40,7 +40,7 @@ PATCH http://localhost:8080/api/quotes/4/updateQuoteHasBorder
 Content-Type: application/json
 
 {
-  "quoteHasBorder": "true"
+  "quoteHasBorder": true
 }
 
 ###
@@ -67,7 +67,7 @@ PATCH http://localhost:8080/api/quotes/4/updateQuoteIsFlipped
 Content-Type: application/json
 
 {
-  "quoteIsFlipped": "true"
+  "quoteIsFlipped": true
 }
 
 ###
