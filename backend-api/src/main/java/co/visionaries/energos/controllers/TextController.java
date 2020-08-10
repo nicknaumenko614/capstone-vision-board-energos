@@ -40,25 +40,24 @@ public class TextController {
         textStorage.saveText(text);
     }
 
-    @PatchMapping("/api/texts/updatetext")
-    public Text updateText(@RequestBody Text text) {
-        Text textToUpdate = textStorage.retrieveTextById(text.getId());
+    @PatchMapping("/api/texts/{textId}/updateTextContent")
+    public Text updateText(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setTextContent(text.getTextContent());
-        textToUpdate.setFontSize(text.getFontSize());
-        textToUpdate.setHasFontShadow(text.getHasFontShadow());
-        textToUpdate.setFontShadowColor(text.getFontShadowColor());
-        textToUpdate.setFontColor(text.getFontColor());
-        textToUpdate.setFontFamily(text.getFontFamily());
-        textToUpdate.setFontBold(text.getFontBold());
-        textToUpdate.setFontItalicized(text.getFontItalicized());
-        textToUpdate.setFontUnderlined(text.getFontUnderlined());
-        textToUpdate.setTextParentElement(text.getTextParentElement());
         textStorage.saveText(textToUpdate);
         return textToUpdate;
-
-
     }
 }
 
+
+//        textToUpdate.setFontSize(text.getFontSize());
+//        textToUpdate.setHasFontShadow(text.getHasFontShadow());
+//        textToUpdate.setFontShadowColor(text.getFontShadowColor());
+//        textToUpdate.setFontColor(text.getFontColor());
+//        textToUpdate.setFontFamily(text.getFontFamily());
+//        textToUpdate.setFontBold(text.getFontBold());
+//        textToUpdate.setFontItalicized(text.getFontItalicized());
+//        textToUpdate.setFontUnderlined(text.getFontUnderlined());
+//        textToUpdate.setTextParentElement(text.getTextParentElement());
 
 

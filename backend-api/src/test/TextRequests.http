@@ -7,27 +7,6 @@ GET http://localhost:8080/api/texts/7
 
 ###
 
-PATCH http://localhost:8080/api/texts/updatetext
-Content-Type: application/json
-
-{
-  "id": 7,
-  "textHtmlId": "text2",
-  "textContent": "This is updated content.",
-  "fontSize": "20px",
-  "hasFontShadow": true,
-  "fontShadowColor": "#34fg54",
-  "fontColor": "#fgrt45",
-  "fontFamily": "Times",
-  "textParentElement": "block4",
-  "fontBold": false,
-  "fontItalicized": false,
-  "fontUnderlined": true
-
-}
-
-###
-
 DELETE http://localhost:8080/api/texts/7/delete
 
 ###
@@ -49,3 +28,14 @@ Content-Type: application/json
   "fontUnderlined": false
 
 }
+
+###
+
+PATCH http://localhost:8080/api/texts/7/updateTextContent
+Content-Type: application/json
+
+{
+ "textContent": "Update"
+}
+
+###
