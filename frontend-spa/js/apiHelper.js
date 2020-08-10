@@ -12,7 +12,7 @@ export const postNewVisionBoard = async (boardName) => {
 
 export const fetchSingleVisionBoard = (visionboardId) => {
   return fetch(
-    `http://localhost:8080/api/visionboards/${visionboardId}")`
+    `http://localhost:8080/api/visionboards/${visionboardId}`
   ).then((response) => response.json());
 };
 
@@ -38,8 +38,8 @@ export const updateVisionBoard = async (visionboard) => {
 //   ).then((response) => response.json());
 // };
 
-export const fetchBackgrounds = async () => {
-  return fetch("http://localhost:8080/api/backgrounds").then((response) =>
+export const fetchBackgrounds = async (visionBoardId) => {
+  return fetch(`http://localhost:8080/api/backgrounds/visionboard/${visionBoardId}`).then((response) =>
     response.json()
   );
 };
@@ -60,8 +60,8 @@ export const deleteBackground = async (backgroundId) => {
   }).then((response) => response.json());
 };
 
-export const fetchImages = async () => {
-  return fetch("http://localhost:8080/api/images").then((response) =>
+export const fetchImages = async (visionBoardId) => {
+  return fetch(`http://localhost:8080/api/images/visionboard/${visionBoardId}`).then((response) =>
     response.json()
   );
 };
@@ -95,8 +95,8 @@ export const deleteImage = async (imageId) => {
   }).then((response) => response.json());
 };
 
-export const fetchTexts = async () => {
-  return fetch("http://localhost:8080/api/texts").then((response) =>
+export const fetchTexts = async (visionBoardId) => {
+  return fetch(`http://localhost:8080/api/texts/visionboard/${visionBoardId}`).then((response) =>
     response.json()
   );
 };
@@ -130,8 +130,8 @@ export const deleteText = async (textId) => {
   }).then((response) => response.json());
 };
 
-export const fetchQuotes = async () => {
-  return fetch("http://localhost:8080/api/quotes").then((response) =>
+export const fetchQuotes = async (visionBoardId) => {
+  return fetch(`http://localhost:8080/api/quotes/visionboard/${visionBoardId}`).then((response) =>
     response.json()
   );
 };
