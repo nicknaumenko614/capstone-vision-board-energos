@@ -82,11 +82,12 @@ ImageController {
         imageStorage.saveImage(imageToUpdate);
         return imageToUpdate;
     }
+
+    @PatchMapping("/api/images/{imageId}/updateImageParentElement")
+    public Image updateImageParentElement(@PathVariable long imageId, @RequestBody Image image) {
+        Image imageToUpdate = imageStorage.retrieveImageById(imageId);
+        imageToUpdate.setImageParentElement(image.getImageParentElement());
+        imageStorage.saveImage(imageToUpdate);
+        return imageToUpdate;
+    }
 }
-
-
-
-//        imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
-//        imageToUpdate.setImageRotate(image.getImageRotate());
-//        imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
-//        imageToUpdate.setImageParentElement(image.getImageParentElement());

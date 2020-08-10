@@ -88,3 +88,12 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/images/2/updateImageParentElement
+Content-Type: application/json
+
+{
+  "imageParentElement": "images-container"
+}
+
+###
