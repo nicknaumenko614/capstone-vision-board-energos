@@ -5,14 +5,6 @@ const main = document.querySelector("main");
 
 export function addDragAndDropEventListeners() {
   const boxes = document.querySelectorAll(".box");
-  // boxes.forEach((box) => {
-  //   box.addEventListener("drop", () => {
-  //     drop(event, box);
-  //   });
-
-  // box.addEventListener("dragover", () => {
-  //   allowDrop(event);
-  // });
 
   main.addEventListener("drop", () => {
     mainDropEventListener();

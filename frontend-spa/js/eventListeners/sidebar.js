@@ -18,20 +18,15 @@ const backgroundAddImageInput = document.querySelector(
 const backgroundImageInputContainer = document.querySelector(
   ".wallpapers-container .input-container"
 );
-// const presetWallpaperImages = document.querySelectorAll(
-//   ".wallpapers-container img"
-// );
+
 const addImageInput = document.querySelector(".images-container .add-image");
 const imageInputContainer = document.querySelector(
   ".images-container .input-container"
 );
-// const presetImages = document.querySelectorAll(".images-container img");
 const addQuoteInput = document.querySelector(".add-quote");
-// const presetQuotes = document.querySelectorAll(".quotes-container img");
 const quoteInputContainer = document.querySelector(
   ".quotes-container .input-container"
 );
-// const presetTexts = document.querySelectorAll(".text");
 
 export function addSideBarEventListeners() {
   for (let i = 0; i < icons.length; i++) {
@@ -71,28 +66,7 @@ export function addSideBarEventListeners() {
   addQuoteInput.addEventListener("change", () => {
     createNewQuote();
   });
-
-  // fillArraysWithPresetElements();
-  // addEventListenerToWallpaperImages();
-  // addEventListenersToImages();
-  // addEventListenersToQuotes();
-  // addEventListenerToTexts();
 }
-
-// function fillArraysWithPresetElements() {
-//   presetWallpaperImages.forEach((img) => {
-//     wallpaperImages.push(img);
-//   });
-//   presetImages.forEach((img) => {
-//     images.push(img);
-//   });
-//   presetQuotes.forEach((quote) => {
-//     quotes.push(quote);
-//   });
-//   presetTexts.forEach((text) => {
-//     texts.push(text);
-//   });
-// }
 
 function changeBackgroundColor() {
   let color = backgroundColorPickerInput.value;
@@ -149,17 +123,7 @@ function createNewTextElement() {
     inputContainerDiv.nextSibling
   );
   addTextInput.value = "";
-  // texts.push(textDiv);
-  // addEventListenerToTexts();
 }
-
-// function addEventListenerToTexts() {
-//   texts.forEach((text) => {
-//     text.addEventListener("dragstart", () => {
-//       drag(event);
-//     });
-//   });
-// }
 
 function checkUrl(url) {
   return url.match(/\.(jpeg|jpg|png|gif|tiff)/) != null;
@@ -175,27 +139,15 @@ function createNewBackgroundImage() {
   }
   const img = createImageToAdd(url, "wallpaper", wallpaperNumber);
 
-  // const img = new Image();
-  // img.src = url;
-  // img.id = "add-" + className + "-" + number;
-  // img.classList.add(className);
+ 
   backgroundImageInputContainer.parentNode.insertBefore(
     img,
     backgroundImageInputContainer.nextSibling
   );
   backgroundAddImageInput.value = "";
   wallpaperNumber++;
-  // wallpaperImages.push(img);
-  // addEventListenerToWallpaperImages();
+ 
 }
-
-// function addEventListenerToWallpaperImages() {
-//   for (let i = 0; i < wallpaperImages.length; i++) {
-//     wallpaperImages[i].addEventListener("click", () => {
-//       main.style.backgroundImage = "url(" + wallpaperImages[i].src + ")";
-//     });
-//   }
-// }
 
 let imageNumber = 0;
 function createNewImage() {
@@ -207,27 +159,13 @@ function createNewImage() {
   }
   const img = createImageToAdd(url, "image", imageNumber);
 
-  // const img = new Image();
-  // img.src = url;
-  // img.id = "add-" + className + "-" + number;
-  // img.classList.add(className);
   imageInputContainer.parentNode.insertBefore(
     img,
     imageInputContainer.nextSibling
   );
   addImageInput.value = "";
   imageNumber++;
-  // images.push(img);
-  // addEventListenersToImages();
 }
-
-// function addEventListenersToImages() {
-//   for (let i = 0; i < images.length; i++) {
-//     images[i].addEventListener("dragstart", () => {
-//       drag(event);
-//     });
-//   }
-// }
 
 let quoteNumber = 0;
 function createNewQuote() {
@@ -239,27 +177,13 @@ function createNewQuote() {
   }
   const img = createImageToAdd(url, "quote", quoteNumber);
 
-  // const img = new Image();
-  // img.src = url;
-  // img.id = "add-" + className + "-" + number;
-  // img.classList.add(className);
   quoteInputContainer.parentNode.insertBefore(
     img,
     quoteInputContainer.nextSibling
   );
   addQuoteInput.value = "";
   quoteNumber++;
-  // quotes.push(img);
-  // addEventListenersToQuotes();
 }
-
-// function addEventListenersToQuotes() {
-//   for (let i = 0; i < quotes.length; i++) {
-//     quotes[i].addEventListener("dragstart", () => {
-//       drag(event);
-//     });
-//   }
-// }
 
 function sidebarClickEventListener() {
   const el = event.target;
