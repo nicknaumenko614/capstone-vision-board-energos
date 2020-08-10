@@ -71,3 +71,12 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/api/quotes/4/updateQuoteParentElement
+Content-Type: application/json
+
+{
+  "quoteParentElement": "quotes-container"
+}
+
+###

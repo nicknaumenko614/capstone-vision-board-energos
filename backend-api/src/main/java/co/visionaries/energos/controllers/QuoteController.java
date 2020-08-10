@@ -76,12 +76,12 @@ public class QuoteController {
         quoteStorage.saveQuote(quoteToUpdate);
         return quoteToUpdate;
     }
+
+    @PatchMapping("/api/quotes/{quoteId}/updateQuoteParentElement")
+    public Quote updateQuoteParentElement(@PathVariable long quoteId, @RequestBody Quote quote) {
+        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quoteId);
+        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
+        quoteStorage.saveQuote(quoteToUpdate);
+        return quoteToUpdate;
+    }
 }
-
-
-//
-//
-//
-//
-//
-//        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
