@@ -18,8 +18,9 @@ public class QuoteController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping("/api/quotes")
-    public Collection<Quote> getAllQuotes(){return quoteStorage.getAllQuotes();}
+    @GetMapping("/api/quotes/visionboard/{visionBoardId}")
+    public Collection<Quote> getAllQuotes(@PathVariable long visionBoardId){
+        return visionBoardStorage.retrieveVisionBoardbyId(visionBoardId).getQuotes();}
 
     @GetMapping("/api/quotes/{quoteId}")
     public Quote getQuoteById(@PathVariable long quoteId) { return quoteStorage.retrieveQuoteById(quoteId);}

@@ -1,4 +1,4 @@
-GET http://localhost:8080/api/quotes
+GET http://localhost:8080/api/quotes/visionboard/1
 ###
 
 GET http://localhost:8080/api/quotes/23
