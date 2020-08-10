@@ -1,4 +1,4 @@
-GET http://localhost:8080/api/backgrounds
+GET http://localhost:8080/api/backgrounds/visionboard/1
 
 ###
 
