@@ -19,9 +19,9 @@ ImageController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping("/api/images")
-    public Collection<Image> getAllImages() {
-        return imageStorage.getAllImages();
+    @GetMapping("/api/images/visionboard/{visionBoardId}")
+    public Collection<Image> getAllImages(@PathVariable long visionBoardId) {
+        return visionBoardStorage.retrieveVisionBoardbyId(visionBoardId).getImages();
     }
 
     @GetMapping("/api/images/{imageId}")
