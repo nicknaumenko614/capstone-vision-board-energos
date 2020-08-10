@@ -117,8 +117,8 @@ public class VisionBoardController {
     }
 
 
-    @PatchMapping("/api/visionboards/{visionBoardId}/updateBorderTemplateName")
-    public VisionBoard updateBorderTemplateName(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridTemplateName")
+    public VisionBoard updateGridTemplateName(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
         VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
         visionBoardStorage.saveVisionBoard(visionBoardToUpdate);

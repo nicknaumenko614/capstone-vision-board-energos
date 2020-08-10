@@ -57,3 +57,27 @@ Content-Type: application/json
 {
   "gridBorderStyle": "dotted"
 }
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderThickness
+Content-Type: application/json
+
+{
+  "gridBorderThickness": "10px"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateBorderHasGrid
+Content-Type: application/json
+
+{
+  "hasGrid": false
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridTemplateName
+Content-Type: application/json
+
+{
+  "gridTemplateName": 6
+}
