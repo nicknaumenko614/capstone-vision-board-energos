@@ -1,4 +1,4 @@
-import { renderDesignBoard } from "./components/renderDesignBoards.js";
+import { renderDesignBoard } from "../components/renderDesignBoards.js";
 import { removePreviousElement } from "./drag-and-drop.js";
 
 const templates = document.querySelectorAll(".templates-container img");
