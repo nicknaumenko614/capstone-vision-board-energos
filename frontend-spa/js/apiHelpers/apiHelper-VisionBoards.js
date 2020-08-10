@@ -40,7 +40,7 @@ export const updateVisionBoardThemeDark = async (id, visionboard) => {
 
 export const updateVisionBoardHasGrid = async (id, visionboard) => {
   return fetch(
-    `http://localhost:8080/api/visionboards/${id}/updateHasGrid`,
+    `http://localhost:8080/api/visionboards/${id}/updateBorderHasGrid`,
     {
       method: "PATCH",
       headers: {

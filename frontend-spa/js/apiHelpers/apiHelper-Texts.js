@@ -43,8 +43,18 @@ export const fetchTexts = async (visionBoardId) => {
     }).then((response) => response.json());
   };
   
-  export const updateTextHasFontShadow = async (id, text) => {
-    return fetch(`http://localhost:8080/api/texts/${id}/updateTextHasFontShadow`, {
+  export const updateHasFontShadow = async (id, text) => {
+    return fetch(`http://localhost:8080/api/texts/${id}/updateHasFontShadow`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(text),
+    }).then((response) => response.json());
+  };
+  
+  export const updateFontShadowColor = async (id, text) => {
+    return fetch(`http://localhost:8080/api/texts/${id}/updateFontShadowColor`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -73,8 +83,8 @@ export const fetchTexts = async (visionBoardId) => {
     }).then((response) => response.json());
   };
   
-  export const updateTextIsFontBold = async (id, text) => {
-    return fetch(`http://localhost:8080/api/texts/${id}/updateTextIsFontBold`, {
+  export const updateIsFontBold = async (id, text) => {
+    return fetch(`http://localhost:8080/api/texts/${id}/updateIsFontBold`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -83,8 +93,8 @@ export const fetchTexts = async (visionBoardId) => {
     }).then((response) => response.json());
   };
   
-  export const updateTextIsFontItalicized = async (id, text) => {
-    return fetch(`http://localhost:8080/api/texts/${id}/updateTextIsFontItalicized`, {
+  export const updateIsFontItalicized = async (id, text) => {
+    return fetch(`http://localhost:8080/api/texts/${id}/updateIsFontItalicized`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -93,8 +103,8 @@ export const fetchTexts = async (visionBoardId) => {
     }).then((response) => response.json());
   };
   
-  export const updateTextIsFontUnderlined = async (id, text) => {
-    return fetch(`http://localhost:8080/api/texts/${id}/updateTextIsFontUnderlined`, {
+  export const updateIsFontUnderlined = async (id, text) => {
+    return fetch(`http://localhost:8080/api/texts/${id}/updateIsFontUnderlined`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

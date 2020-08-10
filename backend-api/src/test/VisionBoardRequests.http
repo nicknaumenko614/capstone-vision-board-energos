@@ -1,14 +1,10 @@
 GET http://localhost:8080/api/visionboards
 
 ###
-
-GET http://localhost:8080/api/visionboards/28
-
-
-###
-
 POST http://localhost:8080/api/visionboards/add/johnsdadd
 
+###
+GET http://localhost:8080/api/visionboards/28
 
 ###
 PATCH http://localhost:8080/api/visionboards/1/updateThemeDark
