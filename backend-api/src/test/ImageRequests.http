@@ -62,4 +62,29 @@ Content-Type: application/json
 
 ###
 
+PATCH http://localhost:8080/api/images/2/updateImageBorderRadius
+Content-Type: application/json
 
+{
+  "imageBorderRadius": "50"
+}
+
+###
+
+PATCH http://localhost:8080/api/images/2/updateImageRotate
+Content-Type: application/json
+
+{
+  "imageRotate": "180"
+}
+
+###
+
+PATCH http://localhost:8080/api/images/2/updateImageIsFlipped
+Content-Type: application/json
+
+{
+  "imageIsFlipped": "true"
+}
+
+###

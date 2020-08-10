@@ -59,10 +59,33 @@ ImageController {
         return imageToUpdate;
     }
 
+    @PatchMapping("/api/images/{imageId}/updateImageBorderRadius")
+    public Image updateImageBorderRadius(@PathVariable long imageId, @RequestBody Image image) {
+        Image imageToUpdate = imageStorage.retrieveImageById(imageId);
+        imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
+        imageStorage.saveImage(imageToUpdate);
+        return imageToUpdate;
+    }
+
+    @PatchMapping("/api/images/{imageId}/updateImageRotate")
+    public Image updateImageRotate(@PathVariable long imageId, @RequestBody Image image) {
+        Image imageToUpdate = imageStorage.retrieveImageById(imageId);
+        imageToUpdate.setImageRotate(image.getImageRotate());
+        imageStorage.saveImage(imageToUpdate);
+        return imageToUpdate;
+    }
+
+    @PatchMapping("/api/images/{imageId}/updateImageIsFlipped")
+    public Image updateImageIsFlipped(@PathVariable long imageId, @RequestBody Image image) {
+        Image imageToUpdate = imageStorage.retrieveImageById(imageId);
+        imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
+        imageStorage.saveImage(imageToUpdate);
+        return imageToUpdate;
+    }
 }
 
 
-//        imageToUpdate.setImageHasBorder(image.isImageHasBorder());
+
 //        imageToUpdate.setImageBorderRadius(image.getImageBorderRadius());
 //        imageToUpdate.setImageRotate(image.getImageRotate());
 //        imageToUpdate.setImageIsFlipped(image.isImageIsFlipped());
