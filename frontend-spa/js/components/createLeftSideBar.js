@@ -1,5 +1,6 @@
 import { fetchBackgrounds } from "../apiHelpers/apiHelper-Backgrounds.js";
 import { fetchImages } from "../apiHelpers/apiHelper-Images.js";
+import { fetchTexts } from "../apiHelpers/apiHelper-Texts.js";
 
 export function createLeftSideBar(visionboard) {
   const sidebar = document.createElement("section");
@@ -26,6 +27,7 @@ export function createLeftSideBar(visionboard) {
 
   const textContainer = document.createElement("div");
   textContainer.classList.add("text-container");
+  populateTexts(textContainer, visionboard);
 
   const quotesContainer = document.createElement("div");
   quotesContainer.classList.add("quotes-container");
@@ -102,19 +104,44 @@ function populateWallpapers(el, visionboard) {
 }
 
 function populateImages(el, visionboard) {
-    el.innerHTML = `
+  el.innerHTML = `
     <div class="input-container">
     <label>Image URL</label>
     <input type="text" class="add-image" />
   </div>
     `;
 
-    fetchImages(`${visionboard.id}`).then((images) => {
-        images.forEach((image) => {
-          const img = new Image();
-          img.classList.add("image");
-          img.src = `${image.imageLink}`;
-          el.appendChild(img);
-        });
-      });
+  fetchImages(`${visionboard.id}`).then((images) => {
+    images.forEach((image) => {
+      const img = new Image()
+      img.classList.add("image");
+      img.draggable = "true";
+      img.src = `${image.imageLink}`;
+      el.appendChild(img);
+    });
+  });
+}
+
+function populateTexts(el, visionboard) {
+  el.innerHTML = `
+  <div class="input-container">
+            <label>Text Input</label>
+            <input type="text" class="add-text" />
+          </div>
+  `;
+
+  fetchTexts(`${visionboard.id}`).then((texts) => {
+    texts.forEach((text) => {
+      const textDiv = document.createElement("div");
+      textDiv.classList.add("text");
+      textDiv.id = `${text.textHtmlId}`;
+      textDiv.draggable = "true";
+      const textH2 = document.createElement("h2");
+      const content = `${text.textContent}`;
+      textH2.contentEditable = "true";
+      textH2.innerText = content;
+      textDiv.appendChild(textH2);
+      el.appendChild(textDiv);
+    });
+  });
 }
