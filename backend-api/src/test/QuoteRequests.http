@@ -1,28 +1,11 @@
 GET http://localhost:8080/api/quotes/visionboard/1
+
 ###
 
 GET http://localhost:8080/api/quotes/23
 
-
 ###
 
-PATCH http://localhost:8080/api/quotes/updatequote
-Content-Type: application/json
-
-{
-  "id": 23,
-  "quoteHtmlId": "updated-img1",
-  "quoteIsZoomed": true,
-  "quoteLink": "/images/quotes/quote1.png",
-  "quoteHasBorder": true,
-  "quoteBorderRadius": "0000px",
-  "quoteRotate": 3,
-  "quoteIsFlipped": true,
-  "quoteParentElement": "quotes-asdasdfasdfasdf"
-}
-
-
-###
 
 DELETE http://localhost:8080/api/quotes/23/delete
 
@@ -42,3 +25,13 @@ Content-Type: application/json
   "quoteParentElement": "quotes-asdasdfasdfasdf"
 }
 
+###
+
+PATCH http://localhost:8080/api/quotes/4/updateQuoteIsZoomed
+Content-Type: application/json
+
+{
+  "quoteIsZoomed": "true"
+}
+
+###

@@ -37,16 +37,19 @@ public class QuoteController {
         quoteStorage.saveQuote(quote);
     }
 
-    @PatchMapping("/api/quotes/updatequote")
-    public Quote updateQuote(@RequestBody Quote quote) {
-        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quote.getId());
+    @PatchMapping("/api/quotes/{quoteId}/updateQuoteIsZoomed")
+    public Quote updateQuoteIsZoomed(@PathVariable long quoteId, @RequestBody Quote quote) {
+        Quote quoteToUpdate = quoteStorage.retrieveQuoteById(quoteId);
         quoteToUpdate.setQuoteIsZoomed(quote.isQuoteIsZoomed());
-        quoteToUpdate.setQuoteHasBorder(quote.isQuoteHasBorder());
-        quoteToUpdate.setQuoteBorderRadius(quote.getQuoteBorderRadius());
-        quoteToUpdate.setQuoteRotate(quote.getQuoteRotate());
-        quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
-        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
         quoteStorage.saveQuote(quoteToUpdate);
         return quoteToUpdate;
     }
 }
+
+
+//
+//        quoteToUpdate.setQuoteHasBorder(quote.isQuoteHasBorder());
+//        quoteToUpdate.setQuoteBorderRadius(quote.getQuoteBorderRadius());
+//        quoteToUpdate.setQuoteRotate(quote.getQuoteRotate());
+//        quoteToUpdate.setQuoteIsFlipped(quote.isQuoteIsFlipped());
+//        quoteToUpdate.setQuoteParentElement(quote.getQuoteParentElement());
