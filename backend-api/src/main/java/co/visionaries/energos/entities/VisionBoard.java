@@ -18,7 +18,7 @@ public class VisionBoard {
     private String gridBorderStyle;
     private String backgroundImageLink;
     private String backgroundColor;
-    private String gridTemplateName;
+    private int gridTemplateName;
 
     @OneToMany(mappedBy = "visionBoard")
     private Collection<Text> texts;
@@ -34,7 +34,7 @@ public class VisionBoard {
 
     public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing,
                        String gridBorderRadius, String gridBorderThickness, String gridBorderColor,
-                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName) {
+                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, int gridTemplateName) {
         this.visionBoardName = visionBoardName;
         this.isThemeDark = isThemeDark;
         this.hasGrid = hasGrid;
@@ -140,11 +140,11 @@ public class VisionBoard {
         this.backgroundColor = backgroundColor;
     }
 
-    public String getGridTemplateName() {
+    public int getGridTemplateName() {
         return gridTemplateName;
     }
 
-    public void setGridTemplateName(String gridTemplateName) {
+    public void setGridTemplateName(int gridTemplateName) {
         this.gridTemplateName = gridTemplateName;
     }
 
