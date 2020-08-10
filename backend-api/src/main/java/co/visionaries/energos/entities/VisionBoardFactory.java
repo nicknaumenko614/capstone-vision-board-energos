@@ -33,37 +33,37 @@ public class VisionBoardFactory {
         Image image2 = new Image("img2", false, "/images/gallery-images/baby-berner1.jpg",
                 false, "0%", 0, false, "images-container", visionBoard);
 //        Image image3 = new Image ("img3", false, "/images/gallery-images/baby-berner2.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image4 = new Image ("img4", false, "/images/gallery-images/dollars.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image5 = new Image ("img5", false, "/images/gallery-images/family-sunset.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image6 = new Image ("img6", false, "/images/gallery-images/grad-cap.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image7 = new Image ("img7", false, "/images/gallery-images/health-is-wealth.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image8 = new Image ("img8", false, "/images/gallery-images/health.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image9 = new Image ("img9", false, "/images/gallery-images/house-pool.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image10 = new Image ("img10", false, "/images/gallery-images/luggage-beach.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image11 = new Image ("img11", false, "/images/gallery-images/mercedes.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image12 = new Image ("img12", false, "/images/gallery-images/paper-love.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image13 = new Image ("img13", false, "/images/gallery-images/pom.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image14 = new Image ("img14", false, "/images/gallery-images/running.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image15 = new Image ("img15", false, "/images/gallery-images/runningII.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image16 = new Image ("img16", false, "/images/gallery-images/success-focus-life-achievements.jpeg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image17 = new Image ("img17", false, "/images/gallery-images/wedding.jpeg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 //        Image image18 = new Image ("img18", false, "/images/gallery-images/woman-and-man-hugging-on-street.jpg",
-//                false, "0px", 0, false, "images-container", visionBoard);
+//                false, "0%", 0, false, "images-container", visionBoard);
 
         imageStorage.saveImage(image1);
         imageStorage.saveImage(image2);
@@ -88,23 +88,23 @@ public class VisionBoardFactory {
                 0, false, "quotes-container", visionBoard);
         Quote quote2 = new Quote("quote-img2", false, "/images/quotes/quote2.jpg", false, "0%",
                 0, false, "quotes-container", visionBoard);
-//        Quote quote3 = new Quote("quote-img3", false, "/images/quotes/quote3.png", false, "0px",
+//        Quote quote3 = new Quote("quote-img3", false, "/images/quotes/quote3.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote4 = new Quote("quote-img4", false, "/images/quotes/quote4.png", false, "0px",
+//        Quote quote4 = new Quote("quote-img4", false, "/images/quotes/quote4.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote5 = new Quote("quote-img5", false, "/images/quotes/quote5.png", false, "0px",
+//        Quote quote5 = new Quote("quote-img5", false, "/images/quotes/quote5.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote6 = new Quote("quote-img6", false, "/images/quotes/quote6.png", false, "0px",
+//        Quote quote6 = new Quote("quote-img6", false, "/images/quotes/quote6.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote7 = new Quote("quote-img7", false, "/images/quotes/quote7.png", false, "0px",
+//        Quote quote7 = new Quote("quote-img7", false, "/images/quotes/quote7.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote8 = new Quote("quote-img8", false, "/images/quotes/quote8.png", false, "0px",
+//        Quote quote8 = new Quote("quote-img8", false, "/images/quotes/quote8.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote9 = new Quote("quote-img9", false, "/images/quotes/quote9.png", false, "0px",
+//        Quote quote9 = new Quote("quote-img9", false, "/images/quotes/quote9.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote10 = new Quote("quote-img10", false, "/images/quotes/quote10.png", false, "0px",
+//        Quote quote10 = new Quote("quote-img10", false, "/images/quotes/quote10.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
-//        Quote quote11 = new Quote("quote-img11", false, "/images/quotes/quote11.png", false, "0px",
+//        Quote quote11 = new Quote("quote-img11", false, "/images/quotes/quote11.png", false, "0%",
 //                0, false,"quotes-container", visionBoard);
 
         quoteStorage.saveQuote(quote1);
