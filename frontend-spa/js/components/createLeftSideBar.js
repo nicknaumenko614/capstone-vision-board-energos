@@ -1,6 +1,7 @@
 import { fetchBackgrounds } from "../apiHelpers/apiHelper-Backgrounds.js";
 import { fetchImages } from "../apiHelpers/apiHelper-Images.js";
 import { fetchTexts } from "../apiHelpers/apiHelper-Texts.js";
+import { fetchQuotes } from "../apiHelpers/apiHelper-Quotes.js";
 
 export function createLeftSideBar(visionboard) {
   const sidebar = document.createElement("section");
@@ -31,6 +32,7 @@ export function createLeftSideBar(visionboard) {
 
   const quotesContainer = document.createElement("div");
   quotesContainer.classList.add("quotes-container");
+  populateQuotes(quotesContainer, visionboard);
 
   const settingsContainer = document.createElement("div");
   settingsContainer.classList.add("settings-container");
@@ -113,7 +115,7 @@ function populateImages(el, visionboard) {
 
   fetchImages(`${visionboard.id}`).then((images) => {
     images.forEach((image) => {
-      const img = new Image()
+      const img = new Image();
       img.classList.add("image");
       img.draggable = "true";
       img.src = `${image.imageLink}`;
@@ -145,3 +147,25 @@ function populateTexts(el, visionboard) {
     });
   });
 }
+
+function populateQuotes(el, visionboard) {
+  el.innerHTML = `
+  <div class="input-container">
+  <label>Image URL </label>
+  <input type="text" class="add-quote" />
+</div>
+  `;
+
+  fetchQuotes(`${visionboard.id}`).then((quotes) => {
+    quotes.forEach((quote) => {
+      const img = new Image();
+      img.classList.add("quote");
+      img.draggable = "true";
+      img.src = `${quote.quoteLink}`;
+      el.appendChild(img);
+    });
+  });
+
+}
+
+
