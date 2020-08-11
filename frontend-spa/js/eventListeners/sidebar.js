@@ -1,8 +1,9 @@
 import { drag, createJSON } from "./drag-and-drop.js";
-import { updateVisionBoardBackgroundColor } from "../apiHelpers/apiHelper-VisionBoards.js";
+import { updateVisionBoardBackgroundColor,  updateVisionBoardBackgroundImageLink } from "../apiHelpers/apiHelper-VisionBoards.js";
 import { postText } from "../apiHelpers/apiHelper-Texts.js";
 import { postNewBackground } from "../apiHelpers/apiHelper-Backgrounds.js";
 import { postNewImage } from "../apiHelpers/apiHelper-Images.js";
+import { postNewQuote } from "../apiHelpers/apiHelper-Quotes.js";
 
 export function addSideBarEventListeners() {
   const icons = document.querySelectorAll(".icon-div i");
@@ -235,6 +236,7 @@ function createNewQuote() {
     "quoteLink": img.src,
     "quoteParentElement": "quotes-container"
   }
+  postNewQuote(visionBoardId, quoteJSON);
 }
 
 function sidebarClickEventListener() {
@@ -243,6 +245,11 @@ function sidebarClickEventListener() {
   if (el.classList.contains("wallpaper")) {
     const src = el.src;
     main.style.backgroundImage = "url(" + src + ")";
+    
+
+    const visionBoardId =document.querySelector(".visionboard-id-input").value;
+    const addBackgroundImageUrlJSON = createJSON("backgroundLink", src);
+    updateVisionBoardBackgroundImageLink(visionBoardId, addBackgroundImageUrlJSON);
   }
 }
 
