@@ -300,7 +300,7 @@ function populateHelp(el){
 
     <h3>How do I select and add an image to my vision board?</h3>
 
-    <p>Select the Image Icon on the left of the screen. Click on the thumbnail of the image you would like to add and drag the image to the desired box on the vision board. When it is above the desired location, drop the image. It will then display on your vision board.</p>
+    <p>Select the Image Icon on the left of the screen. Grab the corner of the thumbnail of the image you would like to add and drag the image to the desired box on the vision board. When it is above the desired location, drop the image. It will then display on your vision board.</p>
 
     <h2>Text</h2>
 
@@ -310,7 +310,7 @@ function populateHelp(el){
 
     <h3>How do I select and and add text to my vision board?</h3>
 
-    <p>Select the Text Icon on the left of the screen. Find the text you would like to add to your vision board and hover over the area just next to the text. The grabber cursor will appear. Then, drag the text to the desired box on the vision board and drop it. The text will display on your vision board.</p>
+    <p>Select the Text Icon on the left of the screen. Grab the corner of the thumbnail of the text you would like to add and drag the text to the desired box on the vision board and drop it. The text will display on your vision board.</p>
 
     <h3>How do I edit the text?</h3>
 
@@ -322,6 +322,40 @@ function populateHelp(el){
 
     <p>Select the Quote Icon on the left of the screen and then click in the Quote URL box. 
     Type your idea you would like to add and then press the 'Enter' key. The new text will add to the gallery.</p>
+
+    <h3>How do I add a quote to my vision board?</h3>
+
+    <p>Click on the Quote Icon on the left of the screen. Grab the corner of the thumbnail of the quote you would like to add and drag the quote over the desired box on the vision board. When it is above the desired location, drop the quote. It will then display on your vision board.</p>
+
+    <h2>Settings</h2>
+
+    <h3>How do I toggle Dark Mode?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Click the toggle under Dark Mode. When the toggle is blue, Dark Mode is turned on. When the toggle is grey, Dark Mode is turned off.</p>
+
+    <h3>How do I toggle the grid on and off?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Click the toggle under Show Grid. When the toggle is blue, Show Grid is turned on. When the toggle is grey, Show Grid is turned off.</p>
+
+    <h3>How do I change the spacing between grid boxes?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Select the slider under Grid Spacing and move the ball left or right. Left decreases the amount of space between boxes. Right increases the amount of space between boxes.</p>
+
+    <h3>How do I change the border radius of the grid boxes?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Select the slider under Border Radius and move the ball left or right. Left creates a more square box, while right rounds the boxes.</p>
+
+    <h3>How do I change the border thickness?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Select the slider under Border Thickness and move the ball left or right. Left decreases the thickness, while right increases it.</p>
+
+    <h3>How do I change the border color?</h3>
+
+    <p>Select the Settings Icon on the left of the screen and then click the color block under Border Color for the color picker to display. Then, select your desired color.</p>
+
+    <h3>How do I change the border style?</h3>
+
+    <p>Select the Settings Icon on the left of the screen and then select the desired border style from the drop-down list. Once selected, the border style will update on the vision board.</p>
 
   </div>
   `;
