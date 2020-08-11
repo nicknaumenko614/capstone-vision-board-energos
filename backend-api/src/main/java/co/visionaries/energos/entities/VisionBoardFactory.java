@@ -90,19 +90,19 @@ public class VisionBoardFactory {
                 0, false, "quotes-container", visionBoard);
         Quote quote3 = new Quote("quote-img3", false, "/images/quotes/quote3.png", false, "0%",
                 0, false,"quotes-container", visionBoard);
-        Quote quote4 = new Quote("quote-img4", false, "/images/quotes/quote4.png", false, "0%",
+        Quote quote4 = new Quote("quote-img4", false, "/images/quotes/quote4.jpg", false, "0%",
                 0, false,"quotes-container", visionBoard);
-        Quote quote5 = new Quote("quote-img5", false, "/images/quotes/quote5.png", false, "0%",
+        Quote quote5 = new Quote("quote-img5", false, "/images/quotes/quote5.jpg", false, "0%",
                 0, false,"quotes-container", visionBoard);
-        Quote quote6 = new Quote("quote-img6", false, "/images/quotes/quote6.png", false, "0%",
+        Quote quote6 = new Quote("quote-img6", false, "/images/quotes/quote6.jpg", false, "0%",
                 0, false,"quotes-container", visionBoard);
-        Quote quote7 = new Quote("quote-img7", false, "/images/quotes/quote7.png", false, "0%",
+        Quote quote7 = new Quote("quote-img7", false, "/images/quotes/quote7.jpg", false, "0%",
                 0, false,"quotes-container", visionBoard);
-        Quote quote8 = new Quote("quote-img8", false, "/images/quotes/quote8.png", false, "0%",
+        Quote quote8 = new Quote("quote-img8", false, "/images/quotes/quote8.jpg", false, "0%",
                 0, false,"quotes-container", visionBoard);
-        Quote quote9 = new Quote("quote-img9", false, "/images/quotes/quote9.png", false, "0%",
+        Quote quote9 = new Quote("quote-img9", false, "/images/quotes/quote9.jpg", false, "0%",
                 0, false,"quotes-container", visionBoard);
-        Quote quote10 = new Quote("quote-img10", false, "/images/quotes/quote10.png", false, "0%",
+        Quote quote10 = new Quote("quote-img10", false, "/images/quotes/quote10.jpg", false, "0%",
                 0, false,"quotes-container", visionBoard);
         Quote quote11 = new Quote("quote-img11", false, "/images/quotes/quote11.png", false, "0%",
                 0, false,"quotes-container", visionBoard);
@@ -166,7 +166,7 @@ public class VisionBoardFactory {
         backgroundStorage.saveBackground(background5);
         backgroundStorage.saveBackground(background6);
         backgroundStorage.saveBackground(background7);
-        
+
         return visionBoard;
     }
 
