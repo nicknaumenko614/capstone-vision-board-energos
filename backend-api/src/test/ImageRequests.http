@@ -7,6 +7,11 @@ GET http://localhost:8080/api/images/20
 
 ###
 
+GET http://localhost:8080/api/images/8
+
+
+###
+
 DELETE http://localhost:8080/api/images/21/delete
 
 ###

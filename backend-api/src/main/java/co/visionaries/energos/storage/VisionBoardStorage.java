@@ -1,5 +1,6 @@
 package co.visionaries.energos.storage;
 
+import co.visionaries.energos.entities.Image;
 import co.visionaries.energos.entities.Text;
 import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.repositories.VisionBoardRepository;
@@ -37,5 +38,16 @@ public class VisionBoardStorage {
 
     public Collection<VisionBoard> getAllVisionBoards() {
         return (Collection<VisionBoard>) visionBoardRepo.findAll();
+    }
+
+    public Image findImageByHtmlId(String imageHtmlId, long visionBoardId) {
+        VisionBoard retrievedVisionBoard = retrieveVisionBoardbyId(visionBoardId);
+        Image retrievedImage = null;
+        for (Image image : retrievedVisionBoard.getImages()) {
+            if (imageHtmlId.equalsIgnoreCase(image.getImageHtmlId())) {
+                retrievedImage = image;
+            }
+        }
+        return retrievedImage;
     }
 }
