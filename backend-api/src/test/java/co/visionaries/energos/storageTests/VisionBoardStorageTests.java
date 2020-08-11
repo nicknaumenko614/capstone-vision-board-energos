@@ -31,7 +31,7 @@ public class VisionBoardStorageTests {
     @Test
     public void shouldBeAbleToSaveNewVisionBoard() {
         VisionBoard testVisionBoard = new VisionBoard("boardName", false, true, "10px", "0%",
-                "2px", "#393E41", "solid", "", "#F9FCFF", "0");
+                "2px", "#393E41", "solid", "", "#F9FCFF", 0);
         underTest.saveVisionBoard(testVisionBoard);
         verify(visionBoardRepo).save(testVisionBoard);
     }

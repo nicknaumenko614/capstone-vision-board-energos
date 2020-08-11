@@ -1,18 +1,5 @@
-const imagesContainer = document.querySelector(".images-container");
-const textsContainer = document.querySelector(".text-container");
-const quotesContainer = document.querySelector(".quotes-container");
-const main = document.querySelector("main");
-
 export function addDragAndDropEventListeners() {
-  const boxes = document.querySelectorAll(".box");
-  // boxes.forEach((box) => {
-  //   box.addEventListener("drop", () => {
-  //     drop(event, box);
-  //   });
-
-  // box.addEventListener("dragover", () => {
-  //   allowDrop(event);
-  // });
+  const main = document.querySelector("main");
 
   main.addEventListener("drop", () => {
     mainDropEventListener();
@@ -47,7 +34,10 @@ function drop(box) {
 }
 
 export function removePreviousElement(box) {
-  let previousElement = box.firstChild;
+  const imagesContainer = document.querySelector(".images-container");
+  const textsContainer = document.querySelector(".text-container");
+  const quotesContainer = document.querySelector(".quotes-container");
+  const previousElement = box.firstChild;
   if (previousElement == null) return false;
   if (previousElement.classList.contains("image")) {
     imagesContainer.appendChild(previousElement);

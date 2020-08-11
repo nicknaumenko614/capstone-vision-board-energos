@@ -18,9 +18,9 @@ public class TextController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping("/api/texts")
-    public Collection<Text> getAllTexts() {
-        return textStorage.getAllTexts();
+    @GetMapping("/api/texts/visionboard/{visionBoardId}")
+    public Collection<Text> getAllTexts(@PathVariable long visionBoardId) {
+        return visionBoardStorage.retrieveVisionBoardbyId(visionBoardId).getTexts();
     }
 
     @GetMapping("/api/texts/{textId}")
@@ -40,25 +40,87 @@ public class TextController {
         textStorage.saveText(text);
     }
 
-    @PatchMapping("/api/text/updatetext")
-    public Text updateText (@RequestBody Text text) {
-        Text textToUpdate = textStorage.retrieveTextById(text.getId());
+    @PatchMapping("/api/texts/{textId}/updateTextContent")
+    public Text updateText(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setTextContent(text.getTextContent());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateFontSize")
+    public Text updateFontSize(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setFontSize(text.getFontSize());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateHasFontShadow")
+    public Text updateHasFontShadow(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setHasFontShadow(text.getHasFontShadow());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateFontShadowColor")
+    public Text updateFontShadowColor(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setFontShadowColor(text.getFontShadowColor());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateFontColor")
+    public Text updateFontColor(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setFontColor(text.getFontColor());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateFontFamily")
+    public Text updateFontFamily(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setFontFamily(text.getFontFamily());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateIsFontBold")
+    public Text updateIsFontBold(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setFontBold(text.getFontBold());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateIsFontItalicized")
+    public Text updateIsFontItalicized(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setFontItalicized(text.getFontItalicized());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateIsFontUnderlined")
+    public Text updateIsFontUnderlined(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setFontUnderlined(text.getFontUnderlined());
+        textStorage.saveText(textToUpdate);
+        return textToUpdate;
+    }
+
+    @PatchMapping("/api/texts/{textId}/updateTextParentElement")
+    public Text updateTextParentElement(@PathVariable long textId, @RequestBody Text text) {
+        Text textToUpdate = textStorage.retrieveTextById(textId);
         textToUpdate.setTextParentElement(text.getTextParentElement());
         textStorage.saveText(textToUpdate);
         return textToUpdate;
-
-
     }
 }
+
 
 
 

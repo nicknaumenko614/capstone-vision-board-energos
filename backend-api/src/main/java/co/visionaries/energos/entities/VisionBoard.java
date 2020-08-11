@@ -8,17 +8,17 @@ public class VisionBoard {
     @Id
     @GeneratedValue
     private long id;
-    private String visionBoardName;
-    private boolean isThemeDark;
-    private boolean hasGrid;
-    private String gridSpacing;
-    private String gridBorderRadius;
-    private String gridBorderThickness;
-    private String gridBorderColor;
-    private String gridBorderStyle;
-    private String backgroundImageLink;
-    private String backgroundColor;
-    private String gridTemplateName;
+    private String visionBoardName = "";
+    private boolean themeDark = false;
+    private boolean hasGrid = true;
+    private String gridSpacing = "10px";
+    private String gridBorderRadius = "0%";
+    private String gridBorderThickness = "2px";
+    private String gridBorderColor = "";
+    private String gridBorderStyle = "none";
+    private String backgroundImageLink = "";
+    private String backgroundColor = "#F9FCFF";
+    private int gridTemplateName = 0;
 
     @OneToMany(mappedBy = "visionBoard")
     private Collection<Text> texts;
@@ -34,9 +34,9 @@ public class VisionBoard {
 
     public VisionBoard(String visionBoardName, boolean isThemeDark, boolean hasGrid, String gridSpacing,
                        String gridBorderRadius, String gridBorderThickness, String gridBorderColor,
-                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, String gridTemplateName) {
+                       String gridBorderStyle, String backgroundImageLink, String backgroundColor, int gridTemplateName) {
         this.visionBoardName = visionBoardName;
-        this.isThemeDark = isThemeDark;
+        this.themeDark = isThemeDark;
         this.hasGrid = hasGrid;
         this.gridSpacing = gridSpacing;
         this.gridBorderRadius = gridBorderRadius;
@@ -69,11 +69,11 @@ public class VisionBoard {
     }
 
     public boolean isThemeDark() {
-        return isThemeDark;
+        return themeDark;
     }
 
     public void setThemeDark(boolean themeDark) {
-        isThemeDark = themeDark;
+        this.themeDark = themeDark;
     }
 
     public boolean isHasGrid() {
@@ -140,11 +140,11 @@ public class VisionBoard {
         this.backgroundColor = backgroundColor;
     }
 
-    public String getGridTemplateName() {
+    public int getGridTemplateName() {
         return gridTemplateName;
     }
 
-    public void setGridTemplateName(String gridTemplateName) {
+    public void setGridTemplateName(int gridTemplateName) {
         this.gridTemplateName = gridTemplateName;
     }
 

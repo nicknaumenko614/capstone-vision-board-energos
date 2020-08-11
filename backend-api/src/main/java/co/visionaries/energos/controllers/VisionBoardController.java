@@ -26,6 +26,7 @@ public class VisionBoardController {
         this.quoteStorage = quoteStorage;
         this.textStorage = textStorage;
     }
+
     @GetMapping("/api/visionboards")
     public Collection<VisionBoard> getAllVisionBoards() {
         return visionBoardStorage.getAllVisionBoards();
@@ -38,7 +39,10 @@ public class VisionBoardController {
 
     @PostMapping("/api/visionboards/add/{boardName}")
     public void addVisionBoard(@PathVariable String boardName) {
-       visionBoardFactory.createDefaultBoard(boardName);
+        visionBoardFactory.createDefaultBoard(boardName);
+//       VisionBoard newVisionBoard = visionBoardStorage.retrieveVisionBoardByName(boardName);
+//       long newVisionBoardId = newVisionBoard.getId();
+//       return newVisionBoardId;
     }
 
 //    @DeleteMapping("/api/visionboards/{visionBoardId}/delete")
@@ -46,22 +50,77 @@ public class VisionBoardController {
 //        visionBoardStorage.deleteVisionBoard(visionBoardId);
 //    }
 
-    @PatchMapping("/api/visionboards/{visionBoardId}/update")
-    public VisionBoard updateVisionBoard(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateThemeDark")
+    public VisionBoard updateThemeDark(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
         VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
-        visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
-        visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
-        visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
-        visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
-        visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
-        visionBoardToUpdate.setGridBorderThickness(visionBoard.getGridBorderThickness());
-        visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
         visionBoardToUpdate.setThemeDark(visionBoard.isThemeDark());
-        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
         visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
-
         return visionBoardToUpdate;
     }
 
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateBackgroundColor")
+    public VisionBoard updateBackgroundColor(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setBackgroundColor(visionBoard.getBackgroundColor());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridSpacing")
+    public VisionBoard updateGridSpacing(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridSpacing(visionBoard.getGridSpacing());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderColor")
+    public VisionBoard updateGridBorderColor(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderColor(visionBoard.getGridBorderColor());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderRadius")
+    public VisionBoard updateGridBorderRadius(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderRadius(visionBoard.getGridBorderRadius());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderStyle")
+    public VisionBoard updateGridBorderStyle(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderStyle(visionBoard.getGridBorderStyle());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridBorderThickness")
+    public VisionBoard updateGridBorderThickness(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridBorderThickness(visionBoard.getGridBorderThickness());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateBorderHasGrid")
+    public VisionBoard updateBorderHasGrid(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setHasGrid(visionBoard.isHasGrid());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
+
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateGridTemplateName")
+    public VisionBoard updateGridTemplateName(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setGridTemplateName(visionBoard.getGridTemplateName());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
 
 }

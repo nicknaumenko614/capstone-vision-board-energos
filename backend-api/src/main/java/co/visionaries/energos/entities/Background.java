@@ -12,7 +12,7 @@ public class Background {
     @Id
     @GeneratedValue
     private long id;
-    private String backgroundLink;
+    private String backgroundLink = "";
 
     @JsonIgnore
     @ManyToOne

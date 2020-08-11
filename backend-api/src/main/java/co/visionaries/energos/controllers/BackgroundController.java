@@ -20,9 +20,9 @@ public class BackgroundController {
         this.visionBoardStorage = visionBoardStorage;
     }
 
-    @GetMapping("/api/backgrounds")
-    public Collection<Background> getAllBackgrounds() {
-        return backgroundStorage.getAllBackgrounds();
+    @GetMapping("/api/backgrounds/visionboard/{visionBoardId}")
+    public Collection<Background> getAllBackgrounds(@PathVariable long visionBoardId) {
+        return visionBoardStorage.retrieveVisionBoardbyId(visionBoardId).getBackgrounds();
     }
 
     @GetMapping("/api/backgrounds/{backgroundId}")
@@ -35,7 +35,7 @@ public class BackgroundController {
         backgroundStorage.deleteBackground(backgroundId);
     }
 
-    @PostMapping("api/backgrounds/{visionBoardId}/add")
+    @PostMapping("/api/backgrounds/{visionBoardId}/add")
     public void addBackgroundToVisionBoard(@PathVariable long visionBoardId, @RequestBody Background background) {
         VisionBoard visionBoard = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
         background.setVisionBoard(visionBoard);

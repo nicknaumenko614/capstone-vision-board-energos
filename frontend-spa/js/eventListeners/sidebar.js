@@ -1,40 +1,19 @@
 import { drag } from "./drag-and-drop.js";
 
-const sidebar = document.querySelector(".sidebar");
-const sidebarContent = document.querySelector(".sidebar-content");
-const main = document.querySelector("main");
-const icons = document.querySelectorAll(".icon-div i");
-const contentContainers = document.querySelectorAll(".sidebar-content > div");
-const addTextInput = document.querySelector(".add-text");
-const inputContainerDiv = document.querySelector(
-  ".text-container .input-container"
-);
-const backgroundColorPickerInput = document.querySelector(
-  ".wallpapers-container .color-picker"
-);
-const backgroundAddImageInput = document.querySelector(
-  ".wallpapers-container .add-image"
-);
-const backgroundImageInputContainer = document.querySelector(
-  ".wallpapers-container .input-container"
-);
-// const presetWallpaperImages = document.querySelectorAll(
-//   ".wallpapers-container img"
-// );
-const addImageInput = document.querySelector(".images-container .add-image");
-const imageInputContainer = document.querySelector(
-  ".images-container .input-container"
-);
-// const presetImages = document.querySelectorAll(".images-container img");
-const addQuoteInput = document.querySelector(".add-quote");
-// const presetQuotes = document.querySelectorAll(".quotes-container img");
-const quoteInputContainer = document.querySelector(
-  ".quotes-container .input-container"
-);
-// const presetTexts = document.querySelectorAll(".text");
-
 export function addSideBarEventListeners() {
-  for (let i = 0; i < icons.length; i++) {
+  const icons = document.querySelectorAll(".icon-div i");
+  const sidebar = document.querySelector(".sidebar");
+  const addTextInput = document.querySelector(".add-text");
+  const backgroundColorPickerInput = document.querySelector(
+    ".wallpapers-container .color-picker"
+  );
+  const backgroundAddImageInput = document.querySelector(
+    ".wallpapers-container .add-image"
+  );
+  const addImageInput = document.querySelector(".images-container .add-image");
+  const addQuoteInput = document.querySelector(".add-quote");
+
+  for (let i = 0; i < icons.length; i++) {  
     icons[i].addEventListener("click", () => {
       addHoverEffectsForIcons(i);
     });
@@ -71,36 +50,27 @@ export function addSideBarEventListeners() {
   addQuoteInput.addEventListener("change", () => {
     createNewQuote();
   });
-
-  // fillArraysWithPresetElements();
-  // addEventListenerToWallpaperImages();
-  // addEventListenersToImages();
-  // addEventListenersToQuotes();
-  // addEventListenerToTexts();
 }
 
-// function fillArraysWithPresetElements() {
-//   presetWallpaperImages.forEach((img) => {
-//     wallpaperImages.push(img);
-//   });
-//   presetImages.forEach((img) => {
-//     images.push(img);
-//   });
-//   presetQuotes.forEach((quote) => {
-//     quotes.push(quote);
-//   });
-//   presetTexts.forEach((text) => {
-//     texts.push(text);
-//   });
-// }
-
 function changeBackgroundColor() {
+  const backgroundColorPickerInput = document.querySelector(
+    ".wallpapers-container .color-picker"
+  );
+  const main = document.querySelector("main");
+
   let color = backgroundColorPickerInput.value;
   main.style.backgroundColor = color;
   main.style.backgroundImage = "";
 }
 
 function addHoverEffectsForIcons(i) {
+  if (i === 0) location.reload();
+  const contentContainers = document.querySelectorAll(".sidebar-content > div");
+  const sidebarContent = document.querySelector(".sidebar-content");
+
+
+  const icons = document.querySelectorAll(".icon-div i");
+
   sidebarContent.style.display = "block";
   icons.forEach((icon) => icon.classList.remove("icon-text"));
   icons.forEach((icon) => icon.classList.remove("active"));
@@ -117,6 +87,10 @@ function addHoverEffectsForIcons(i) {
 }
 
 function hideSidebarContent() {
+  const sidebarContent = document.querySelector(".sidebar-content");
+
+  const icons = document.querySelectorAll(".icon-div i");
+
   const el = event.target;
   if (event.target.closest(".sidebar")) return false;
 
@@ -134,6 +108,11 @@ function hideSidebarContent() {
 
 let textNumber = 0;
 function createNewTextElement() {
+  const inputContainerDiv = document.querySelector(
+    ".text-container .input-container"
+  );
+  const addTextInput = document.querySelector(".add-text");
+
   let textDiv = document.createElement("div");
   textDiv.classList.add("text");
   textDiv.id = "add-text-" + textNumber;
@@ -149,17 +128,7 @@ function createNewTextElement() {
     inputContainerDiv.nextSibling
   );
   addTextInput.value = "";
-  // texts.push(textDiv);
-  // addEventListenerToTexts();
 }
-
-// function addEventListenerToTexts() {
-//   texts.forEach((text) => {
-//     text.addEventListener("dragstart", () => {
-//       drag(event);
-//     });
-//   });
-// }
 
 function checkUrl(url) {
   return url.match(/\.(jpeg|jpg|png|gif|tiff)/) != null;
@@ -167,6 +136,16 @@ function checkUrl(url) {
 
 let wallpaperNumber = 0;
 function createNewBackgroundImage() {
+  const imageInputContainer = document.querySelector(
+    ".images-container .input-container"
+  );
+  const backgroundAddImageInput = document.querySelector(
+    ".wallpapers-container .add-image"
+  );
+  const backgroundImageInputContainer = document.querySelector(
+    ".wallpapers-container .input-container"
+  );
+
   let url = backgroundAddImageInput.value;
   let urlToCheck = checkUrl(url);
   if (urlToCheck === false) {
@@ -175,30 +154,18 @@ function createNewBackgroundImage() {
   }
   const img = createImageToAdd(url, "wallpaper", wallpaperNumber);
 
-  // const img = new Image();
-  // img.src = url;
-  // img.id = "add-" + className + "-" + number;
-  // img.classList.add(className);
   backgroundImageInputContainer.parentNode.insertBefore(
     img,
     backgroundImageInputContainer.nextSibling
   );
   backgroundAddImageInput.value = "";
   wallpaperNumber++;
-  // wallpaperImages.push(img);
-  // addEventListenerToWallpaperImages();
 }
-
-// function addEventListenerToWallpaperImages() {
-//   for (let i = 0; i < wallpaperImages.length; i++) {
-//     wallpaperImages[i].addEventListener("click", () => {
-//       main.style.backgroundImage = "url(" + wallpaperImages[i].src + ")";
-//     });
-//   }
-// }
 
 let imageNumber = 0;
 function createNewImage() {
+  const addImageInput = document.querySelector(".images-container .add-image");
+
   let url = addImageInput.value;
   let urlToCheck = checkUrl(url);
   if (urlToCheck === false) {
@@ -207,30 +174,21 @@ function createNewImage() {
   }
   const img = createImageToAdd(url, "image", imageNumber);
 
-  // const img = new Image();
-  // img.src = url;
-  // img.id = "add-" + className + "-" + number;
-  // img.classList.add(className);
   imageInputContainer.parentNode.insertBefore(
     img,
     imageInputContainer.nextSibling
   );
   addImageInput.value = "";
   imageNumber++;
-  // images.push(img);
-  // addEventListenersToImages();
 }
-
-// function addEventListenersToImages() {
-//   for (let i = 0; i < images.length; i++) {
-//     images[i].addEventListener("dragstart", () => {
-//       drag(event);
-//     });
-//   }
-// }
 
 let quoteNumber = 0;
 function createNewQuote() {
+  const quoteInputContainer = document.querySelector(
+    ".quotes-container .input-container"
+  );
+  const addQuoteInput = document.querySelector(".add-quote");
+
   let url = addQuoteInput.value;
   let urlToCheck = checkUrl(url);
   if (urlToCheck === false) {
@@ -239,29 +197,16 @@ function createNewQuote() {
   }
   const img = createImageToAdd(url, "quote", quoteNumber);
 
-  // const img = new Image();
-  // img.src = url;
-  // img.id = "add-" + className + "-" + number;
-  // img.classList.add(className);
   quoteInputContainer.parentNode.insertBefore(
     img,
     quoteInputContainer.nextSibling
   );
   addQuoteInput.value = "";
   quoteNumber++;
-  // quotes.push(img);
-  // addEventListenersToQuotes();
 }
 
-// function addEventListenersToQuotes() {
-//   for (let i = 0; i < quotes.length; i++) {
-//     quotes[i].addEventListener("dragstart", () => {
-//       drag(event);
-//     });
-//   }
-// }
-
 function sidebarClickEventListener() {
+  const main = document.querySelector("main");
   const el = event.target;
   if (el.classList.contains("wallpaper")) {
     const src = el.src;

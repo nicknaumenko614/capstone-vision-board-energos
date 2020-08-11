@@ -1,22 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Amaranth&display=swap");
 
 :root {
-    --color1: #393e41;
-    --color1a: #393e4177;
-    --color2: #b2ebe0;
-    --color2a: #b2ebe0aa;
-    --color3: #f9fcff;
-    --color4: #f3d1dc;
-    --color5: #e7c874;
-    --color5a: #e7c87477;
-    --color6: #0162b7;
-    --color6a: #0162b767;
-  }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --color1: #393e41;
+  --color1a: #393e4177;
+  --color2: #b2ebe0;
+  --color2a: #b2ebe0aa;
+  --color3: #f9fcff;
+  --color4: #f3d1dc;
+  --color5: #e7c874;
+  --color5a: #e7c87477;
+  --color6: #0162b7;
+  --color6a: #0162b767;
 }
 
 .logo-image {
@@ -40,24 +34,25 @@
 }
 
 .welcome-design-board {
-    display: flex;
-    flex-wrap: wrap;
-    left: 18%;
-    padding: 10px;
-    position: absolute;
-    margin-top: 15%;
-    
+  display: flex;
+  flex-wrap: wrap;
+  left: 18%;
+  padding: 10px;
+  position: absolute;
+  margin-top: 15%;
+  overflow-y: scroll;
+  height: 70%;
 }
 
 .welcome-box {
-    background-color: var(--color6);
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-    position: relative;
-    background-image: url(/images/LemonLimeVBThumbnailBackground.png);
-    background-size: cover;
-    cursor: pointer;
+  background-color: var(--color6);
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  position: relative;
+  background-image: url(/images/LemonLimeVBThumbnailBackground.png);
+  background-size: cover;
+  cursor: pointer;
 }
 
 .welcome-box span {
@@ -70,18 +65,75 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  color: var(--color1);
+  transition: 0.3s ease;
+}
+
+.welcome-box:hover span {
+  color: var(--color3);
 }
 
 .add-vision-board {
   background-color: var(--color3);
-    width: 400px;
-    height: 400px;
-    margin: 20px;
-    font-size: 100pt;
-    border: 2px solid var(--color1);
-    line-height: 400px;
-    text-align: center;
-    color: var(--color1);
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+  font-size: 150pt;
+  border: 2px solid var(--color1);
+  line-height: 380px;
+  text-align: center;
+  color: var(--color1);
+  position: relative;
 }
 
+.add-vision-board .plus-sign {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  text-shadow: 0 0 5px var(--color2), 0 0 5px var(--color2),
+    0 0 5px var(--color2), 0 0 5px var(--color2), 0 0 5px var(--color2),
+    0 0 5px var(--color2), 0 0 5px var(--color2), 0 0 5px var(--color2),
+    0 0 5px var(--color2), 0 0 5px var(--color2);
+}
 
+.add-vision-board:hover .plus-sign {
+  background-color: var(--color2a);
+  text-shadow: 0 0 5px var(--color3), 0 0 5px var(--color3),
+    0 0 5px var(--color3), 0 0 5px var(--color3), 0 0 5px var(--color3),
+    0 0 5px var(--color3), 0 0 5px var(--color3), 0 0 5px var(--color3),
+    0 0 5px var(--color3), 0 0 5px var(--color3);
+}
+
+.add-vision-board .add-form {
+  font-size: 20pt;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 20pt;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 80%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.add-vision-board input {
+  display: block;
+  width: 100%;
+  margin: 25px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color1);
+  font-size: 20pt;
+  outline: none;
+  text-align: center;
+}
+
+.add-vision-board button {
+  padding: 5px 15px;
+  font-size: 15pt;
+  cursor: pointer;
+}
+
+.add-vision-board:hover {
+  background-color: var(--color5a);
+}

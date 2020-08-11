@@ -1,30 +1,79 @@
 GET http://localhost:8080/api/visionboards
 
 ###
-
-GET http://localhost:8080/api/visionboards/1
-
+POST http://localhost:8080/api/visionboards/add/johnsdadd
 
 ###
-
-POST http://localhost:8080/api/visionboards/add/john1
-
+GET http://localhost:8080/api/visionboards/28
 
 ###
-
-PATCH http://localhost:8080/api/visionboards/1/update
+PATCH http://localhost:8080/api/visionboards/1/updateThemeDark
 Content-Type: application/json
 
 {
+  "themeDark": "false"
+}
 
+###
+PATCH http://localhost:8080/api/visionboards/1/updateBackgroundColor
+Content-Type: application/json
 
-  "hasGrid": false,
-  "gridSpacing": "100px",
-  "gridBorderRadius": "100%",
-  "gridBorderThickness": "50px",
-  "gridBorderColor": "#9999",
-  "gridBorderStyle": "dotted",
-  "backgroundImageLink": "asdf",
-  "backgroundColor": "#0000",
-  "gridTemplateName": "5"
+{
+  "backgroundColor": "#fgfgfg"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridSpacing
+Content-Type: application/json
+
+{
+  "gridSpacing": "28px"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderColor
+Content-Type: application/json
+
+{
+  "gridBorderColor": "#WEWEWE"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderRadius
+Content-Type: application/json
+
+{
+  "gridBorderRadius": "45%"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderStyle
+Content-Type: application/json
+
+{
+  "gridBorderStyle": "dotted"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridBorderThickness
+Content-Type: application/json
+
+{
+  "gridBorderThickness": "10px"
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateBorderHasGrid
+Content-Type: application/json
+
+{
+  "hasGrid": false
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateGridTemplateName
+Content-Type: application/json
+
+{
+  "gridTemplateName": 6
 }

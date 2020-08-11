@@ -1,13 +1,13 @@
-let formShown = "false";
+import { renderVisionBoard } from "./createVisionBoard.js";
+import { postNewVisionBoard } from "../apiHelpers/apiHelper-VisionBoards.js";
 
 export const createWelcomePage = (visionBoards) => {
   const container = document.createElement("div");
 
-
   const img = new Image();
   img.classList.add("logo-image");
   img.src = "./images/logo.png";
-  img.alt = "Energos Logo";
+  img.alt = "Energós Logo";
 
   const header = document.createElement("header");
   header.innerHTML = `
@@ -23,31 +23,58 @@ export const createWelcomePage = (visionBoards) => {
     const welcomeBox = document.createElement("div");
     welcomeBox.classList.add("welcome-box");
     const span = document.createElement("span");
-    span.innerText = visionBoard;
+    span.innerText = `${visionBoard.visionBoardName}`;
     welcomeBox.appendChild(span);
     welcomeDesignBoard.appendChild(welcomeBox);
-    welcomeBox.addEventListener("click", (visionBoard) => {
-        renderVisionBoard();
-      });
+    welcomeBox.addEventListener("click", () => {
+      renderVisionBoard(visionBoard);
+    });
   });
 
   const addVisionBoardDiv = document.createElement("div");
   addVisionBoardDiv.classList.add("add-vision-board");
-  addVisionBoardDiv.innerText = "+";
+
+  const plusSign = document.createElement("div");
+  plusSign.classList.add("plus-sign");
+  plusSign.innerText = "+";
+  addVisionBoardDiv.appendChild(plusSign);
+  const form = createAddVisionBoardForm();
+  addVisionBoardDiv.appendChild(form);
   addVisionBoardDiv.addEventListener("click", () => {
-    if(formShown === "false") renderAddVisionBoardForm(addVisionBoardDiv);
-  })
+    renderAddVisionBoardForm(plusSign, form);
+  });
   welcomeDesignBoard.appendChild(addVisionBoardDiv);
 
-    container.append(img, header, welcomeDesignBoard);  
+  container.append(img, header, welcomeDesignBoard);
 
-    return container;
+  return container;
 };
 
-function renderAddVisionBoardForm(addVisionBoardDiv){
-    addVisionBoardDiv.innerHTML = `
-    <label>Vision Board Name</label>
-    `
+function renderAddVisionBoardForm(plusSign, addNewVisionBoardForm) {
+  plusSign.style.display = "none";
+  addNewVisionBoardForm.style.display = "block";
 }
 
+function createAddVisionBoardForm() {
+  const addNewVisionBoardForm = document.createElement("div");
+  addNewVisionBoardForm.classList.add("add-form");
+  addNewVisionBoardForm.style.display = "none";
+  const label = document.createElement("label");
+  label.innerText = "Vision Board Name:";
+  const input = document.createElement("input");
+  input.type = "text";
+  input.required = "true";
+  input.classList.add("vision-board-name");
+  const button = document.createElement("button");
+  button.innerText = "Create Vision Board";
+  addNewVisionBoardForm.append(label, input, button);
+  button.addEventListener("click", () => {
+    let newName = input.value;
+    if (newName === "" || newName == null) return false;
+    postNewVisionBoard(newName).then(() => {
+      location.reload();
+    });
+  });
 
+  return addNewVisionBoardForm;
+}

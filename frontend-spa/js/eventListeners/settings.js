@@ -1,18 +1,14 @@
-const body = document.body;
-const logoImage = document.querySelector(".logo-image");
-const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
-const icons = document.querySelectorAll(".icon-div i");
-const showGridToggleSwitch = document.querySelector(".grid-checkbox");
-const spacingSlider = document.querySelector("#spacing-slider");
-const borderRadiusSlider = document.querySelector("#border-radius-slider");
-const borderThicknessSlider = document.querySelector(
-  "#border-thickness-slider"
-);
-const main = document.querySelector("main");
-const borderColorPicker = document.querySelector(".border-color");
-const borderStyleSelector = document.querySelector(".border-style");
-
 export function addSettingsEventListeners() {
+  const borderThicknessSlider = document.querySelector(
+    "#border-thickness-slider"
+  );
+  const borderRadiusSlider = document.querySelector("#border-radius-slider");
+  const spacingSlider = document.querySelector("#spacing-slider");
+  const showGridToggleSwitch = document.querySelector(".grid-checkbox");
+  const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
+  const borderColorPicker = document.querySelector(".border-color");
+  const borderStyleSelector = document.querySelector(".border-style");
+
   darkModeToggleSwitch.addEventListener("click", () => {
     toggleDarkMode();
   });
@@ -43,6 +39,10 @@ export function addSettingsEventListeners() {
 }
 
 function toggleDarkMode() {
+  const body = document.body;
+  const logoImage = document.querySelector(".logo-image");
+  const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
+  const icons = document.querySelectorAll(".icon-div i");
   if (darkModeToggleSwitch.checked) {
     body.classList.add("dark");
     logoImage.src = "./images/logo-dark.png";
@@ -59,6 +59,7 @@ function toggleDarkMode() {
 }
 
 function toggleShowGrid() {
+  const showGridToggleSwitch = document.querySelector(".grid-checkbox");
   const gridBoxes = document.querySelectorAll(".box");
   if (showGridToggleSwitch.checked) {
     gridBoxes.forEach((box) => (box.style.backgroundColor = ""));
@@ -68,6 +69,7 @@ function toggleShowGrid() {
 }
 
 function changeSpacing() {
+  const spacingSlider = document.querySelector("#spacing-slider");
   const elementsWithGridGap = document.querySelectorAll("main div:not(.box)");
   let gap = spacingSlider.value;
   elementsWithGridGap.forEach(
@@ -76,12 +78,19 @@ function changeSpacing() {
 }
 
 function changeBorderRadius() {
+  const borderRadiusSlider = document.querySelector("#border-radius-slider");
   const gridBoxes = document.querySelectorAll(".box");
   let radius = borderRadiusSlider.value;
   gridBoxes.forEach((box) => (box.style.borderRadius = radius + "%"));
 }
 
 function changeBorder() {
+  const borderColorPicker = document.querySelector(".border-color");
+  const borderStyleSelector = document.querySelector(".border-style");
+  const main = document.querySelector("main");
+  const borderThicknessSlider = document.querySelector(
+    "#border-thickness-slider"
+  );
   let thickness = borderThicknessSlider.value;
   let style = borderStyleSelector.value;
   let color = borderColorPicker.value;
