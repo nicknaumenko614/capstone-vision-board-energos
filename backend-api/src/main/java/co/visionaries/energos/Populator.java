@@ -21,15 +21,12 @@ public class Populator implements CommandLineRunner {
 
     public void run(String... args) throws Exception {
 
-        VisionBoard defaultBoard1 = visionBoardFactory.createDefaultBoard("defaultBoard1");
-        visionBoardRepo.save(defaultBoard1);
 
         VisionBoard john = visionBoardFactory.createDefaultBoard("John");
         visionBoardRepo.save(john);
 
         VisionBoard kendyl = visionBoardFactory.createDefaultBoard("Kendyl");
         visionBoardRepo.save(kendyl);
-
 
 
     }
