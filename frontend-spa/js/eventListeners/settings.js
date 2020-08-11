@@ -1,5 +1,13 @@
 import { createJSON } from "./drag-and-drop.js";
-import { updateVisionBoardThemeDark, updateVisionBoardGridSpacing, updateVisionBoardHasGrid } from "../apiHelpers/apiHelper-VisionBoards.js";
+import {
+  updateVisionBoardThemeDark,
+  updateVisionBoardGridSpacing,
+  updateVisionBoardHasGrid,
+  updateVisionBoardGridBorderRadius,
+  updateVisionBoardGridBorderThickness,
+  updateVisionBoardGridBorderStyle,
+  updateVisionBoardGridBorderColor
+} from "../apiHelpers/apiHelper-VisionBoards.js";
 
 export function addSettingsEventListeners() {
   const borderThicknessSlider = document.querySelector(
@@ -120,4 +128,13 @@ function changeBorder() {
   let style = borderStyleSelector.value;
   let color = borderColorPicker.value;
   main.style.border = thickness + "px " + style + " " + color;
+
+  const changeBorderThicknessJSON = createJSON("gridBorderThickness", thickness + "px");
+  updateVisionBoardGridBorderThickness(visionboardId, changeBorderThicknessJSON);
+
+  const changeBorderStyleJSON = createJSON("gridBorderStyle", style);
+  updateVisionBoardGridBorderStyle(visionboardId, changeBorderStyleJSON);
+
+  const changeBorderColorJSON = createJSON("gridBorderColor", color);
+  updateVisionBoardGridBorderColor(visionboardId, changeBorderColorJSON);
 }
