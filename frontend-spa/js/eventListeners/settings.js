@@ -1,3 +1,6 @@
+import { createJSON } from "./drag-and-drop.js";
+import { updateVisionBoardThemeDark, updateVisionBoardGridSpacing } from "../apiHelpers/apiHelper-VisionBoards.js";
+
 export function addSettingsEventListeners() {
   const borderThicknessSlider = document.querySelector(
     "#border-thickness-slider"
@@ -43,19 +46,27 @@ function toggleDarkMode() {
   const logoImage = document.querySelector(".logo-image");
   const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
   const icons = document.querySelectorAll(".icon-div i");
+  let darkModeBoolean;
+
   if (darkModeToggleSwitch.checked) {
     body.classList.add("dark");
     logoImage.src = "./images/logo-dark.png";
     logoImage.style.marginTop = "20px";
     logoImage.style.transform = "scale(1)";
     icons.forEach((icon) => icon.classList.add("dark"));
+    darkModeBoolean = "true";
   } else {
     body.classList.remove("dark");
     logoImage.src = "./images/logo.png";
     logoImage.style.marginTop = "";
     logoImage.style.transform = "scale(1.2)";
     icons.forEach((icon) => icon.classList.remove("dark"));
+    darkModeBoolean = "false";
   }
+
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
+  const darkThemeJSON = createJSON("themeDark", darkModeBoolean);
+  updateVisionBoardThemeDark(visionboardId, darkThemeJSON);
 }
 
 function toggleShowGrid() {
@@ -75,6 +86,9 @@ function changeSpacing() {
   elementsWithGridGap.forEach(
     (element) => (element.style.gridGap = gap + "px")
   );
+
+  const changeSpacingJSON = createJSON("gridSpacing", gap+"px");
+  updateVisionBoardGridSpacing(visionboardId, changeSpacing);
 }
 
 function changeBorderRadius() {
