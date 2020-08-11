@@ -123,4 +123,12 @@ public class VisionBoardController {
         return visionBoardToUpdate;
     }
 
+    @PatchMapping("/api/visionboards/{visionBoardId}/updateBackgroundImageLink")
+    public VisionBoard updateBackgroundImageLink(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {
+        VisionBoard visionBoardToUpdate = visionBoardStorage.retrieveVisionBoardbyId(visionBoardId);
+        visionBoardToUpdate.setBackgroundImageLink(visionBoard.getBackgroundImageLink());
+        visionBoardStorage.saveVisionBoard(visionBoardToUpdate);
+        return visionBoardToUpdate;
+    }
+
 }

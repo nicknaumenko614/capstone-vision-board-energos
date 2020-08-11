@@ -15,4 +15,4 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/backgrounds/8/delete
+DELETE http://localhost:8080/api/backgrounds/143/delete

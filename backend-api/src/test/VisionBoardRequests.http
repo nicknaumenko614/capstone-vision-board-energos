@@ -4,7 +4,7 @@ GET http://localhost:8080/api/visionboards
 POST http://localhost:8080/api/visionboards/add/johnsdadd
 
 ###
-GET http://localhost:8080/api/visionboards/28
+GET http://localhost:8080/api/visionboards/1
 
 ###
 PATCH http://localhost:8080/api/visionboards/1/updateThemeDark
@@ -76,4 +76,12 @@ Content-Type: application/json
 
 {
   "gridTemplateName": 6
+}
+
+###
+PATCH http://localhost:8080/api/visionboards/1/updateBackgroundImageLink
+Content-Type: application/json
+
+{
+  "backgroundImageLink": "01234566"
 }

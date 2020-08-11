@@ -4,7 +4,7 @@ export const fetchBackgrounds = async (visionBoardId) => {
   ).then((response) => response.json());
 };
 
-export const postNewBackgrounds = async (visionBoardId, background) => {
+export const postNewBackground = async (visionBoardId, background) => {
   return fetch(`http://localhost:8080/api/backgrounds/${visionBoardId}/add`, {
     method: "POST",
     headers: {

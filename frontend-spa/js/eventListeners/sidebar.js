@@ -1,4 +1,9 @@
-import { drag } from "./drag-and-drop.js";
+import { drag, createJSON } from "./drag-and-drop.js";
+import { updateVisionBoardBackgroundColor, updateVisionBoardBackgroundImageLink } from "../apiHelpers/apiHelper-VisionBoards.js";
+import { postText } from "../apiHelpers/apiHelper-Texts.js";
+import { postNewBackground } from "../apiHelpers/apiHelper-Backgrounds.js";
+import { postNewImage } from "../apiHelpers/apiHelper-Images.js";
+import { postNewQuote } from "../apiHelpers/apiHelper-Quotes.js";
 
 export function addSideBarEventListeners() {
   const icons = document.querySelectorAll(".icon-div i");
@@ -13,7 +18,7 @@ export function addSideBarEventListeners() {
   const addImageInput = document.querySelector(".images-container .add-image");
   const addQuoteInput = document.querySelector(".add-quote");
 
-  for (let i = 0; i < icons.length; i++) {  
+  for (let i = 0; i < icons.length; i++) {
     icons[i].addEventListener("click", () => {
       addHoverEffectsForIcons(i);
     });
@@ -61,13 +66,16 @@ function changeBackgroundColor() {
   let color = backgroundColorPickerInput.value;
   main.style.backgroundColor = color;
   main.style.backgroundImage = "";
+
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
+  const changeBackgroundColorJSON = createJSON("backgroundColor", color);
+  updateVisionBoardBackgroundColor(visionboardId, changeBackgroundColorJSON);
 }
 
 function addHoverEffectsForIcons(i) {
   if (i === 0) location.reload();
   const contentContainers = document.querySelectorAll(".sidebar-content > div");
   const sidebarContent = document.querySelector(".sidebar-content");
-
 
   const icons = document.querySelectorAll(".icon-div i");
 
@@ -128,6 +136,13 @@ function createNewTextElement() {
     inputContainerDiv.nextSibling
   );
   addTextInput.value = "";
+  const textJSON = {
+    textHtmlId: textDiv.id,
+    textContent: textFromInput,
+    textParentElement: "text-container",
+  };
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  postText(visionBoardId, textJSON);
 }
 
 function checkUrl(url) {
@@ -136,9 +151,6 @@ function checkUrl(url) {
 
 let wallpaperNumber = 0;
 function createNewBackgroundImage() {
-  const imageInputContainer = document.querySelector(
-    ".images-container .input-container"
-  );
   const backgroundAddImageInput = document.querySelector(
     ".wallpapers-container .add-image"
   );
@@ -160,10 +172,18 @@ function createNewBackgroundImage() {
   );
   backgroundAddImageInput.value = "";
   wallpaperNumber++;
+
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  const backgroundJSON = createJSON("backgroundLink", url);
+  postNewBackground(visionBoardId, backgroundJSON);
 }
 
 let imageNumber = 0;
 function createNewImage() {
+  const imageInputContainer = document.querySelector(
+    ".images-container .input-container"
+  );
+
   const addImageInput = document.querySelector(".images-container .add-image");
 
   let url = addImageInput.value;
@@ -180,6 +200,13 @@ function createNewImage() {
   );
   addImageInput.value = "";
   imageNumber++;
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  const imageJSON = {
+    "imageHtmlId": img.id,
+    "imageLink": img.src,
+    "imageParentElement": "images-container"
+  }
+  postNewImage(visionBoardId, imageJSON);
 }
 
 let quoteNumber = 0;
@@ -203,6 +230,13 @@ function createNewQuote() {
   );
   addQuoteInput.value = "";
   quoteNumber++;
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  const quoteJSON = {
+    "quoteHtmlId": img.id,
+    "quoteLink": img.src,
+    "quoteParentElement": "quotes-container"
+  }
+  postNewQuote(visionBoardId, quoteJSON);
 }
 
 function sidebarClickEventListener() {
@@ -211,6 +245,11 @@ function sidebarClickEventListener() {
   if (el.classList.contains("wallpaper")) {
     const src = el.src;
     main.style.backgroundImage = "url(" + src + ")";
+    
+
+    const visionBoardId =document.querySelector(".visionboard-id-input").value;
+    const addBackgroundImageUrlJSON = createJSON("backgroundImageLink", src);
+    updateVisionBoardBackgroundImageLink(visionBoardId, addBackgroundImageUrlJSON);
   }
 }
 
