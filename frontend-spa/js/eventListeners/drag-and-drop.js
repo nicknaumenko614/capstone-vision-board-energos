@@ -105,7 +105,7 @@ function mainDragStartEventListener() {
   }
 }
 
-function getIdByHTMLId(el) {
+export function getIdByHTMLId(el) {
   const visionboardId = document.querySelector(".visionboard-id-input").value;
 
   if (el == null) return false;
@@ -114,7 +114,7 @@ function getIdByHTMLId(el) {
   if (el.classList.contains("quote")) return fetchQuoteId(visionboardId, el.id);
 }
 
-function createJSON(key, value) {
+export function createJSON(key, value) {
   const jSON = {
     [key]: value,
   };
