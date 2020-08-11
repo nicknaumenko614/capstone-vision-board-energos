@@ -4,6 +4,7 @@ import { createLeftSideBar } from "./createLeftSideBar.js";
 import { addSideBarEventListeners } from "../eventListeners/sidebar.js";
 import { addDragAndDropEventListeners } from "../eventListeners/drag-and-drop.js";
 import { addEventListenersToTemplates } from "../eventListeners/templates.js";
+import { addSettingsEventListeners } from "../eventListeners/settings.js";
 
 export function renderVisionBoard(visionboard) {
   const containerBody = document.querySelector(".container-body");
@@ -29,4 +30,5 @@ function addAllEventListeners() {
   addSideBarEventListeners();
   addDragAndDropEventListeners();
   addEventListenersToTemplates();
+  addSettingsEventListeners();
 }
