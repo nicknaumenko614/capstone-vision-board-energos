@@ -92,7 +92,5 @@ export const updateImageParentElement = async (id, image) => {
 export const fetchImageId = async (visionBoardId, imageHtmlId) => {
   return fetch(
     `http://localhost:8080/api/${visionBoardId}/images/${imageHtmlId}`
-  ).then((response) => {
-    response.JSON();
-  });
+  ).then((response) => response.json());
 };

@@ -35,9 +35,12 @@ function drop(box) {
   const data = e.dataTransfer.getData("elementID");
   const el = document.getElementById(data);
   box.appendChild(el);
-  const elementAsJSON = getIdByHTMLId(el);
-  const elementId = `${elementAsJSON.id}`;
+  
   const boxId = e.target.id;
+  getIdForDrop (el, boxId);
+}
+
+function dropAfter (elementId, boxId, el) {
   if (el.classList.contains("image")) {
     const imageJSON = createJSON("imageParentElement", boxId);
     updateImageParentElement(elementId, imageJSON);
@@ -51,12 +54,24 @@ function drop(box) {
 }
 
 export function removePreviousElement(box) {
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
+  const el = box.firstChild;
+  if (el == null) return false;
+  if (el.classList.contains("image")) fetchImageId (visionboardId, el.id).then((img)=>{
+    removePreviousElementAfter(img.id, el);
+  })
+  if (el.classList.contains("text")) fetchTextId (visionboardId, el.id).then((img)=>{
+    removePreviousElementAfter(img.id, el);
+  })
+  if (el.classList.contains("quote")) fetchQuoteId (visionboardId, el.id).then((img)=>{
+    removePreviousElementAfter(img.id, el);
+  })
+}
+
+function removePreviousElementAfter(elementId, previousElement) {
   const imagesContainer = document.querySelector(".images-container");
   const textsContainer = document.querySelector(".text-container");
   const quotesContainer = document.querySelector(".quotes-container");
-  const previousElement = box.firstChild;
-  const elementAsJSON = getIdByHTMLId(previousElement);
-  const elementId = `${elementAsJSON.id}`;
   if (previousElement == null) return false;
   if (previousElement.classList.contains("image")) {
     imagesContainer.appendChild(previousElement);
@@ -105,13 +120,19 @@ function mainDragStartEventListener() {
   }
 }
 
-export function getIdByHTMLId(el) {
+function getIdForDrop(el, boxId) {
   const visionboardId = document.querySelector(".visionboard-id-input").value;
 
   if (el == null) return false;
-  if (el.classList.contains("image")) return fetchImageId(visionboardId, el.id);
-  if (el.classList.contains("text")) return fetchTextId(visionboardId, el.id);
-  if (el.classList.contains("quote")) return fetchQuoteId(visionboardId, el.id);
+  if (el.classList.contains("image")) fetchImageId (visionboardId, el.id).then((img)=>{
+    dropAfter(img.id, boxId, el);
+  })
+  if (el.classList.contains("text")) fetchTextId (visionboardId, el.id).then((img)=>{
+    dropAfter(img.id, boxId, el);
+  })
+  if (el.classList.contains("quote")) fetchQuoteId (visionboardId, el.id).then((img)=>{
+    dropAfter(img.id, boxId, el);
+  })
 }
 
 export function createJSON(key, value) {

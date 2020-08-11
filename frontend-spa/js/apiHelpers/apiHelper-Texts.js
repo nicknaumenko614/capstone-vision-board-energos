@@ -129,7 +129,5 @@ export const updateTextParentElement = async (id, text) => {
 export const fetchTextId = async (visionBoardId, textHtmlId) => {
   return fetch(
     `http://localhost:8080/api/${visionBoardId}/texts/${textHtmlId}`
-  ).then((response) => {
-    response.JSON();
-  });
+  ).then((response) => response.json());
 };
