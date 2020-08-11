@@ -1,5 +1,5 @@
 import { createJSON } from "./drag-and-drop.js";
-import { updateVisionBoardThemeDark, updateVisionBoardGridSpacing } from "../apiHelpers/apiHelper-VisionBoards.js";
+import { updateVisionBoardThemeDark, updateVisionBoardGridSpacing, updateVisionBoardHasGrid } from "../apiHelpers/apiHelper-VisionBoards.js";
 
 export function addSettingsEventListeners() {
   const borderThicknessSlider = document.querySelector(
@@ -95,8 +95,8 @@ function changeSpacing() {
     (element) => (element.style.gridGap = gap + "px")
   );
 
-  const changeSpacingJSON = createJSON("gridSpacing", gap+"px");
-  updateVisionBoardGridSpacing(visionboardId, changeSpacing);
+  const changeSpacingJSON = createJSON("gridSpacing", gap + "px");
+  updateVisionBoardGridSpacing(visionboardId, changeSpacingJSON);
 }
 
 function changeBorderRadius() {
@@ -104,6 +104,9 @@ function changeBorderRadius() {
   const gridBoxes = document.querySelectorAll(".box");
   let radius = borderRadiusSlider.value;
   gridBoxes.forEach((box) => (box.style.borderRadius = radius + "%"));
+
+  const changeBorderRadiusJSON = createJSON("gridBorderRadius", radius + "%");
+  updateVisionBoardGridBorderRadius(visionboardId, changeBorderRadiusJSON);
 }
 
 function changeBorder() {
