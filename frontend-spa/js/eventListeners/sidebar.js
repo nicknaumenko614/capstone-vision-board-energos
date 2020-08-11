@@ -1,6 +1,7 @@
 import { drag, createJSON } from "./drag-and-drop.js";
 import { updateVisionBoardBackgroundColor } from "../apiHelpers/apiHelper-VisionBoards.js";
 import { postText } from "../apiHelpers/apiHelper-Texts.js";
+import { postNewBackground } from "../apiHelpers/apiHelper-Backgrounds.js";
 
 export function addSideBarEventListeners() {
   const icons = document.querySelectorAll(".icon-div i");
@@ -134,10 +135,10 @@ function createNewTextElement() {
   );
   addTextInput.value = "";
   const textJSON = {
-    "textHtmlId": textDiv.id, 
-    "textContent": textFromInput, 
-    "textParentElement": "text-container"
-  } 
+    textHtmlId: textDiv.id,
+    textContent: textFromInput,
+    textParentElement: "text-container",
+  };
   const visionBoardId = document.querySelector(".visionboard-id-input").value;
   postText(visionBoardId, textJSON);
 }
@@ -169,6 +170,10 @@ function createNewBackgroundImage() {
   );
   backgroundAddImageInput.value = "";
   wallpaperNumber++;
+
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  const backgroundJSON = createJSON("backgroundLink", url);
+  postNewBackground(visionBoardId, backgroundJSON);
 }
 
 let imageNumber = 0;
