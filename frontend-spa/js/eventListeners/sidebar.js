@@ -135,9 +135,7 @@ function checkUrl(url) {
 
 let wallpaperNumber = 0;
 function createNewBackgroundImage() {
-  const imageInputContainer = document.querySelector(
-    ".images-container .input-container"
-  );
+  
   const backgroundAddImageInput = document.querySelector(
     ".wallpapers-container .add-image"
   );
@@ -163,6 +161,10 @@ function createNewBackgroundImage() {
 
 let imageNumber = 0;
 function createNewImage() {
+  const imageInputContainer = document.querySelector(
+    ".images-container .input-container"
+  );
+  
   const addImageInput = document.querySelector(".images-container .add-image");
 
   let url = addImageInput.value;
