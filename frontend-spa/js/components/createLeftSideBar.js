@@ -217,7 +217,7 @@ function populateSettings(el) {
               type="range"
               min="0"
               max="100"
-              value="50"
+              value="10"
               class="spacing-slider"
               id="spacing-slider"
             />
@@ -229,7 +229,7 @@ function populateSettings(el) {
               type="range"
               min="0"
               max="50"
-              value="50"
+              value="0"
               class="spacing-slider"
               id="border-radius-slider"
             />

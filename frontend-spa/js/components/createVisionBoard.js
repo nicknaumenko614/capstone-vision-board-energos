@@ -30,6 +30,7 @@ export function renderVisionBoard(visionboard) {
   containerBody.appendChild(main);
 
   addAllEventListeners();
+  renderPreSavedOptions(visionboard);
 }
 
 function addAllEventListeners() {
@@ -37,4 +38,30 @@ function addAllEventListeners() {
   addDragAndDropEventListeners();
   addEventListenersToTemplates();
   addSettingsEventListeners();
+}
+
+function renderPreSavedOptions(visionboard){
+  darkThemeOption(visionboard);
+  showGridOption(visionboard);
+}
+
+function darkThemeOption(visionboard){
+  if (`${visionboard.themeDark}` == "true"){ 
+    const body = document.body;
+    const icons = document.querySelectorAll(".icon-div i");
+    const logoImage = document.querySelector(".logo-image");
+    body.classList.add("dark");
+    logoImage.src = "./images/logo-dark.png";
+    logoImage.style.marginTop = "20px";
+    logoImage.style.transform = "scale(1)";
+    icons.forEach((icon) => icon.classList.add("dark"));
+    const darkModeToggleSwitch = document.querySelector(".dark-theme-checkbox");
+    darkModeToggleSwitch.checked = true;
+  } 
+}
+
+function showGridOption(visionboard){
+  if (`${visionboard.hasGrid}` == "true"){
+    const 
+  }
 }
