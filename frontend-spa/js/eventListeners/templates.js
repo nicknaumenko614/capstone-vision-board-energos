@@ -1,5 +1,6 @@
 import { renderDesignBoard } from "../components/renderDesignBoards.js";
-import { removePreviousElement } from "./drag-and-drop.js";
+import { removePreviousElement, createJSON } from "./drag-and-drop.js";
+import { updateVisionBoardGridTemplateName } from "../apiHelpers/apiHelper-VisionBoards.js";
 
 export function addEventListenersToTemplates() {
   const templates = document.querySelectorAll(".templates-container img");
@@ -8,7 +9,10 @@ export function addEventListenersToTemplates() {
     templates[i].addEventListener("click", () => {
       clearDesignBoard();
       const designBoard = renderDesignBoard(i);
-      main.appendChild(designBoard);
+      main.appendChild (designBoard);
+    const visionBoardTemplateJSON = createJSON ("gridTemplateName", i);
+    const visionBoardId = document.querySelector(".visionboard-id-input").value;
+    updateVisionBoardGridTemplateName(visionBoardId, visionBoardTemplateJSON);
     });
   }
 }
