@@ -120,6 +120,7 @@ function populateImages(el, visionboard) {
       img.classList.add("image");
       img.draggable = "true";
       img.src = `${image.imageLink}`;
+      img.id = `${image.imageHtmlId}`;
       el.appendChild(img);
     });
   });
@@ -163,6 +164,7 @@ function populateQuotes(el, visionboard) {
       img.classList.add("quote");
       img.draggable = "true";
       img.src = `${quote.quoteLink}`;
+      img.id = `${quote.quoteHtmlId}`;
       el.appendChild(img);
     });
   });
