@@ -173,7 +173,7 @@ function populateTexts(el, visionboard) {
 function populateQuotes(el, visionboard) {
   el.innerHTML = `
   <div class="input-container">
-  <label>Image URL </label>
+  <label>Quote URL </label>
   <input type="text" class="add-quote" />
 </div>
   `;
@@ -291,6 +291,37 @@ function populateHelp(el){
     <h3>How do I select a background for my vision board?</h3>
 
     <p>Select the Background Icon on the left of the screen and then click on the thumbnail of the background image you would like to add to your vision board. The background will then display on your vision board.</p>
+
+    <h2>Images</h2>
+
+    <h3>How do I add a new image to the gallery?</h3>
+
+    <p>Select the Image Icon on the left of the screen and then click in the Image URL box. Type or paste in the URL for the image you would like to add and press the 'Enter' key. The image will then add to the gallery.</p>
+
+    <h3>How do I select and add an image to my vision board?</h3>
+
+    <p>Select the Image Icon on the left of the screen. Click on the thumbnail of the image you would like to add and drag the image to the desired box on the vision board. When it is above the desired location, drop the image. It will then display on your vision board.</p>
+
+    <h2>Text</h2>
+
+    <h3>How do I add new text to the gallery?</h3>
+
+    <p>Select the Text Icon on the left of the screen and then click in the Text Input box. Type your idea you would like to add and then press the 'Enter' key. The new text will add to the gallery.</p>
+
+    <h3>How do I select and and add text to my vision board?</h3>
+
+    <p>Select the Text Icon on the left of the screen. Find the text you would like to add to your vision board and hover over the area just next to the text. The grabber cursor will appear. Then, drag the text to the desired box on the vision board and drop it. The text will display on your vision board.</p>
+
+    <h3>How do I edit the text?</h3>
+
+    <p>Text can be edited in the text gallery or on the vision board. To edit, move your cursor over the words and the text cursor will appear. Then, click the box. The text will then become editable. Change the text as desired and click anywhere just outside of the changed text to save your change.</p>
+
+    <h2>Quotes</h2>
+
+    <h3>How do I add a quote to the gallery?</h3>
+
+    <p>Select the Quote Icon on the left of the screen and then click in the Quote URL box. 
+    Type your idea you would like to add and then press the 'Enter' key. The new text will add to the gallery.</p>
 
   </div>
   `;
