@@ -1,5 +1,5 @@
 import { drag, createJSON } from "./drag-and-drop.js";
-import { updateVisionBoardBackgroundColor,  updateVisionBoardBackgroundImageLink } from "../apiHelpers/apiHelper-VisionBoards.js";
+import { updateVisionBoardBackgroundColor, updateVisionBoardBackgroundImageLink } from "../apiHelpers/apiHelper-VisionBoards.js";
 import { postText } from "../apiHelpers/apiHelper-Texts.js";
 import { postNewBackground } from "../apiHelpers/apiHelper-Backgrounds.js";
 import { postNewImage } from "../apiHelpers/apiHelper-Images.js";
@@ -248,7 +248,7 @@ function sidebarClickEventListener() {
     
 
     const visionBoardId =document.querySelector(".visionboard-id-input").value;
-    const addBackgroundImageUrlJSON = createJSON("backgroundLink", src);
+    const addBackgroundImageUrlJSON = createJSON("backgroundImageLink", src);
     updateVisionBoardBackgroundImageLink(visionBoardId, addBackgroundImageUrlJSON);
   }
 }
