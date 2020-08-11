@@ -1,6 +1,7 @@
 package co.visionaries.energos.storage;
 
 import co.visionaries.energos.entities.Image;
+import co.visionaries.energos.entities.Quote;
 import co.visionaries.energos.entities.Text;
 import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.repositories.VisionBoardRepository;
@@ -49,5 +50,27 @@ public class VisionBoardStorage {
             }
         }
         return retrievedImage;
+    }
+
+    public Quote findQuoteByHtmlId(String quoteHtmlId, long visionBoardId) {
+        VisionBoard retrievedVisionBoard = retrieveVisionBoardbyId(visionBoardId);
+        Quote retrievedQuote = null;
+        for (Quote quote : retrievedVisionBoard.getQuotes()) {
+            if (quoteHtmlId.equalsIgnoreCase(quote.getQuoteHtmlId())) {
+                retrievedQuote = quote;
+            }
+        }
+        return retrievedQuote;
+    }
+
+    public Text findTextByHtmlId(String textHtmlId, long visionBoardId) {
+        VisionBoard retrievedVisionBoard = retrieveVisionBoardbyId(visionBoardId);
+        Text retrievedText = null;
+        for (Text text : retrievedVisionBoard.getTexts()) {
+            if (textHtmlId.equalsIgnoreCase(text.getTextHtmlId())) {
+                retrievedText = text;
+            }
+        }
+        return retrievedText;
     }
 }

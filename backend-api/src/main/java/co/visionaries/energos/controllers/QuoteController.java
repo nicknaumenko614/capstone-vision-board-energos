@@ -1,5 +1,6 @@
 package co.visionaries.energos.controllers;
 
+import co.visionaries.energos.entities.Image;
 import co.visionaries.energos.entities.Quote;
 import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.storage.QuoteStorage;
@@ -24,6 +25,11 @@ public class QuoteController {
 
     @GetMapping("/api/quotes/{quoteId}")
     public Quote getQuoteById(@PathVariable long quoteId) { return quoteStorage.retrieveQuoteById(quoteId);}
+
+    @GetMapping("/api/{visionBoardId}/quotes/{quoteHtmlId}")
+    public Quote getQuoteByHtmlId(@PathVariable long visionBoardId, @PathVariable String quoteHtmlId){
+        return visionBoardStorage.findQuoteByHtmlId(quoteHtmlId, visionBoardId);
+    }
 
     @DeleteMapping("/api/quotes/{quoteId}/delete")
     public void deleteQuote(@PathVariable long quoteId) {

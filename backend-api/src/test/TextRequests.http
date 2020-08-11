@@ -4,6 +4,9 @@ GET http://localhost:8080/api/texts/visionboard/1
 
 GET http://localhost:8080/api/texts/7
 
+###
+
+GET http://localhost:8080/api/1/texts/text10
 
 ###
 

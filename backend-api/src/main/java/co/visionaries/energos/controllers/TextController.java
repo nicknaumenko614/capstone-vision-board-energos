@@ -1,5 +1,6 @@
 package co.visionaries.energos.controllers;
 
+import co.visionaries.energos.entities.Image;
 import co.visionaries.energos.entities.Text;
 import co.visionaries.energos.entities.VisionBoard;
 import co.visionaries.energos.storage.TextStorage;
@@ -26,6 +27,11 @@ public class TextController {
     @GetMapping("/api/texts/{textId}")
     public Text getTextById(@PathVariable long textId) {
         return textStorage.retrieveTextById(textId);
+    }
+
+    @GetMapping("/api/{visionBoardId}/texts/{textHtmlId}")
+    public Text getTextByHtmlId(@PathVariable long visionBoardId, @PathVariable String textHtmlId){
+        return visionBoardStorage.findTextByHtmlId(textHtmlId, visionBoardId);
     }
 
     @DeleteMapping("/api/texts/{textId}/delete")
