@@ -21,7 +21,7 @@
   background-color: var(--color3);
   height: 100%;
   width: 100px;
-  padding-top: 20px;
+  padding-top: 0;
   z-index: 100;
 }
 
@@ -43,7 +43,7 @@
 }
 
 .sidebar .icon-div {
-  margin-top: 7vh;
+  margin-top: 4vh;
   position: relative;
 }
 
@@ -93,6 +93,10 @@
   outline: none;
 }
 
+.sidebar .back-arrow .icon-text:hover::after {
+  content: "Back";
+}
+
 .sidebar .templates .icon-text:hover::after {
   content: "Templates";
 }
@@ -115,6 +119,10 @@
 
 .sidebar .settings .icon-text:hover::after {
   content: "Settings";
+}
+
+.sidebar .help .icon-text:hover::after {
+  content: "Help";
 }
 
 .sidebar .sidebar-content {

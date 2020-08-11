@@ -14,6 +14,8 @@ export function createLeftSideBar(visionboard) {
   const sidebarContent = document.createElement("div");
   sidebarContent.classList.add("sidebar-content");
 
+  const backContainer = document.createElement("div");
+
   const templatesContainer = document.createElement("div");
   templatesContainer.classList.add("templates-container");
   populateTemplates(templatesContainer);
@@ -38,13 +40,19 @@ export function createLeftSideBar(visionboard) {
   settingsContainer.classList.add("settings-container");
   populateSettings(settingsContainer);
 
+  const helpContainer = document.createElement("div");
+  helpContainer.classList.add("help-container");
+  populateHelp(helpContainer);
+
   sidebarContent.append(
+    backContainer,
     templatesContainer,
     wallpapersContainer,
     imagesContainer,
     textContainer,
     quotesContainer,
-    settingsContainer
+    settingsContainer,
+    helpContainer
   );
   sidebar.append(buttonsContainer, sidebarContent);
   return sidebar;
@@ -52,6 +60,9 @@ export function createLeftSideBar(visionboard) {
 
 function addButtonsToContainer(el) {
   el.innerHTML = `
+        <div class="back-arrow icon-div">
+          <i class="material-icons icon-text">reply</i>
+        </div>
         <div class="templates icon-div">
           <i class="material-icons icon-text">view_quilt</i>
         </div>
@@ -69,6 +80,9 @@ function addButtonsToContainer(el) {
         </div>
         <div class="settings icon-div">
           <i class="material-icons icon-text">settings</i>
+        </div>
+        <div class="help icon-div">
+          <i class="material-icons icon-text">help</i>
         </div>
     `;
 }
@@ -243,4 +257,8 @@ function populateSettings(el) {
           </div>
         </div>
   `;
+}
+
+function populateHelp(el){
+  el.innerText
 }
