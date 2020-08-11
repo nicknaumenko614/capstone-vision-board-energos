@@ -332,3 +332,25 @@
   font-size: 15pt;
   padding: 5px;
 }
+
+.sidebar .help-container .help-questions {
+  margin: 20px;
+  font-family: "Amaranth", sans-serif;
+}
+
+.sidebar .help-container h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sidebar .help-container h3 {
+  text-align: justify;
+  font-size: 12pt;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.sidebar .help-container p {
+  text-align: start;
+  font-size: 11pt;
+}

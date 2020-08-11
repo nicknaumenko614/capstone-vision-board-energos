@@ -269,5 +269,29 @@ function populateSettings(el) {
 }
 
 function populateHelp(el){
-  el.innerText
+  el.innerHTML = `
+  <div class="help-questions">
+
+    <h2>Templates</h2>
+
+    <h3>How do I select a new template for my vision board?</h3>
+
+    <p>Select the Template Icon on the left of the screen and then select desired template from the template gallery. Once selected, the new template will display on the vision board.</p>
+
+    <h2>Backgrounds</h2>
+
+    <h3>How do I add a background color to my vision board?</h3>
+
+    <p>Select the Background Icon on the left of the screen and then click the color block for the color picker to display. Then, select your desired color. The color will then display as the background for your vision board.</p>
+
+    <h3>How do I add a new background image to the gallery?</h3>
+
+    <p>Select the Background Icon on the left of the screen and then click in the Image URL box. Type or paste in the URL for the background image you would like to add and press the 'Enter' key. The background image will then add to the gallery.</p>
+
+    <h3>How do I select a background for my vision board?</h3>
+
+    <p>Select the Background Icon on the left of the screen and then click on the thumbnail of the background image you would like to add to your vision board. The background will then display on your vision board.</p>
+
+  </div>
+  `;
 }
