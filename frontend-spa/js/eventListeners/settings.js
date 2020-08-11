@@ -72,11 +72,19 @@ function toggleDarkMode() {
 function toggleShowGrid() {
   const showGridToggleSwitch = document.querySelector(".grid-checkbox");
   const gridBoxes = document.querySelectorAll(".box");
+  let showGridBoolean;
+
   if (showGridToggleSwitch.checked) {
     gridBoxes.forEach((box) => (box.style.backgroundColor = ""));
+    showGridBoolean = "true";
   } else {
     gridBoxes.forEach((box) => (box.style.backgroundColor = "transparent"));
+    showGridBoolean = "false";
   }
+
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
+  const showGridJSON = createJSON("hasGrid", showGridBoolean);
+  updateVisionBoardHasGrid(visionboardId, showGridJSON);
 }
 
 function changeSpacing() {
