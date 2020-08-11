@@ -103,6 +103,7 @@ function changeSpacing() {
     (element) => (element.style.gridGap = gap + "px")
   );
 
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
   const changeSpacingJSON = createJSON("gridSpacing", gap + "px");
   updateVisionBoardGridSpacing(visionboardId, changeSpacingJSON);
 }
@@ -113,6 +114,7 @@ function changeBorderRadius() {
   let radius = borderRadiusSlider.value;
   gridBoxes.forEach((box) => (box.style.borderRadius = radius + "%"));
 
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
   const changeBorderRadiusJSON = createJSON("gridBorderRadius", radius + "%");
   updateVisionBoardGridBorderRadius(visionboardId, changeBorderRadiusJSON);
 }
@@ -129,6 +131,7 @@ function changeBorder() {
   let color = borderColorPicker.value;
   main.style.border = thickness + "px " + style + " " + color;
 
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
   const changeBorderThicknessJSON = createJSON("gridBorderThickness", thickness + "px");
   updateVisionBoardGridBorderThickness(visionboardId, changeBorderThicknessJSON);
 

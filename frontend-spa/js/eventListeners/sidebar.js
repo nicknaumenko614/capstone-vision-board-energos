@@ -1,4 +1,5 @@
-import { drag } from "./drag-and-drop.js";
+import { drag, createJSON } from "./drag-and-drop.js";
+import { updateVisionBoardBackgroundColor } from "../apiHelpers/apiHelper-VisionBoards.js";
 
 export function addSideBarEventListeners() {
   const icons = document.querySelectorAll(".icon-div i");
@@ -61,6 +62,10 @@ function changeBackgroundColor() {
   let color = backgroundColorPickerInput.value;
   main.style.backgroundColor = color;
   main.style.backgroundImage = "";
+
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
+  const changeBackgroundColorJSON = createJSON("backgroundColor", color);
+  updateVisionBoardBackgroundColor(visionboardId, changeBackgroundColorJSON);
 }
 
 function addHoverEffectsForIcons(i) {
@@ -135,7 +140,6 @@ function checkUrl(url) {
 
 let wallpaperNumber = 0;
 function createNewBackgroundImage() {
-  
   const backgroundAddImageInput = document.querySelector(
     ".wallpapers-container .add-image"
   );
@@ -164,7 +168,7 @@ function createNewImage() {
   const imageInputContainer = document.querySelector(
     ".images-container .input-container"
   );
-  
+
   const addImageInput = document.querySelector(".images-container .add-image");
 
   let url = addImageInput.value;
