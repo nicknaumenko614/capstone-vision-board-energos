@@ -31,13 +31,4 @@ public class ImageStorage {
         imageRepo.deleteById(imageId);
     }
 
-    public Image retrieveImageByHtmlId(String imageHtmlId) {
-        Image retrievedImage;
-        Optional<Image> imageOptional = imageRepo.findByHtmlId(imageHtmlId);
-        retrievedImage=imageOptional.get();
-        return retrievedImage;
-
-
-}
-
     }
