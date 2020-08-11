@@ -6,6 +6,9 @@ GET http://localhost:8080/api/quotes/23
 
 ###
 
+GET http://localhost:8080/api/1/quotes/quote-img11
+
+###
 
 DELETE http://localhost:8080/api/quotes/23/delete
 

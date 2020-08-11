@@ -171,4 +171,5 @@ public class VisionBoard {
     public void setImages(Collection<Image> images) {
         this.images = images;
     }
+
 }

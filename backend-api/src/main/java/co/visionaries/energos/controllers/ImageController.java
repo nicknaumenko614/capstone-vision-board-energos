@@ -29,6 +29,11 @@ ImageController {
         return imageStorage.retrieveImageById(imageId);
     }
 
+    @GetMapping("/api/{visionBoardId}/images/{imageHtmlId}")
+    public Image getImageByHtmlId(@PathVariable long visionBoardId, @PathVariable String imageHtmlId){
+         return visionBoardStorage.findImageByHtmlId(imageHtmlId, visionBoardId);
+    }
+
     @DeleteMapping("/api/images/{imageId}/delete")
     public void deleteImage(@PathVariable long imageId) {
         imageStorage.deleteImage(imageId);
