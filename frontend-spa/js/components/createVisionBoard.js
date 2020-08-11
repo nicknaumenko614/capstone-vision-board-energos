@@ -11,6 +11,12 @@ export function renderVisionBoard(visionboard) {
 
   clearElementChildren(containerBody);
 
+  const visionboardIdInput = document.createElement("input");
+  visionboardIdInput.classList.add("visionboard-id-input");
+  visionboardIdInput.value = `${visionboard.id}`;
+  visionboardIdInput.type = "hidden";
+  containerBody.appendChild(visionboardIdInput);
+
   const image = new Image();
   image.classList.add("logo-image");
   image.src = "./images/logo.png";

@@ -13,7 +13,7 @@ export function addSideBarEventListeners() {
   const addImageInput = document.querySelector(".images-container .add-image");
   const addQuoteInput = document.querySelector(".add-quote");
 
-  for (let i = 0; i < icons.length; i++) {  
+  for (let i = 0; i < icons.length; i++) {
     icons[i].addEventListener("click", () => {
       addHoverEffectsForIcons(i);
     });
@@ -67,7 +67,6 @@ function addHoverEffectsForIcons(i) {
   if (i === 0) location.reload();
   const contentContainers = document.querySelectorAll(".sidebar-content > div");
   const sidebarContent = document.querySelector(".sidebar-content");
-
 
   const icons = document.querySelectorAll(".icon-div i");
 
