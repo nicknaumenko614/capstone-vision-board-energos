@@ -1,10 +1,9 @@
 import { renderDesignBoard } from "../components/renderDesignBoards.js";
 import { removePreviousElement } from "./drag-and-drop.js";
 
-const templates = document.querySelectorAll(".templates-container img");
-const main = document.querySelector("main");
-
 export function addEventListenersToTemplates() {
+  const templates = document.querySelectorAll(".templates-container img");
+  const main = document.querySelector("main");
   for (let i = 0; i < templates.length; i++) {
     templates[i].addEventListener("click", () => {
       clearDesignBoard();
@@ -15,6 +14,7 @@ export function addEventListenersToTemplates() {
 }
 
 function clearDesignBoard() {
+  const main = document.querySelector("main");
   removeAllElements();
   main.innerHTML = null;
 }

@@ -3,6 +3,7 @@ import { renderDesignBoard } from "./renderDesignBoards.js";
 import { createLeftSideBar } from "./createLeftSideBar.js";
 import { addSideBarEventListeners } from "../eventListeners/sidebar.js";
 import { addDragAndDropEventListeners } from "../eventListeners/drag-and-drop.js";
+import { addEventListenersToTemplates } from "../eventListeners/templates.js";
 
 export function renderVisionBoard(visionboard) {
   const containerBody = document.querySelector(".container-body");
@@ -27,4 +28,5 @@ export function renderVisionBoard(visionboard) {
 function addAllEventListeners() {
   addSideBarEventListeners();
   addDragAndDropEventListeners();
+  addEventListenersToTemplates();
 }
