@@ -135,7 +135,10 @@ function populateImages(el, visionboard) {
       img.draggable = "true";
       img.src = `${image.imageLink}`;
       img.id = `${image.imageHtmlId}`;
-      el.appendChild(img);
+      let parent = document.querySelector(`#${image.imageParentElement}`);
+      if (parent == null) parent = document.querySelector(`.${image.imageParentElement}`);
+      if (parent == null) parent = el;
+      parent.appendChild(img);
     });
   });
 }
@@ -159,7 +162,10 @@ function populateTexts(el, visionboard) {
       textH2.contentEditable = "true";
       textH2.innerText = content;
       textDiv.appendChild(textH2);
-      el.appendChild(textDiv);
+      let parent = document.querySelector(`#${text.textParentElement}`);
+      if (parent == null) parent = document.querySelector(`.${text.textParentElement}`);
+      if (parent == null) parent = el;
+      parent.appendChild(textDiv);
     });
   });
 }
@@ -179,7 +185,10 @@ function populateQuotes(el, visionboard) {
       img.draggable = "true";
       img.src = `${quote.quoteLink}`;
       img.id = `${quote.quoteHtmlId}`;
-      el.appendChild(img);
+      let parent = document.querySelector(`#${quote.quoteParentElement}`);
+      if (parent == null) parent = document.querySelector(`.${quote.quoteParentElement}`);
+      if (parent == null) parent = el;
+      parent.appendChild(quote);
     });
   });
 }
