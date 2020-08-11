@@ -2,6 +2,7 @@ import { drag, createJSON } from "./drag-and-drop.js";
 import { updateVisionBoardBackgroundColor } from "../apiHelpers/apiHelper-VisionBoards.js";
 import { postText } from "../apiHelpers/apiHelper-Texts.js";
 import { postNewBackground } from "../apiHelpers/apiHelper-Backgrounds.js";
+import { postNewImage } from "../apiHelpers/apiHelper-Images.js";
 
 export function addSideBarEventListeners() {
   const icons = document.querySelectorAll(".icon-div i");
@@ -198,6 +199,13 @@ function createNewImage() {
   );
   addImageInput.value = "";
   imageNumber++;
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  const imageJSON = {
+    "imageHtmlId": img.id,
+    "imageLink": img.src,
+    "imageParentElement": "images-container"
+  }
+  postNewImage(visionBoardId, imageJSON);
 }
 
 let quoteNumber = 0;
