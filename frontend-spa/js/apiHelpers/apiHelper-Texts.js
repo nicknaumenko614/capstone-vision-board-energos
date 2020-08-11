@@ -122,3 +122,10 @@ export const fetchTexts = async (visionBoardId) => {
       body: JSON.stringify(text),
     }).then((response) => response.json());
   };
+
+  export const fetchTextId = async (visionBoardId, textHtmlId) => {
+    return fetch (`http://localhost:8080/api/${visionBoardId}/texts/${textHtmlId}`
+    ).then((response) => {
+      response.JSON();
+    });
+  }

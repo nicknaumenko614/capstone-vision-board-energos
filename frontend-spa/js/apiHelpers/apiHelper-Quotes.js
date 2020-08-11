@@ -82,3 +82,10 @@ export const fetchQuotes = async (visionBoardId) => {
       body: JSON.stringify(quote),
     }).then((response) => response.json());
   };
+
+  export const fetchQuoteId = async (visionBoardId, quoteHtmlId) => {
+    return fetch (`http://localhost:8080/api/${visionBoardId}/quotes/${quoteHtmlId}`
+    ).then((response) => {
+      response.JSON();
+    });
+  }
