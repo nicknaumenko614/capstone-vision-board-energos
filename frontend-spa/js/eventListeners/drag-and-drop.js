@@ -1,3 +1,7 @@
+import {fetchImageId} from "../apiHelpers/apiHelper-Images.js";
+import {fetchTextId} from "../apiHelpers/apiHelper-Texts.js";
+import {fetchQuoteId} from "../apiHelpers/apiHelper-Quotes.js";
+
 export function addDragAndDropEventListeners() {
   const main = document.querySelector("main");
 
@@ -38,6 +42,7 @@ export function removePreviousElement(box) {
   const textsContainer = document.querySelector(".text-container");
   const quotesContainer = document.querySelector(".quotes-container");
   const previousElement = box.firstChild;
+  const elementAsJSON = getIdByHTMLId(previousElement);
   if (previousElement == null) return false;
   if (previousElement.classList.contains("image")) {
     imagesContainer.appendChild(previousElement);
@@ -78,4 +83,12 @@ function mainDragStartEventListener() {
     )
       drag(el);
   }
+}
+
+function getIdByHTMLId(el) {
+  const visionboardId = document.querySelector(".visionboard-id-input").value;
+
+  if (el.classList.contains("image")) return fetchImageId(visionboardId, el.id);
+  if (el.classList.contains("text")) return fetchTextId(visionboardId, el.id);
+  if(el.classList.contains("quote")) return fetchQuoteId(visionboardId, el.id);
 }
