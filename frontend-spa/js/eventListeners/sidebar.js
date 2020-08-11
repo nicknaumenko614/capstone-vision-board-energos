@@ -229,6 +229,12 @@ function createNewQuote() {
   );
   addQuoteInput.value = "";
   quoteNumber++;
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  const quoteJSON = {
+    "quoteHtmlId": img.id,
+    "quoteLink": img.src,
+    "quoteParentElement": "quotes-container"
+  }
 }
 
 function sidebarClickEventListener() {
