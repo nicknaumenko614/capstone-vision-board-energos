@@ -188,7 +188,7 @@ function populateQuotes(el, visionboard) {
       let parent = document.querySelector(`#${quote.quoteParentElement}`);
       if (parent == null) parent = document.querySelector(`.${quote.quoteParentElement}`);
       if (parent == null) parent = el;
-      parent.appendChild(quote);
+      parent.appendChild(img);
     });
   });
 }

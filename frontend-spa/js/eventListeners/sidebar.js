@@ -1,5 +1,6 @@
 import { drag, createJSON } from "./drag-and-drop.js";
 import { updateVisionBoardBackgroundColor } from "../apiHelpers/apiHelper-VisionBoards.js";
+import { postText } from "../apiHelpers/apiHelper-Texts.js";
 
 export function addSideBarEventListeners() {
   const icons = document.querySelectorAll(".icon-div i");
@@ -132,6 +133,13 @@ function createNewTextElement() {
     inputContainerDiv.nextSibling
   );
   addTextInput.value = "";
+  const textJSON = {
+    "textHtmlId": textDiv.id, 
+    "textContent": textFromInput, 
+    "textParentElement": "text-container"
+  } 
+  const visionBoardId = document.querySelector(".visionboard-id-input").value;
+  postText(visionBoardId, textJSON);
 }
 
 function checkUrl(url) {
