@@ -135,10 +135,13 @@ function populateImages(el, visionboard) {
       img.draggable = "true";
       img.src = `${image.imageLink}`;
       img.id = `${image.imageHtmlId}`;
-      let parent = document.querySelector(`#${image.imageParentElement}`);
-      if (parent == null) parent = document.querySelector(`.${image.imageParentElement}`);
-      if (parent == null) parent = el;
-      parent.appendChild(img);
+      try {
+        let parent = document.querySelector(`#${image.imageParentElement}`);
+        if (parent == null)
+          parent = document.querySelector(`.${image.imageParentElement}`);
+        if (parent == null) parent = el;
+        parent.appendChild(img);
+      } catch (error) {}
     });
   });
 }
@@ -162,10 +165,13 @@ function populateTexts(el, visionboard) {
       textH2.contentEditable = "true";
       textH2.innerText = content;
       textDiv.appendChild(textH2);
-      let parent = document.querySelector(`#${text.textParentElement}`);
-      if (parent == null) parent = document.querySelector(`.${text.textParentElement}`);
-      if (parent == null) parent = el;
-      parent.appendChild(textDiv);
+      try {
+        let parent = document.querySelector(`#${text.textParentElement}`);
+        if (parent == null)
+          parent = document.querySelector(`.${text.textParentElement}`);
+        if (parent == null) parent = el;
+        parent.appendChild(textDiv);
+      } catch (error) {}
     });
   });
 }
@@ -173,7 +179,7 @@ function populateTexts(el, visionboard) {
 function populateQuotes(el, visionboard) {
   el.innerHTML = `
   <div class="input-container">
-  <label>Image URL </label>
+  <label>Quote URL </label>
   <input type="text" class="add-quote" />
 </div>
   `;
@@ -185,10 +191,13 @@ function populateQuotes(el, visionboard) {
       img.draggable = "true";
       img.src = `${quote.quoteLink}`;
       img.id = `${quote.quoteHtmlId}`;
-      let parent = document.querySelector(`#${quote.quoteParentElement}`);
-      if (parent == null) parent = document.querySelector(`.${quote.quoteParentElement}`);
-      if (parent == null) parent = el;
-      parent.appendChild(img);
+      try {
+        let parent = document.querySelector(`#${quote.quoteParentElement}`);
+        if (parent == null)
+          parent = document.querySelector(`.${quote.quoteParentElement}`);
+        if (parent == null) parent = el;
+        parent.appendChild(img);
+      } catch (error) {}
     });
   });
 }
@@ -217,7 +226,7 @@ function populateSettings(el) {
               type="range"
               min="0"
               max="100"
-              value="50"
+              value="10"
               class="spacing-slider"
               id="spacing-slider"
             />
@@ -229,7 +238,7 @@ function populateSettings(el) {
               type="range"
               min="0"
               max="50"
-              value="50"
+              value="0"
               class="spacing-slider"
               id="border-radius-slider"
             />
@@ -268,6 +277,95 @@ function populateSettings(el) {
   `;
 }
 
-function populateHelp(el){
-  el.innerText
+function populateHelp(el) {
+  el.innerHTML = `
+  <div class="help-questions">
+
+    <h2>Templates</h2>
+
+    <h3>How do I select a new template for my vision board?</h3>
+
+    <p>Select the Template Icon on the left of the screen and then select desired template from the template gallery. Once selected, the new template will display on the vision board.</p>
+
+    <h2>Backgrounds</h2>
+
+    <h3>How do I add a background color to my vision board?</h3>
+
+    <p>Select the Background Icon on the left of the screen and then click the color block for the color picker to display. Then, select your desired color. The color will then display as the background for your vision board.</p>
+
+    <h3>How do I add a new background image to the gallery?</h3>
+
+    <p>Select the Background Icon on the left of the screen and then click in the Image URL box. Type or paste in the URL for the background image you would like to add and press the 'Enter' key. The background image will then add to the gallery.</p>
+
+    <h3>How do I select a background for my vision board?</h3>
+
+    <p>Select the Background Icon on the left of the screen and then click on the thumbnail of the background image you would like to add to your vision board. The background will then display on your vision board.</p>
+
+    <h2>Images</h2>
+
+    <h3>How do I add a new image to the gallery?</h3>
+
+    <p>Select the Image Icon on the left of the screen and then click in the Image URL box. Type or paste in the URL for the image you would like to add and press the 'Enter' key. The image will then add to the gallery.</p>
+
+    <h3>How do I select and add an image to my vision board?</h3>
+
+    <p>Select the Image Icon on the left of the screen. Grab the corner of the thumbnail of the image you would like to add and drag the image to the desired box on the vision board. When it is above the desired location, drop the image. It will then display on your vision board.</p>
+
+    <h2>Text</h2>
+
+    <h3>How do I add new text to the gallery?</h3>
+
+    <p>Select the Text Icon on the left of the screen and then click in the Text Input box. Type your idea you would like to add and then press the 'Enter' key. The new text will add to the gallery.</p>
+
+    <h3>How do I select and and add text to my vision board?</h3>
+
+    <p>Select the Text Icon on the left of the screen. Grab the corner of the thumbnail of the text you would like to add and drag the text to the desired box on the vision board and drop it. The text will display on your vision board.</p>
+
+    <h3>How do I edit the text?</h3>
+
+    <p>Text can be edited in the text gallery or on the vision board. To edit, move your cursor over the words and the text cursor will appear. Then, click the box. The text will then become editable. Change the text as desired and click anywhere just outside of the changed text to save your change.</p>
+
+    <h2>Quotes</h2>
+
+    <h3>How do I add a quote to the gallery?</h3>
+
+    <p>Select the Quote Icon on the left of the screen and then click in the Quote URL box. 
+    Type your idea you would like to add and then press the 'Enter' key. The new text will add to the gallery.</p>
+
+    <h3>How do I add a quote to my vision board?</h3>
+
+    <p>Click on the Quote Icon on the left of the screen. Grab the corner of the thumbnail of the quote you would like to add and drag the quote over the desired box on the vision board. When it is above the desired location, drop the quote. It will then display on your vision board.</p>
+
+    <h2>Settings</h2>
+
+    <h3>How do I toggle Dark Mode?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Click the toggle under Dark Mode. When the toggle is blue, Dark Mode is turned on. When the toggle is grey, Dark Mode is turned off.</p>
+
+    <h3>How do I toggle the grid on and off?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Click the toggle under Show Grid. When the toggle is blue, Show Grid is turned on. When the toggle is grey, Show Grid is turned off.</p>
+
+    <h3>How do I change the spacing between grid boxes?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Select the slider under Grid Spacing and move the ball left or right. Left decreases the amount of space between boxes. Right increases the amount of space between boxes.</p>
+
+    <h3>How do I change the border radius of the grid boxes?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Select the slider under Border Radius and move the ball left or right. Left creates a more square box, while right rounds the boxes.</p>
+
+    <h3>How do I change the border thickness?</h3>
+
+    <p>Click on the Settings Icon on the left of the screen. Select the slider under Border Thickness and move the ball left or right. Left decreases the thickness, while right increases it.</p>
+
+    <h3>How do I change the border color?</h3>
+
+    <p>Select the Settings Icon on the left of the screen and then click the color block under Border Color for the color picker to display. Then, select your desired color.</p>
+
+    <h3>How do I change the border style?</h3>
+
+    <p>Select the Settings Icon on the left of the screen and then select the desired border style from the drop-down list. Once selected, the border style will update on the vision board.</p>
+
+  </div>
+  `;
 }

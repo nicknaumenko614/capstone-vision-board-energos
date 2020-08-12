@@ -332,3 +332,37 @@
   font-size: 15pt;
   padding: 5px;
 }
+
+.sidebar .help-container {
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
+.sidebar .help-container .help-questions {
+  margin: 20px;
+  font-family: "Amaranth", sans-serif;
+}
+
+.sidebar .help-container h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--color6);
+}
+
+.sidebar .help-container h3 {
+  text-align: justify;
+  font-size: 12pt;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.sidebar .help-container p {
+  text-align: start;
+  font-size: 11pt;
+  margin-top: 10px;
+}
+
+.sidebar .help-container p:last-child {
+  margin-bottom: 50px;
+}

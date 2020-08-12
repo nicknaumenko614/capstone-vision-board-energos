@@ -92,7 +92,5 @@ export const updateQuoteParentElement = async (id, quote) => {
 export const fetchQuoteId = async (visionBoardId, quoteHtmlId) => {
   return fetch(
     `http://localhost:8080/api/${visionBoardId}/quotes/${quoteHtmlId}`
-  ).then((response) => {
-    response.JSON();
-  });
+  ).then((response) => response.json());
 };
