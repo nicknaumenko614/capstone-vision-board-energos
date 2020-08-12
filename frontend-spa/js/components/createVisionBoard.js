@@ -98,8 +98,12 @@ function borderOption(visionboard) {
   );
   const color = `${visionboard.gridBorderColor}`;
   const thickness = `${visionboard.gridBorderThickness}`;
-  const style = `${visionboard.gridBorderStyle}`;
-  console.log(color, thickness, style);
+  let style = `${visionboard.gridBorderStyle}`;
+  if (style == null) style = "solid";
 
   main.style.border = thickness + " " + style + " " + color;
+
+  borderColorPicker.value = color;
+  borderStyleSelector.value = style;
+  borderThicknessSlider.value = parseInt(thickness, 10);
 }
