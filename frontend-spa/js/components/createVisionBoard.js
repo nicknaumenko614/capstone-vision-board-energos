@@ -109,15 +109,13 @@ function borderOption(visionboard) {
   borderThicknessSlider.value = parseInt(thickness, 10);
 }
 
-function backgroundOption (visionboard) {
-const color = `${visionboard.backgroundColor}`;
-const backgroundImageLink = `${visionboard.backgroundImageLink}`;
-const main = document.querySelector("main");
-console.log(backgroundImageLink);
-if (backgroundImageLink == ""){
-  alert("hiiii");
-main.style.backgroundColor = color;
-}else {
-  main.style.backgroundImage = "url("+backgroundImageLink+")";
-}
+function backgroundOption(visionboard) {
+  const color = `${visionboard.backgroundColor}`;
+  const backgroundImageLink = `${visionboard.backgroundImageLink}`;
+  const main = document.querySelector("main");
+  if (backgroundImageLink == "") {
+    main.style.backgroundColor = color;
+  } else {
+    main.style.backgroundImage = "url(" + backgroundImageLink + ")";
+  }
 }

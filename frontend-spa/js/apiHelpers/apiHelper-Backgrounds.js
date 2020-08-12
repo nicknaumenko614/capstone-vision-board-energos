@@ -11,7 +11,7 @@ export const postNewBackground = async (visionBoardId, background) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(background),
-  }).then((response) => response.json());
+  });
 };
 
 export const deleteBackground = async (backgroundId) => {
