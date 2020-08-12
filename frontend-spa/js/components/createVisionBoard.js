@@ -61,7 +61,10 @@ function darkThemeOption(visionboard){
 }
 
 function showGridOption(visionboard){
-  if (`${visionboard.hasGrid}` == "true"){
-    const 
+  if (`${visionboard.hasGrid}` == "false"){
+    const showGridToggleSwitch = document.querySelector(".grid-checkbox");
+    const gridBoxes = document.querySelectorAll(".box");
+    gridBoxes.forEach((box) => (box.style.backgroundColor = "transparent"));
+    showGridToggleSwitch.checked = false;
   }
 }

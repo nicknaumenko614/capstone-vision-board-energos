@@ -135,10 +135,13 @@ function populateImages(el, visionboard) {
       img.draggable = "true";
       img.src = `${image.imageLink}`;
       img.id = `${image.imageHtmlId}`;
-      let parent = document.querySelector(`#${image.imageParentElement}`);
-      if (parent == null) parent = document.querySelector(`.${image.imageParentElement}`);
-      if (parent == null) parent = el;
-      parent.appendChild(img);
+      try {
+        let parent = document.querySelector(`#${image.imageParentElement}`);
+        if (parent == null)
+          parent = document.querySelector(`.${image.imageParentElement}`);
+        if (parent == null) parent = el;
+        parent.appendChild(img);
+      } catch (error) {}
     });
   });
 }
@@ -162,10 +165,13 @@ function populateTexts(el, visionboard) {
       textH2.contentEditable = "true";
       textH2.innerText = content;
       textDiv.appendChild(textH2);
-      let parent = document.querySelector(`#${text.textParentElement}`);
-      if (parent == null) parent = document.querySelector(`.${text.textParentElement}`);
-      if (parent == null) parent = el;
-      parent.appendChild(textDiv);
+      try {
+        let parent = document.querySelector(`#${text.textParentElement}`);
+        if (parent == null)
+          parent = document.querySelector(`.${text.textParentElement}`);
+        if (parent == null) parent = el;
+        parent.appendChild(textDiv);
+      } catch (error) {}
     });
   });
 }
@@ -185,10 +191,13 @@ function populateQuotes(el, visionboard) {
       img.draggable = "true";
       img.src = `${quote.quoteLink}`;
       img.id = `${quote.quoteHtmlId}`;
-      let parent = document.querySelector(`#${quote.quoteParentElement}`);
-      if (parent == null) parent = document.querySelector(`.${quote.quoteParentElement}`);
-      if (parent == null) parent = el;
-      parent.appendChild(img);
+      try {
+        let parent = document.querySelector(`#${quote.quoteParentElement}`);
+        if (parent == null)
+          parent = document.querySelector(`.${quote.quoteParentElement}`);
+        if (parent == null) parent = el;
+        parent.appendChild(img);
+      } catch (error) {}
     });
   });
 }
@@ -268,7 +277,7 @@ function populateSettings(el) {
   `;
 }
 
-function populateHelp(el){
+function populateHelp(el) {
   el.innerHTML = `
   <div class="help-questions">
 
