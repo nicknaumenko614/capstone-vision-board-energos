@@ -43,6 +43,7 @@ function addAllEventListeners() {
 function renderPreSavedOptions(visionboard){
   darkThemeOption(visionboard);
   showGridOption(visionboard);
+  gridSpacingOption(visionboard);
 }
 
 function darkThemeOption(visionboard){
@@ -67,4 +68,14 @@ function showGridOption(visionboard){
     gridBoxes.forEach((box) => (box.style.backgroundColor = "transparent"));
     showGridToggleSwitch.checked = false;
   }
+}
+
+function gridSpacingOption(visionboard){
+  const spacingSlider = document.querySelector("#spacing-slider");
+  const elementsWithGridGap = document.querySelectorAll("main div:not(.box)");
+  const gap = `${visionboard.gridSpacing}`;
+  elementsWithGridGap.forEach(
+    (element) => (element.style.gridGap = gap)
+  );
+  spacingSlider.value = parseInt(gap, 10);
 }
