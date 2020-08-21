@@ -14,7 +14,7 @@ export const postText = async (visionBoardId, text) => {
       },
       body: JSON.stringify(text),
     }
-  ).then((response) => response.json());
+  );
 };
 
 export const deleteText = async (textId) => {

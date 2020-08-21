@@ -14,7 +14,7 @@ export const postNewImage = async (visionBoardId, image) => {
       },
       body: JSON.stringify(image),
     }
-  ).then((response) => response.json());
+  );
 };
 
 export const deleteImage = async (imageId) => {

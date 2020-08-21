@@ -40,15 +40,7 @@ public class VisionBoardController {
     @PostMapping("/api/visionboards/add/{boardName}")
     public void addVisionBoard(@PathVariable String boardName) {
         visionBoardFactory.createDefaultBoard(boardName);
-//       VisionBoard newVisionBoard = visionBoardStorage.retrieveVisionBoardByName(boardName);
-//       long newVisionBoardId = newVisionBoard.getId();
-//       return newVisionBoardId;
     }
-
-//    @DeleteMapping("/api/visionboards/{visionBoardId}/delete")
-//    public void deleteVisionBoard(@PathVariable long visionBoardId) {
-//        visionBoardStorage.deleteVisionBoard(visionBoardId);
-//    }
 
     @PatchMapping("/api/visionboards/{visionBoardId}/updateThemeDark")
     public VisionBoard updateThemeDark(@PathVariable long visionBoardId, @RequestBody VisionBoard visionBoard) {

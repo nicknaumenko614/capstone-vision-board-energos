@@ -14,7 +14,7 @@ export const postNewQuote = async (visionBoardId, quote) => {
       },
       body: JSON.stringify(quote),
     }
-  ).then((response) => response.json());
+  );
 };
 
 export const deleteQuote = async (quoteId) => {
